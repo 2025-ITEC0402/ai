@@ -14,7 +14,6 @@ class ExternalSearchAgent:
     def __init__(self):
         self.logger = setup_logger("external_search")
         
-        # Gemini 모델 설정
         self.llm = ChatGoogleGenerativeAI(
             model="gemini-2.0-flash",
             google_api_key=GOOGLE_API_KEY,
@@ -25,17 +24,7 @@ class ExternalSearchAgent:
         self.search_tool = TavilySearchResults(
             max_results=5,
             api_key=TAVILY_API_KEY,
-            search_depth="advanced",
-            include_domains=[
-                "khanacademy.org",
-                "mathsisfun.com",
-                "wolframalpha.com",
-                "mathworld.wolfram.com",
-                "paulscalculusnotes.com",
-                "tutorial.math.lamar.edu",
-                "brilliant.org",
-                "ocw.mit.edu"
-            ]
+            search_depth="advanced"
         )
         
         self.tools = [self.search_tool]
@@ -56,6 +45,7 @@ class ExternalSearchAgent:
 
             주제: {topic}
             질문: {query}
+            검색 결과: {search_results}
 
             응답은 정확성과 전문성을 유지하면서 학부 수준의 공학수학 학생이 이해할 수 있는 수준으로 작성하세요.
             사용자에게 직접 말하는 형식으로 답변하며, 적절한 수식과 설명을 포함하세요."""),
@@ -76,17 +66,15 @@ class ExternalSearchAgent:
             str: 검색 결과 요약 텍스트
         """
         self.logger.info(f"ExternalSearchAgent: 외부 검색 수행 중 - 주제: '{topic}', 질의: '{query}'")
+        search_results = self.search_tool.invoke(query)
         
-        try:
-            result = self.search_chain.invoke({
-                "topic": topic,
-                "query": query
-            })
-            
-            self.logger.info(f"ExternalSearchAgent: 검색 결과 요약 완료 (길이: {len(result)}자)")
-            
-            return result
-            
-        except Exception as e:
-            self.logger.error(f"외부 검색 오류: {e}")
-            return f"검색 중 오류가 발생했습니다: {str(e)}"
+        if not search_results:
+            return "검색 결과가 없습니다. 다른 키워드로 검색해보세요."
+        
+        result = self.search_chain.invoke({
+            "topic": topic,
+            "query": query,
+            "search_results": search_results
+        })
+        
+        return result

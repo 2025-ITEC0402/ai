@@ -28,7 +28,7 @@ def main():
     
     external_searcher = ExternalSearchAgent()
     
-    search_query = "편미분에 대해서 설명해줘"
+    search_query = "편미분에 대해서 알려줘"
     search_topic = "편미분"
     
     print("\n===== 외부 검색 테스트 =====")
