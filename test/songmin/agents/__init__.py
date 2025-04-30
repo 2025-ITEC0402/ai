@@ -5,4 +5,5 @@ from agents.problem_solving import ProblemSolvingAgent
 
 __all__ = [
     'ProblemSolvingAgent'
+    'ExternalSearchAgent'
 ]
