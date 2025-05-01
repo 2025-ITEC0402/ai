@@ -16,13 +16,25 @@ def task_manager_node(state):
     return task_manager.task_manage(state)
     
 def external_search_node(state):
-    query = state["messages"][-1].content
+    query = state.get("query", "")
+    if not query and state.get("messages"):
+        for msg in reversed(state.get("messages", [])):
+            if not hasattr(msg, "name") or msg.name != "ExternalSearch":
+                query = msg.content
+                break
+    
     answer = search_agent.search_and_summarize(query)
     msg = HumanMessage(content=answer, name="ExternalSearch")
     return {"messages": [msg]}
 
 def problem_solving_node(state):
-    query = state["messages"][-1].content
+    query = state.get("query", "")
+    if not query and state.get("messages"):
+        for msg in reversed(state.get("messages", [])):
+            if not hasattr(msg, "name") or msg.name != "ProblemSolving":
+                query = msg.content
+                break
+    
     answer = solving_agent.solve_problem(query)
     msg = HumanMessage(content=answer, name="ProblemSolving")
     return {"messages": [msg]}

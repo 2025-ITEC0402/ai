@@ -29,7 +29,7 @@ SONGMIN/
 │   ├── problem_generation.py      # 문제 생성 에이전트
 │   ├── problem_solving.py         # 문제 풀이 에이전트
 │   ├── quality_evaluation.py      # 답변 퀄리티 평가 에이전트
-│   ├── task_manager.py            # 태스크 매니저
+│   ├── task_manager.py            # 테스크 매니저
 │   └── theory_explanation.py      # 이론 설명 에이전트
 ├── data/                          # 데이터 파일
 │   └── topics.json                # topic json파일(calculus 챕터)
@@ -82,7 +82,7 @@ TAVILY_API_KEY=your_tavily_api_key
 ## 실행 방법
 
 ```bash
-docker-compose run -it ema
+docker-compose run --rm -it ema
 ```
 
 ## 개발 정보

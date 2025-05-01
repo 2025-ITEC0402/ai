@@ -8,11 +8,11 @@ from langchain_core.messages import HumanMessage, AIMessage
 from graph.workflow import graph
 from utils.logger import setup_logger
 from langchain_core.runnables import RunnableConfig
-
+import uuid
 
 # 로거 설정
 logger = setup_logger("main")
-config = RunnableConfig(recursion_limit=10, configurable={"thread_id": "abc123"})
+config = RunnableConfig(recursion_limit=10, configurable={"thread_id": str(uuid.uuid4())})
 
 def process_query(query: str) -> str:
     """
@@ -39,10 +39,9 @@ def process_query(query: str) -> str:
     messages = final_state.values['messages']
     ai_messages = [msg for msg in messages if isinstance(msg, AIMessage)]
     final_message = ai_messages[-1].content
-
     return final_message
 def main():
-    query = "1+2는?"
+    query = "1+2 = ?"
     response = process_query(query)
     print("\n" + "=" * 50)
     print("EMA의 응답:")
