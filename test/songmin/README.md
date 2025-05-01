@@ -18,34 +18,35 @@ EMA는 공학수학 학습을 지원하기 위한 다중 에이전트 시스템�
 
 ## 시스템 구조
 
-ema/
+```plaintext
+SONGMIN/
 ├── .env                           # 환경 변수 설정
 ├── agents/                        # 에이전트 모듈
 │   ├── __init__.py
-│   ├── external_search.py          # 외부 검색 에이전트
-│   ├── external_sharing.py         # 외부 공유 에이전트
-│   ├── learning_history.py         # 학습 이력 에이전트
-│   ├── problem_generation.py       # 문제 생성 에이전트
-│   ├── problem_solving.py           # 문제 풀이 에이전트
-│   ├── quality_evaluation.py       # 답변 퀄리티 평가 에이전트
-│   ├── task_manager.py              # 태스크 매니저
-│   └── theory_explanation.py       # 이론 설명 에이전트
-├── data/                           # 데이터 파일
-│   ├── topics.json                 # topic json파일(calculus 챕터)
-├── graph/                          # 워크플로우 그래프
+│   ├── external_search.py         # 외부 검색 에이전트
+│   ├── external_sharing.py        # 외부 공유 에이전트
+│   ├── learning_history.py        # 학습 이력 에이전트
+│   ├── problem_generation.py      # 문제 생성 에이전트
+│   ├── problem_solving.py         # 문제 풀이 에이전트
+│   ├── quality_evaluation.py      # 답변 퀄리티 평가 에이전트
+│   ├── task_manager.py            # 태스크 매니저
+│   └── theory_explanation.py      # 이론 설명 에이전트
+├── data/                          # 데이터 파일
+│   └── topics.json                # topic json파일(calculus 챕터)
+├── graph/                         # 워크플로우 그래프
 │   ├── __init__.py
-│   └── workflow.py                 # 워크플로우 정의
-├── utils/                          # 유틸리티 함수
-│   ├── __init__.py
-├── .dockerignore                   
-├── Dockerfile                      
-├── docker-compose.yml              
-├── config.py                       # 설정 파일
-├── main.py                         # 메인 실행 파일
-├── poetry.lock                     
-├── pyproject.toml                  # Poetry 설정 파일
-├── README.md                       
-└── requirements.txt                # 의존성 목록
+│   └── workflow.py                # 워크플로우 정의
+├── utils/                         # 유틸리티 함수
+│   └── __init__.py
+├── .dockerignore                  
+├── Dockerfile                    
+├── docker-compose.yml            
+├── config.py                      # 설정 파일
+├── main.py                        # 메인 실행 파일
+├── poetry.lock                    
+├── pyproject.toml                 # Poetry 설정 파일
+├── README.md                     
+└── requirements.txt               # 의존성 목록
 
 ## 워크플로우
 
