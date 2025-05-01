@@ -91,6 +91,6 @@ class TaskManagerAgent:
         chain = self.routing_prompt | self.llm.with_structured_output(RouteResponse)
         response = chain.invoke(state)
         
-        logger.info(f"TaskManagerAgent: 결정된 다음 단계 - {response.next}")
+        logger.info(f"TaskManagerAgent: 결정된 다음 단계 - {response.next} - 질의 : {response.query}")
         
         return response

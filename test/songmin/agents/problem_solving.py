@@ -5,7 +5,6 @@ from langchain_core.output_parsers import StrOutputParser
 from utils.logger import setup_logger
 from config import GOOGLE_API_KEY
 
-# 로거 설정
 logger = setup_logger(__name__)
 
 class ProblemSolvingAgent:
@@ -65,6 +64,6 @@ class ProblemSolvingAgent:
             "query": query
         })
         
-        logger.info(f"ProblemSolvingAgent: 풀이 생성 완료 (길이: {len(result)}자)")
+        logger.info(f"ProblemSolvingAgent: 풀이 생성 완료")
         
         return result

@@ -7,7 +7,6 @@ from agents.task_manager import TaskManagerAgent, members
 from agents.external_search import ExternalSearchAgent
 from agents.problem_solving import ProblemSolvingAgent
 
-# 에이전트 인스턴스 생성
 search_agent = ExternalSearchAgent()
 solving_agent = ProblemSolvingAgent()
 task_manager = TaskManagerAgent()
@@ -42,6 +41,7 @@ def problem_solving_node(state):
 class AgentState(TypedDict):
     messages: Annotated[Sequence[HumanMessage], operator.add]
     next: str
+    query: str
 
 workflow = StateGraph(AgentState)
 

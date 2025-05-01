@@ -12,7 +12,7 @@ class ExternalSearchAgent:
     """
     
     def __init__(self):
-        self.logger = setup_logger("external_search")
+        self.logger = setup_logger(__name__)
         
         self.llm = ChatGoogleGenerativeAI(
             model="gemini-2.0-flash",
@@ -22,7 +22,7 @@ class ExternalSearchAgent:
         )
         
         self.search_tool = TavilySearchResults(
-            max_results=5,
+            max_results=3,
             api_key=TAVILY_API_KEY,
             search_depth="advanced"
         )

@@ -9,8 +9,9 @@ from graph.workflow import graph
 from utils.logger import setup_logger
 from langchain_core.runnables import RunnableConfig
 import uuid
+import warnings
+warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
 
-# 로거 설정
 logger = setup_logger("main")
 config = RunnableConfig(recursion_limit=10, configurable={"thread_id": str(uuid.uuid4())})
 
@@ -41,7 +42,7 @@ def process_query(query: str) -> str:
     final_message = ai_messages[-1].content
     return final_message
 def main():
-    query = "1+2 = ?"
+    query = "미분 예시 문제 검색해줘. 그리고 찾은 문제 풀어줘"
     response = process_query(query)
     print("\n" + "=" * 50)
     print("EMA의 응답:")
