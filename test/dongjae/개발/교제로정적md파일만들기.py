@@ -23,11 +23,15 @@ llm = ChatGoogleGenerativeAI(
 # 3) Markdown 변환용 프롬프트 템플릿
 md_prompt = PromptTemplate.from_template(
     """You receive the following engineering math textbook excerpt, including LaTeX formulas.
-Convert it into well-formatted Markdown:
+Convert it into well-formatted Markdown according to these rules:
 - Use `#` for chapter headings and `##` for section headings.
 - Wrap formulas in `$$...$$`.
 - Preserve bullet lists.
 - Output only Markdown.
+- Respond in Korean.
+- Focus on theoretical explanations from the textbook, making them easy to understand.
+- Do not include any exercise problems.
+- Use light emojis to aid comprehension, without overdoing it.
 
 # Excerpt:
 {excerpt}
@@ -107,8 +111,6 @@ def convert_and_save(chapters: dict, output_dir: str = "chapters_md"):
     """
     Path(output_dir).mkdir(exist_ok=True)
     for title, content in chapters.items():
-        if int(title[:2]) < 9:
-            continue
         # 청크 분할
         chunks = split_text(content)
         md_parts = []
