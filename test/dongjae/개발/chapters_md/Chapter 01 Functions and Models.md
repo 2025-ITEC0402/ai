@@ -1,6 +1,5 @@
-# Chapter 01 ConCept_CheCk_answers__continued_
+# Chapter 01 Functions and Models
 
-```markdown
 # 함수와 역함수
 
 ## 함수의 변환
@@ -56,8 +55,6 @@
 * 함수 f와 t의 곱 ft의 정의역은 두 함수의 정의역의 교집합, 즉 $$A \cap B$$ 입니다.
 * 함수 f/t의 정의역은 $$A \cap B$$ 에서 $$t(x) = 0$$ 인 x를 제외한 집합입니다.
 
-
-```
 
 # 함수와 그래프 📈
 

@@ -1,5 +1,4 @@
-# Chapter 02 ConCept_CheCk_answers__continued_
-
+# Chapter 02 Limits and Derivatives
 # 극한과 연속 💡
 
 ## 극한 법칙
