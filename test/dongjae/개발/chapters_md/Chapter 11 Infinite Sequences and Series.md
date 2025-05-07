@@ -1,6 +1,5 @@
-# Chapter 11 ConCept_CheCk_answers__continued_
+# Chapter 11 Infinite Sequences and Series
 
-```markdown
 # 7. 수렴 판정과 합의 추정 🤔
 
 ## 7. (a) 적분 판정에 의한 수렴과 합의 추정
@@ -73,7 +72,6 @@ $$
 
 * 매클로린 급수: $\sum_{n=0}^{\infty} x^n$
 * 수렴 구간: $R=1$, $(-1, 1)$
-```
 
 # 멱급수 (Power Series)
 
@@ -174,7 +172,6 @@ $$a × b = \begin{vmatrix} i & j & k \\ a₁ & a₂ & a₃ \\ b₁ & b₂ & b₃
 
 외적은 두 벡터에 수직인 벡터를 찾거나, 두 벡터가 이루는 평행사변형의 넓이를 구하는 데 사용할 수 있습니다.
 
-```markdown
 # 벡터의 외적과 내적 ✨
 
 ## 외적의 활용 🧮
@@ -193,6 +190,3 @@ $$a × b = \begin{vmatrix} i & j & k \\ a₁ & a₂ & a₃ \\ b₁ & b₂ & b₃
 * 두 벡터 $\vec{a}$ 와 $\vec{b}$ 의 내적은 $\vec{a} \cdot \vec{b}$ 로 표기합니다.
 * 내적의 결과는 스칼라 값입니다.
 * 일정한 힘 $\vec{F}$ 가 물체를 변위 $\vec{d}$ 만큼 움직일 때 한 일 $W$ 는 $W = \vec{F} \cdot \vec{d}$ 입니다.
-
-
-```

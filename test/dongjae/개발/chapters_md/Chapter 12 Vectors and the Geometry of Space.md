@@ -1,4 +1,4 @@
-# Chapter 12 ConCept_CheCk_answers__continued_
+# Chapter 12 Vectors and the Geometry of Space
 
 # 벡터와 평면 기하학 🧮
 
@@ -124,7 +124,6 @@ $$ \kappa = \left| \frac{d\mathbf{T}}{ds} \right| $$
 
 $$ \kappa = \frac{|\mathbf{T'}(t)|}{|\mathbf{r'}(t)|} $$
 
-```markdown
 # 벡터 함수의 미분과 곡률 🤔
 
 ## 벡터 함수의 미분
@@ -192,9 +191,6 @@ $$
 * **u(t) ⋅ v(t)의 미분:** u'(t) ⋅ v(t) + u(t) ⋅ v'(t)
 * **u(t) × v(t)의 미분:** u'(t) × v(t) + u(t) × v'(t)
 * **u(f(t))의 미분:** f'(t) u'(f(t)) (연쇄 법칙)
-
-
-```
 
 # 챕터 1: 벡터 소개 ✨
 

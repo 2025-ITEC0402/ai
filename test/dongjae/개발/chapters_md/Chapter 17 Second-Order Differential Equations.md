@@ -1,4 +1,4 @@
-# Chapter 17 ConCept_CheCk_answers__continued_
+# Chapter 17 Second-Order Differential Equations
 
 # 미분방정식과 멱급수 💡
 

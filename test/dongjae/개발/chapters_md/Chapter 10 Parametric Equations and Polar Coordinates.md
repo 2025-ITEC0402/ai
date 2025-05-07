@@ -1,4 +1,4 @@
-# Chapter 10 ConCept_CheCk_answers__continued_
+# Chapter 10 Parametric Equations and Polar Coordinates
 
 # 8. 쌍곡선과 이심률
 
