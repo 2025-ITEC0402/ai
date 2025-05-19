@@ -146,7 +146,7 @@ class TaskManagerAgent:
                 json_str = content
             final_response = AIMessage(content=json_str)
             return {
-                "next": "FINISH",
+                "next": "QualityEvaluation",
                 "query": final_response,
                 "messages": messages + [final_response]
             }
