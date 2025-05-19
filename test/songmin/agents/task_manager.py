@@ -42,6 +42,7 @@ class TaskManagerAgent:
             문제 생성 및 풀이 워크플로우:
             1. 사용자가 문제 생성을 요청하면 ProblemGeneration 에이전트로 라우팅
             2. 문제가 생성되면 해당 문제에 대한 풀이를 위해 ProblemSolving 에이전트로 라우팅
+             - query에는 생성된 문제를 넣으세요
             3. 문제와 풀이가 모두 완료되면 'sufficient'로 결정하여 최종 답변 생성
             
             에이전트 선택 기준:
@@ -53,7 +54,6 @@ class TaskManagerAgent:
             MessagesPlaceholder(variable_name="messages"),
             ("system", """이전 대화를 고려하여:
             1. 메시지 기록을 확인하고 현재까지 어떤 에이전트가 이미 작업했는지 파악하세요.
-            2. 사용자의 요청에 대해 문제 생성과 풀이 모두 필요한지 판단하세요.
             3. 사용자가 요청하는 문제의 개수와 주제, 범위를 잘 파악하세요.
             4. 다음 작업자를 결정하세요: {options}
                - 문제 생성만 완료된 상태라면 ProblemSolving을 선택하세요.
@@ -144,12 +144,10 @@ class TaskManagerAgent:
                     json_str = content[3:-3].strip()
             else:
                 json_str = content
-            fixed_json_str = re.sub(r'\\\\', r'\\\\\\\\', json_str)
-            result = json.loads(fixed_json_str)
-            final_response = AIMessage(content=json.dumps(result, ensure_ascii=False, indent=2))
+            final_response = AIMessage(content=json_str)
             return {
                 "next": "FINISH",
-                "query": final_response.content,
+                "query": final_response,
                 "messages": messages + [final_response]
             }
 

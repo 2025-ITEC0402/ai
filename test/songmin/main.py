@@ -42,7 +42,7 @@ def process_query(query: str) -> str:
     final_message = ai_messages[-1].content
     return final_message
 def main():
-    query = "미분 예시 문제 두 개 만들어줘"
+    query = "미분 예시 문제 한 개 만들어줘"
     response = process_query(query)
     print("\n" + "=" * 50)
     print("EMA의 응답:")
