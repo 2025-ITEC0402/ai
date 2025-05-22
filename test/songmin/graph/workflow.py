@@ -21,48 +21,24 @@ def task_manager_node(state):
 
 def external_search_node(state):
     query = state.get("query", "")
-    if not query and state.get("messages"):
-        for msg in reversed(state.get("messages", [])):
-            if not hasattr(msg, "name") or msg.name != "ExternalSearch":
-                query = msg.content
-                break
-    
     answer = search_agent.search_and_summarize(query)
     msg = HumanMessage(content=answer, name="ExternalSearch")
     return {"messages": [msg]}
 
 def problem_solving_node(state):
     query = state.get("query", "")
-    if not query and state.get("messages"):
-        for msg in reversed(state.get("messages", [])):
-            if not hasattr(msg, "name") or msg.name != "ProblemSolving":
-                query = msg.content
-                break
-    
     answer = solving_agent.solve_problem(query)
     msg = HumanMessage(content=answer, name="ProblemSolving")
     return {"messages": [msg]}
 
 def problem_generation_node(state):
     query = state.get("query", "")
-    if not query and state.get("messages"):
-        for msg in reversed(state.get("messages", [])):
-            if not hasattr(msg, "name") or msg.name != "ProblemGeneration":
-                query = msg.content
-                break
-    
     problem = generating_agent.generate_problem(query)
     msg = HumanMessage(content=problem, name="ProblemGeneration")
     return {"messages": [msg]}
 
 def quality_agent_node(state):
     query = state.get("query", "")
-    if not query and state.get("messages"):
-        for msg in reversed(state.get("messages", [])):
-            if not hasattr(msg, "name") or msg.name != "QualityEvaluation":
-                query = msg.content
-                break
-    
     evaluation_result = quality_agent.evaluate_quality(query)
     msg = HumanMessage(content=str(evaluation_result), name="QualityEvaluation")
     return {"messages": [msg], "next": evaluation_result.get("next")}

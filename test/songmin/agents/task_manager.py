@@ -41,6 +41,7 @@ class TaskManagerAgent:
             
             문제 생성 및 풀이 워크플로우:
             1. 사용자가 문제 생성을 요청하면 ProblemGeneration 에이전트로 라우팅
+             - query에는 사용자가 요청한 문제의 주제, 난이도, 범위, 문제 개수 등을 파악하여 넣으세요
             2. 문제가 생성되면 해당 문제에 대한 풀이를 위해 ProblemSolving 에이전트로 라우팅
              - query에는 생성된 문제를 넣으세요
             3. 문제와 풀이가 모두 완료되면 'sufficient'로 결정하여 최종 답변 생성
@@ -54,11 +55,11 @@ class TaskManagerAgent:
             MessagesPlaceholder(variable_name="messages"),
             ("system", """이전 대화를 고려하여:
             1. 메시지 기록을 확인하고 현재까지 어떤 에이전트가 이미 작업했는지 파악하세요.
-            3. 사용자가 요청하는 문제의 개수와 주제, 범위를 잘 파악하세요.
-            4. 다음 작업자를 결정하세요: {options}
+            2. 사용자가 요청하는 문제의 개수와 주제, 난이도, 범위를 잘 파악하세요.
+            3. 다음 작업자를 결정하세요: {options}
                - 문제 생성만 완료된 상태라면 ProblemSolving을 선택하세요.
                - 문제 생성과 풀이가 모두 완료되었다면 'sufficient'를 선택하세요.
-            5. 작업자에게 요청할 정보를 명확히하여 질의를 생성하세요."""),
+            4. 작업자에게 요청할 정보를 명확히하여 질의를 생성하세요."""),
         ]).partial(members=", ".join(members), options=", ".join(options_for_next))
 
         self.response_prompt = ChatPromptTemplate.from_messages([

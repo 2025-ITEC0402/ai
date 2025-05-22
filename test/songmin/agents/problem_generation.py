@@ -30,7 +30,7 @@ class ProblemGenerationAgent:
             공학수학 문제를 생성하여 Taskmanager에게 제공해라
 
             """),
-            ("human", "위 지침에 따라 문제를 생성해주세요.")
+            ("human", "{query}")
         ])
     
     def generate_problem(self, query: str) -> str:
