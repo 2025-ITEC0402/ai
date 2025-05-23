@@ -1,7 +1,7 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain.agents import create_tool_calling_agent, AgentExecutor
+from langgraph.prebuilt import create_react_agent
 from langchain_core.tools import tool
 from dotenv import load_dotenv
 import os
@@ -67,19 +67,6 @@ class ProblemGenerationAgent:
               ③ [선택지 3]
               ④ [선택지 4]
               ⑤ [선택지 5]
-            - 정답: [①, ②, ③, ④, ⑤ 중 하나]
-            
-            요청 사항: {input}"""),
-            ("human", "{input}"),
-            ("placeholder", "{agent_scratchpad}")
+            - 정답: [①, ②, ③, ④, ⑤ 중 하나]""")
         ])
-        
-        self.agent = create_tool_calling_agent(self.llm, self.tools, self.generation_prompt)
-        self.agent_executor = AgentExecutor(
-            agent=self.agent,
-            tools=self.tools,
-            verbose=True,
-            max_iterations=10,
-            max_execution_time=10,
-            handle_parsing_errors=True,
-        )
+        self.agent = create_react_agent(self.llm, self.tools, state_modifier = self.generation_prompt)

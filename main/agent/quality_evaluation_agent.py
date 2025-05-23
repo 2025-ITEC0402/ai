@@ -1,7 +1,7 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain.agents import create_react_agent
+from langgraph.prebuilt import create_react_agent
 from langchain_core.tools import tool
 from dotenv import load_dotenv
 import os
@@ -52,11 +52,7 @@ class QualityEvaluationAgent:
             - 전체 점수: [0-10점 범위의 평균 점수]
             - 다음 액션: [FINISH/REVISE]
             - 상세 평가: [각 기준별 점수 및 피드백]
-            - 개선 제안: [구체적인 개선 방향]
-            
-            평가할 내용: {input}"""),
-            ("human", "{input}"),
-            ("placeholder", "{agent_scratchpad}")
+            - 개선 제안: [구체적인 개선 방향]""")
         ])
         
-        self.agent = create_react_agent(self.llm, self.tools, self.evaluation_prompt)
+        self.agent = create_react_agent(self.llm, self.tools, state_modifier = self.evaluation_prompt)
