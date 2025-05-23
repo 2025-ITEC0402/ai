@@ -5,8 +5,10 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_community.tools.tavily_search import TavilySearchResults
 from config import GOOGLE_API_KEY, TAVILY_API_KEY
 from utils.logger import setup_logger
-from langgraph.prebuilt import create_react_agent
-class ExternalSearchAgent:
+from langchain.agents import create_tool_calling_agent
+from langchain.agents import AgentExecutor
+
+class ExternalSearchAgent2:
     """
     LangChain 도구를 사용하여 외부 정보를 검색하고 요약하는 에이전트
     """
@@ -29,8 +31,6 @@ class ExternalSearchAgent:
         
         self.tools = [self.search_tool]
         
-        self.search_agent = create_react_agent(self.llm,tools = self.tools)
-        
         self.search_prompt = ChatPromptTemplate.from_messages([
             ("system", """당신은 공학수학 정보 검색 에이전트입니다. 사용자의 질문에 대한 외부 정보를 검색하고 요약하는 역할을 합니다.
             
@@ -51,33 +51,16 @@ class ExternalSearchAgent:
             - 검색 질의: [검색에 사용된 질의]
             - 주요 발견사항: [검색에서 발견된 핵심 정보]
             - 정보 출처: [정보의 출처 요약 (웹사이트, 학술 자료 등)]
-            
-            질문: {query}
-            검색 결과: {search_results}"""),
-            ("human", "{query}")
+             """),
+            ("human", "{query}"),
+            ("placeholder", "{agent_scratchpad}")
         ])
-        
-        self.search_chain = self.search_prompt | self.llm_with_tools | StrOutputParser()
-    
-    def search_and_summarize(self, query: str) -> str:
-        """
-        주어진 질의에 대해 외부 검색을 수행하고 결과를 요약합니다.
-        
-        Args:
-            query (str): 사용자 질의
-            
-        Returns:
-            str: 검색 결과 요약 텍스트
-        """
-        self.logger.info(f"ExternalSearchAgent: 외부 검색 수행 중 - 질의: '{query}'")
-        search_results = self.search_tool.invoke(query)
-        
-        if not search_results:
-            return "정보 유형: \"외부 검색 결과\"\n검색 질의: \"" + query + "\"\n주요 발견사항: 검색 결과가 없습니다.\n신뢰도 평가: 해당 없음"
-        
-        result = self.search_chain.invoke({
-            "query": query,
-            "search_results": search_results
-        })
-        
-        return result
+        self.search_agent = create_tool_calling_agent(self.llm, self.tools, self.search_prompt)
+        self.agent_executor = AgentExecutor(
+            agent=self.search_agent,
+            tools=self.tools,
+            verbose=True,
+            max_iterations=10,
+            max_execution_time=10,
+            handle_parsing_errors=True,
+        )
