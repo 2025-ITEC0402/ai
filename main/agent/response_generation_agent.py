@@ -71,6 +71,7 @@ class ResponseGenerationAgent:
             - **외부 검색 결과**: 개념 설명을 이해하기 쉽게 재구성
             - **문제 풀이**: 단계별 풀이 과정을 명확하게 정리
             - **문제 생성**: 문제와 해설을 교육적으로 제시"""),
+            ("placeholder", "{messages}")
         ])
         
         self.agent = create_react_agent(self.llm, self.tools, state_modifier = self.response_prompt)

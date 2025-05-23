@@ -23,7 +23,7 @@ def supervisor_agent(state):
 
 def agent_node(state, agent, name):
     agent_response = agent.agent.invoke(state)
-    msg = HumanMessage(content=agent_response["messages"][-1], name=name)
+    msg = HumanMessage(content=agent_response["messages"][-1].content, name=name)
     return {"messages": [msg]}
 
 search_node = partial(agent_node, agent=search_agent, name="ExternalSearch")
@@ -32,7 +32,7 @@ generating_node = partial(agent_node, agent=generating_agent, name="ProblemGener
 response_node = partial(agent_node, agent=response_agent, name="GeneratingResponse")
 
 class AgentState(TypedDict):
-    messages: Annotated[Sequence[BaseMessage], operator.add]
+    messages: Annotated[Sequence[HumanMessage], operator.add]
     next: str
 
 workflow = StateGraph(AgentState)

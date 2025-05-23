@@ -51,6 +51,7 @@ class ProblemSolvingAgent:
             - 단계별 풀이: [상세한 풀이 과정]
             - 최종 답안: [명확한 최종 답변]
             - 추가 설명: [필요시 추가 설명이나 대안적 접근법]"""),
+            ("placeholder", "{messages}")
         ])
 
         self.agent = create_react_agent(self.llm, self.tools, state_modifier = self.solving_prompt)

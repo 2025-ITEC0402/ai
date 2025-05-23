@@ -67,6 +67,7 @@ class ProblemGenerationAgent:
               ③ [선택지 3]
               ④ [선택지 4]
               ⑤ [선택지 5]
-            - 정답: [①, ②, ③, ④, ⑤ 중 하나]""")
+            - 정답: [①, ②, ③, ④, ⑤ 중 하나]"""),
+            ("placeholder", "{messages}")
         ])
         self.agent = create_react_agent(self.llm, self.tools, state_modifier = self.generation_prompt)

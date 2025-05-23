@@ -52,7 +52,8 @@ class QualityEvaluationAgent:
             - 전체 점수: [0-10점 범위의 평균 점수]
             - 다음 액션: [FINISH/REVISE]
             - 상세 평가: [각 기준별 점수 및 피드백]
-            - 개선 제안: [구체적인 개선 방향]""")
+            - 개선 제안: [구체적인 개선 방향]"""),
+            ("placeholder", "{messages}")
         ])
         
         self.agent = create_react_agent(self.llm, self.tools, state_modifier = self.evaluation_prompt)

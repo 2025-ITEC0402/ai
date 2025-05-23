@@ -50,5 +50,6 @@ class ExternalSearchAgent:
             - 주요 발견사항: [검색에서 발견된 핵심 정보]
             - 정보 출처: [정보의 출처 요약 (웹사이트, 학술 자료 등)]
              """),
+             ("placeholder", "{messages}")
         ])
         self.agent = create_react_agent(self.llm, self.tools, state_modifier = self.search_prompt)

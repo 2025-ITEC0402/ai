@@ -17,6 +17,7 @@ quality_agent = QualityEvaluationAgent()
 task_manager = TaskManagerAgent()
 
 def task_manager_node(state):
+    print(state)
     return task_manager.task_manage(state)
 from langchain_core.messages import HumanMessage
 
