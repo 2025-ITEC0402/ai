@@ -2,9 +2,10 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.tools.tavily_search import TavilySearchResults
 from dotenv import load_dotenv
-from langchain.agents import create_tool_calling_agent
-from langchain.agents import AgentExecutor
+from langchain.prebuilt import create_react_agent
 import os
+
+from pywin.framework.toolmenu import tools
 
 load_dotenv()
 class ExternalSearchAgent:
@@ -54,12 +55,4 @@ class ExternalSearchAgent:
             ("human", "{query}"),
             ("placeholder", "{agent_scratchpad}")
         ])
-        self.search_agent = create_tool_calling_agent(self.llm, self.tools, self.search_prompt)
-        self.agent_executor = AgentExecutor(
-            agent=self.search_agent,
-            tools=self.tools,
-            verbose=True,
-            max_iterations=10,
-            max_execution_time=10,
-            handle_parsing_errors=True,
-        )
+        self.search_agent = create_react_agent(self.llm, tools=self.tools)
