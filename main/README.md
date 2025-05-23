@@ -21,7 +21,7 @@ docker-compose --build
 # 실행(이후, ema 위치는 이름 지은거, ema 말고도 아무거나 가능)
 docker-compose run ema
 # 실행(실행 후 컨테이너 자동 삭제)
-docker-compose run --rm -it ema
+docker-compose run --rm ema
 ```
 
 ## 패키지 추가 방법
