@@ -1,8 +1,9 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
-    from langchain_core.tools import tool
-from langchain.prebuilt import create_react_agent
+from langchain_core.tools import tool
+from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
+from langchain_core.messages import HumanMessage
 import os
 
 load_dotenv()
@@ -72,5 +73,25 @@ class ProblemGenerationAgent:
             ("human", "{input}"),
             ("placeholder", "{agent_scratchpad}")
         ])
+
+        def _modify_state(state: dict):
+            human_msgs = [
+                m for m in state.get("messages", [])
+                if isinstance(m, HumanMessage)
+            ]
+            query = human_msgs[-1].content if human_msgs else ""
+
+            # 2) scratchpad 메시지 (툴 호출 기록)
+            scratch = state.get("agent_scratchpad", [])
+
+            # 3) 프롬프트 템플릿에 바인딩
+            prompt_value = self.generation_prompt.format_prompt(
+                input=query,
+                agent_scratchpad=scratch
+            )
+
+            # (디버깅)
+            print("**")
+            return prompt_value.to_messages()
         
-        self.agent = create_react_agent(self.llm, tools=self.tools, state_modifier=self.generation_prompt)
+        self.agent = create_react_agent(self.llm, tools=self.tools, state_modifier=_modify_state)

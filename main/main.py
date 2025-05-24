@@ -9,15 +9,14 @@ def main(choice):
     
     if choice == 1:
         # 외부 검색 에이전트
-        agent = ExternalSearchAgent()
+        agent = ExternalSearchAgent().agent
         input = "미분의 기본 정리에 대해 설명해주세요"
-        result = agent.agent_executor.invoke({"input": input})
-        
+        result = agent.invoke({"input": input},{"stream":False})
     elif choice == 2:
         # 문제 해결 에이전트
-        agent = ProblemSolvingAgent()
+        agent = ProblemSolvingAgent().agent
         input = "x + y의 x에 대한 편미분"
-        result = agent.agent_executor.invoke({"input": input})
+        result = agent.invoke({"messages": input})
         
     elif choice == 3:
         # 품질 평가 에이전트
@@ -39,4 +38,4 @@ def main(choice):
     print(result)
 
 if __name__ == "__main__":
-    main(4)
+    main(2)
