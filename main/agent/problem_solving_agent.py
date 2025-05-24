@@ -25,7 +25,7 @@ class ProblemSolvingAgent:
         #더미 툴
         @tool
         def solve_math_problem(problem: str) -> str:
-            """수학 문제를 분석하고 풀이하는 도구"""
+            """더미 툴로, 아무 기능이 없습니다"""
             return f"문제 분석 완료: {problem}"
         self.tools = [solve_math_problem]
 

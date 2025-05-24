@@ -33,7 +33,7 @@ class ResponseGenerationAgent:
         self.response_prompt = ChatPromptTemplate.from_messages([
             ("system", """당신은 공학수학 학습 시스템의 최종 응답 생성 에이전트입니다.
             
-            다른 에이전트들(ExternalSearch, ProblemSolving, ProblemGeneration)이 제공한 정보를 바탕으로 
+            다른 에이전트들(ExternalSearch, ProblemSolving, ProblemGeneration, ExplainTheoryAgent)이 제공한 정보를 바탕으로 
             사용자에게 최적화된 최종 응답을 생성하는 역할을 합니다.
             
             응답 생성 시 다음 품질 기준을 반영해야 합니다:

@@ -52,7 +52,7 @@ def process_query(query: str) -> str:
 def main():
     """메인 실행 함수"""
 
-    query = "편미분에 대해서 알려주세요"
+    query = "편미분에 대해서 설명해줘"
     response = process_query(query)
     
     print("\n" + "=" * 50)

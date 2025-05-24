@@ -25,7 +25,7 @@ class QualityEvaluationAgent:
         #더미 툴
         @tool
         def evaluate_content_quality(content: str) -> str:
-            """답변 내용을 분석하는 도구"""
+            """더미 툴로, 아무 기능이 없습니다"""
             return f"내용 분석 완료: {content}"
 
         self.tools = [evaluate_content_quality]
