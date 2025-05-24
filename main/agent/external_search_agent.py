@@ -55,4 +55,4 @@ class ExternalSearchAgent:
             ("human", "{query}"),
             ("placeholder", "{agent_scratchpad}")
         ])
-        self.search_agent = create_react_agent(self.llm, tools=self.tools)
+        self.agent = create_react_agent(self.llm, tools=self.tools, state_modifier=self.search_prompt)
