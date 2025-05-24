@@ -7,6 +7,7 @@ from agent.external_search_agent import ExternalSearchAgent
 from agent.problem_solving_agent import ProblemSolvingAgent
 from agent.problem_generation_agent import ProblemGenerationAgent
 from agent.response_generation_agent import ResponseGenerationAgent
+from agent.explain_theory_agent import ExplainTheoryAgent
 from agent.task_manager import TaskManager
 from functools import partial
 
@@ -14,10 +15,11 @@ search_agent = ExternalSearchAgent()
 solving_agent = ProblemSolvingAgent()
 generating_agent = ProblemGenerationAgent()
 response_agent = ResponseGenerationAgent()
+explain_theory_agent = ExplainTheoryAgent()
 Task_Manager = TaskManager()
 
 #GeneratingResponse는 뒤에 추가 - 최종 응답 생성 후 종료 위함
-members = ["ExternalSearch", "ProblemSolving", "ProblemGeneration"]
+members = ["ExternalSearch", "ProblemSolving", "ProblemGeneration", "ExplainTheoryAgent"]
 def supervisor_agent(state):
     return Task_Manager.agent.invoke(state)
 
@@ -30,6 +32,7 @@ search_node = partial(agent_node, agent=search_agent, name="ExternalSearch")
 solving_node = partial(agent_node, agent=solving_agent, name="ProblemSolving")
 generating_node = partial(agent_node, agent=generating_agent, name="ProblemGeneration")
 response_node = partial(agent_node, agent=response_agent, name="GeneratingResponse")
+explain_node = partial(agent_node, agent=explain_theory_agent, name="ExplainTheoryAgent")
 
 class AgentState(TypedDict):
     messages: Annotated[Sequence[HumanMessage], operator.add]
@@ -41,6 +44,7 @@ workflow.add_node("ExternalSearch", search_node)
 workflow.add_node("ProblemSolving", solving_node)
 workflow.add_node("ProblemGeneration", generating_node)
 workflow.add_node("GeneratingResponse", response_node)
+workflow.add_node("ExplainTheoryAgent", explain_node)
 workflow.add_node("TaskManager", supervisor_agent)
 
 for m in members:

@@ -10,7 +10,7 @@ import os
 
 load_dotenv()
 
-members = ["ExternalSearch", "ProblemSolving", "ProblemGeneration", "GeneratingResponse"]
+members = ["ExternalSearch", "ProblemSolving", "ProblemGeneration", "GeneratingResponse", "ExplainTheoryAgent"]
 
 class RouteResponse(BaseModel):
     next: Literal[*members]
@@ -40,6 +40,7 @@ class TaskManager:
             - 문제 생성에 대한 정보를 얻으려는 경우 ProblemGeneration
             - 문제 풀이에 대한 정보가 필요한 경우 ProblemSolving
             - 특정 개념이나 정보에 대한 외부 검색이 필요한 경우 ExternalSearch
+            - 이론 설명을 위해 이론에 대한 의미 기반 검색을 수행하려는 경우 ExplainTheoryAgent
             - 모든 정보가 충족되고 사용자의 요청에 대한 최종 응답을 생성하려는 경우 GeneratingResponse (FINISH, END와 같은 역할을 합니다)
             
             사용자가 요구하는 양을 명확히 이해하고 횟수를 명시하지 않는 이상 일반적인 경우 에이전트를 한 번씩만 호출하세요

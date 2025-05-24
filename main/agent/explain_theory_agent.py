@@ -90,30 +90,8 @@ class ExplainTheoryAgent:
                     "설명 중에는 검색된 문맥을 반드시 인용하고, 두 도구 모두 유효한 결과를 찾지 못하면 내부 지식을 활용하세요. "
                     "응답은 학술적이고 체계적인 구조로 작성하되, 필요할 때 정적 페이지 URL을 함께 제안해야 합니다."
                 ),
-                ("human", "{input}"),
-                ("placeholder", "{agent_scratchpad}"),
+                ("placeholder", "{messages}"),
             ]
         )
 
-
-        def _modify_state(state: dict):
-            human_msgs = [
-                m for m in state.get("messages", [])
-                if isinstance(m, HumanMessage)
-            ]
-            query = human_msgs[-1].content if human_msgs else ""
-
-            # 2) scratchpad 메시지 (툴 호출 기록)
-            scratch = state.get("agent_scratchpad", [])
-
-            # 3) 프롬프트 템플릿에 바인딩
-            prompt_value = self.theory_explanation_prompt.format_prompt(
-                input=query,
-                agent_scratchpad=scratch
-            )
-
-            # (디버깅)
-            print("**")
-            return prompt_value.to_messages()
-
-        self.agent = create_react_agent(self.llm, tools=self.tools, state_modifier=_modify_state)
+        self.agent = create_react_agent(self.llm, tools=self.tools, state_modifier=self.theory_explanation_prompt)

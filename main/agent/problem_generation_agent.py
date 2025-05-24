@@ -73,33 +73,8 @@ class ProblemGenerationAgent:
              ⑤ …
            - 정답: [①, ②, ③, ④, ⑤ 중 하나]
         9. 더 이상 도구를 호출하지 마세요.
-        10. 마지막 줄에 “[END]” 토큰을 추가하여 종료를 명시하세요.
-        
-        요청 사항: {input}"""
+        10. 마지막 줄에 “[END]” 토큰을 추가하여 종료를 명시하세요."""
             ),
-            ("human", "{input}"),
-            ("placeholder", "{agent_scratchpad}")
+            ("placeholder", "{messages}"),
         ])
-
-
-        def _modify_state(state: dict):
-            human_msgs = [
-                m for m in state.get("messages", [])
-                if isinstance(m, HumanMessage)
-            ]
-            query = human_msgs[-1].content if human_msgs else ""
-
-            # 2) scratchpad 메시지 (툴 호출 기록)
-            scratch = state.get("agent_scratchpad", [])
-
-            # 3) 프롬프트 템플릿에 바인딩
-            prompt_value = self.generation_prompt.format_prompt(
-                input=query,
-                agent_scratchpad=scratch
-            )
-
-            # (디버깅)
-            print("**")
-            return prompt_value.to_messages()
-        
-        self.agent = create_react_agent(self.llm, tools=self.tools, state_modifier=_modify_state)
+        self.agent = create_react_agent(self.llm, tools=self.tools, state_modifier=self.generation_prompt)
