@@ -2,7 +2,7 @@ from agent.external_search_agent import ExternalSearchAgent
 from agent.problem_solving_agent import ProblemSolvingAgent
 from agent.quality_evaluation_agent import QualityEvaluationAgent
 from agent.problem_generation_agent import ProblemGenerationAgent
-from agent.explain_theory_agent import ExternalSearchAgent
+from agent.explain_theory_agent import ExplainTheoryAgent
 import warnings
 warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
 
@@ -12,7 +12,7 @@ def main(choice):
         # 외부 검색 에이전트
         agent = ExternalSearchAgent().agent
         input = "미분의 기본 정리에 대해 설명해주세요"
-        result = agent.invoke({"input": input},{"stream":False})
+        result = agent.invoke({"messages": input})
     elif choice == 2:
         # 문제 해결 에이전트
         agent = ProblemSolvingAgent().agent
@@ -38,7 +38,7 @@ def main(choice):
 
     elif choice == 5:
         # 이론 설명 에이전트
-        agent = ExternalSearchAgent().agent
+        agent = ExplainTheoryAgent().agent
         input = "편미분 하는 방법을 모르겠어"
         result = agent.invoke({"messages": input})
 
@@ -47,4 +47,4 @@ def main(choice):
     print(result)
 
 if __name__ == "__main__":
-    main(4)
+    main(5)

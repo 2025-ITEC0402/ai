@@ -1,6 +1,5 @@
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_community.tools.tavily_search import TavilySearchResults
 from dotenv import load_dotenv
 from langgraph.prebuilt import create_react_agent
 from langchain_core.messages import HumanMessage
@@ -9,7 +8,7 @@ from langchain.tools import Tool
 import os
 
 load_dotenv()
-class ExternalSearchAgent:
+class ExplainTheoryAgent:
     """
     LangChain 도구를 사용하여 외부 정보를 검색하고 요약하는 에이전트
     """
@@ -29,7 +28,7 @@ class ExternalSearchAgent:
         )
 
         #calculus rag 툴
-        cal_vectorstore = FAISS.load_local("../vectorstore", base_embeddings, allow_dangerous_deserialization=True)
+        cal_vectorstore = FAISS.load_local("vectorstore", base_embeddings, allow_dangerous_deserialization=True)
         cal_retriever = cal_vectorstore.as_retriever()
         def calculus_search_fn(query: str) -> list[dict]:
             docs = cal_retriever.get_relevant_documents(query)
@@ -53,7 +52,7 @@ class ExternalSearchAgent:
         )
 
         #md파일 rag 툴
-        md_vectorstore = FAISS.load_local("../md_vectorstore", base_embeddings, allow_dangerous_deserialization=True)
+        md_vectorstore = FAISS.load_local("md_vectorstore", base_embeddings, allow_dangerous_deserialization=True)
         md_retriever = md_vectorstore.as_retriever()
         def md_search_fn(query: str) -> list[dict]:
             docs = md_retriever.get_relevant_documents(query)
