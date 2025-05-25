@@ -2,17 +2,13 @@
 EMA (Engineering Mathematics Assistant) 메인 실행 파일
 """
 import os
+import sys
 import uuid
 import warnings
-import re, json
-from fastapi import FastAPI, HTTPException, status
-from pydantic import BaseModel, Field
+from typing import Dict, Any
 from langchain_core.messages import HumanMessage, AIMessage
-from langchain_core.runnables import RunnableConfig
 from workflow import graph
-from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-
+from langchain_core.runnables import RunnableConfig
 
 warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
 warnings.filterwarnings("ignore", message=".*get_relevant_documents.*")
@@ -22,15 +18,15 @@ config = RunnableConfig(recursion_limit=10, configurable={"thread_id": str(uuid.
 def process_query(query: str) -> str:
     """
     사용자 질의를 처리하고 응답을 반환합니다.
-
+    
     Args:
         query (str): 사용자의 질의
-
+        
     Returns:
         str: 시스템의 응답
     """
     print(f"사용자 질의 처리 시작: {query}")
-
+    
     state = {"messages": [HumanMessage(content=query, name="User")]}
 
     try:
@@ -38,54 +34,32 @@ def process_query(query: str) -> str:
             if step:
                 node_name = list(step.keys())[0]
                 print(f"🔄 실행 중: {node_name}")
-
+        
         final_state = graph.get_state(config=config)
         messages = final_state.values['messages']
-
+        
         ai_messages = [msg for msg in messages if isinstance(msg, AIMessage)]
         if ai_messages:
             final_message = ai_messages[-1].content
         else:
             final_message = messages[-1].content if messages else "응답을 생성할 수 없습니다."
-
+        
         return final_message
-
+        
     except Exception as e:
         return f"오류 발생: {str(e)}"
 
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash",
-    google_api_key=GOOGLE_API_KEY,
-    convert_system_message_to_human=True,
-    temperature=0.2
-)
-app = FastAPI(
-    title="Calc-Question Generator API",
-    description="미적분 객관식 문제를 생성하는 REST API",
-    version="1.0.0",
-)
+def main():
+    """메인 실행 함수"""
 
-class QuestionRequest(BaseModel):
-    topics: str           = Field(..., example="함수의 극한 확인문제")
-    range_: str           = Field(..., alias="range", example="2.2 The Limit of Functions")
-    summarized: str       = Field(..., example="극한의 정의, 한쪽·무한 극한, 수직 점근선")
-    difficulty: str       = Field(..., example="풀이 5줄 이내")
-    quiz_examples: str    = Field(..., example="(예시 문제)")
-
-class QuestionResponse(BaseModel):
-    question: str
-    choice1: str
-    choice2: str
-    choice3: str
-    choice4: str
-    choice5: str
-    answer: int
-    solution: str
-
-# ───────────────────────────────
+    query = "편미분 문제 하나를 내줘."
+    response = process_query(query)
+    
+    print("\n" + "=" * 50)
+    print("EMA의 응답:")
+    print("=" * 50)
+    print(response)
+    print("=" * 50)
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True, log_level="debug")
+    main()
