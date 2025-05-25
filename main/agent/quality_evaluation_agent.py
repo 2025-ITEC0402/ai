@@ -1,7 +1,7 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 from langgraph.prebuilt import create_react_agent
-from langchain_core.messages import HumanMessage
 from langchain_core.tools import tool
 from dotenv import load_dotenv
 import os
@@ -25,7 +25,7 @@ class QualityEvaluationAgent:
         #더미 툴
         @tool
         def evaluate_content_quality(content: str) -> str:
-            """답변 내용을 분석하는 도구"""
+            """더미 툴로, 아무 기능이 없습니다"""
             return f"내용 분석 완료: {content}"
 
         self.tools = [evaluate_content_quality]
@@ -52,32 +52,8 @@ class QualityEvaluationAgent:
             - 전체 점수: [0-10점 범위의 평균 점수]
             - 다음 액션: [FINISH/REVISE]
             - 상세 평가: [각 기준별 점수 및 피드백]
-            - 개선 제안: [구체적인 개선 방향]
-            
-            평가할 내용: {input}"""),
-            ("human", "{input}"),
-            ("placeholder", "{agent_scratchpad}")
+            - 개선 제안: [구체적인 개선 방향]"""),
+            ("placeholder", "{messages}")
         ])
-
-        def _modify_state(state: dict):
-            human_msgs = [
-                m for m in state.get("messages", [])
-                if isinstance(m, HumanMessage)
-            ]
-            query = human_msgs[-1].content if human_msgs else ""
-
-            # 2) scratchpad 메시지 (툴 호출 기록)
-            scratch = state.get("agent_scratchpad", [])
-
-            # 3) 프롬프트 템플릿에 바인딩
-            prompt_value = self.evaluation_prompt.format_prompt(
-                input=query,
-                agent_scratchpad=scratch
-            )
-
-            # (디버깅)
-            print("**")
-            return prompt_value.to_messages()
-
-
-        self.agent = create_react_agent(self.llm, tools=self.tools, state_modifier=_modify_state)
+        
+        self.agent = create_react_agent(self.llm, self.tools, state_modifier = self.evaluation_prompt)

@@ -1,8 +1,8 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.tools import tool
+from langchain_core.output_parsers import StrOutputParser
 from langgraph.prebuilt import create_react_agent
-from langchain_core.messages import HumanMessage
+from langchain_core.tools import tool
 from dotenv import load_dotenv
 import os
 
@@ -25,7 +25,7 @@ class ProblemSolvingAgent:
         #더미 툴
         @tool
         def solve_math_problem(problem: str) -> str:
-            """수학 문제를 분석하고 풀이하는 도구"""
+            """더미 툴로, 아무 기능이 없습니다"""
             return f"문제 분석 완료: {problem}"
         self.tools = [solve_math_problem]
 
@@ -50,32 +50,8 @@ class ProblemSolvingAgent:
             - 접근 방법: [문제 해결을 위한 접근 방법 설명]
             - 단계별 풀이: [상세한 풀이 과정]
             - 최종 답안: [명확한 최종 답변]
-            - 추가 설명: [필요시 추가 설명이나 대안적 접근법]
-            
-            문제: {input}"""),
-            ("human", "{input}"),
-            ("placeholder", "{agent_scratchpad}")
+            - 추가 설명: [필요시 추가 설명이나 대안적 접근법]"""),
+            ("placeholder", "{messages}")
         ])
 
-        def _modify_state(state: dict):
-            human_msgs = [
-                m for m in state.get("messages", [])
-                if isinstance(m, HumanMessage)
-            ]
-            query = human_msgs[-1].content if human_msgs else ""
-
-            # 2) scratchpad 메시지 (툴 호출 기록)
-            scratch = state.get("agent_scratchpad", [])
-
-            # 3) 프롬프트 템플릿에 바인딩
-            prompt_value = self.solving_prompt.format_prompt(
-                input=query,
-                agent_scratchpad=scratch
-            )
-
-            # (디버깅)
-            print("**")
-            return prompt_value.to_messages()
-
-
-        self.agent = create_react_agent(self.llm, tools=self.tools, state_modifier=_modify_state)
+        self.agent = create_react_agent(self.llm, self.tools, state_modifier = self.solving_prompt)
