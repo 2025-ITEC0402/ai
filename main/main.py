@@ -67,6 +67,9 @@ app = FastAPI(
     version="1.0.0",
 )
 
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+# 문제생성 api
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 class QuestionRequest(BaseModel):
     topics: str           = Field(..., example="함수의 극한 확인문제")
     range_: str           = Field(..., alias="range", example="2.2 The Limit of Functions")
@@ -84,9 +87,6 @@ class QuestionResponse(BaseModel):
     answer: int
     solution: str
 
-# ───────────────────────────────
-# 엔드포인트
-# ───────────────────────────────
 @app.post(
     "/questions",
     response_model=QuestionResponse,
@@ -131,6 +131,35 @@ async def create_question(payload: QuestionRequest):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e),
         )
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+# 질의응답 api
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+class QARequest(BaseModel):
+    query: str = Field(..., example="함수의 극한이란 무엇인가요?")
+
+class QAResponse(BaseModel):
+    answer: str
+
+@app.post(
+    "/qna",
+    response_model=QAResponse,
+    summary="사용자 질의응답",
+    status_code=status.HTTP_200_OK,
+)
+async def answer_query(payload: QARequest):
+    """
+    사용자로부터 받은 질의를 AI 그래프에 전달해 답변을 생성합니다.
+    """
+    try:
+        result = process_query(payload.query)
+        return QAResponse(answer=result)
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e),
+        )
+
 
 
 if __name__ == "__main__":
