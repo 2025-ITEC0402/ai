@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "ema"
+version = "0.1.0"
+description = "Supervisor-based calculus study AI agent system"
+authors = ["author <author.email@gmail.com>"]
+readme = "README.md"
+package-mode = false
+include = ["data/*.json"]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+
+# 에이전트 시스템의 핵심 라이브러리
+langchain = "0.*"
+langchain-core = "0.*"
+langchain-community = "0.*"
+langchain-openai = "0.*"  # OpenAI 모델을 사용하는 경우
+langchain-google-genai = "2.*"  # Gemini 모델을 사용하기 위한 추가
+langgraph = "0.*"  # 에이전트 워크플로우 관리
+langsmith = "0.*"  # 선택사항: 디버깅 및 모니터링
+
+# 검색 기능
+tavily-python = "0.*"  # Tavily 검색 API
+
+# 기본 유틸리티
+pydantic = "2.*"
+python-dotenv = "1.*"
+
+# 데이터 처리
+pandas = "2.*"
+
+# PDF 처리 및 문서 변환
+pypdf = "4.*"
+reportlab = "4.*"
+markdownify = "0.*"
+
+# 벡터 저장소 (임베딩 저장이 필요한 경우)
+chromadb = "0.*"
+
+# API 서버 (API 모드 사용 시)
+fastapi = "0.*"
+uvicorn = {extras = ["standard"], version = "0.*"}
+faiss-cpu = "^1.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

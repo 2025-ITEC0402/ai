@@ -1,0 +1,2426 @@
+[
+  {
+    "id": "chunk_1",
+    "text": "calculus Early TranscEndEnTals EighTh EdiTion mETric vErsion JamEs sTEwarT McMaster University and University of toronto Australia \u2022 Brazil \u2022 Mexico \u2022 Singapore \u2022 United Kingdom \u2022 United States Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 1,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_2",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 1,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_3",
+    "text": "This is an electronic version of the print textbook. Due to electronic rights restrictions, some third party content may be suppressed. Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. The publisher reserves the right to remove content from this title at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 2,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_4",
+    "text": "For valuable information on pricing, previous editions, changes to current editions, and alternate formats, please visit www.cengage.com/highered to search by ISBN#, author, title, or keyword for materials in your areas of interest. Important Notice: Media content referenced within the product description or the product text may not be available in the eBook version. Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 2,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_5",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 2,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_6",
+    "text": "Printed in the United States of America Print Number: 01 Print Year: 2015 51T70k Calculus: Early Transcendentals, Eighth Edition, \u00a9 2016, 2012 Cengage Learning International Metric Version WCN: 02-300 James Stewart ALL RIGHTS RESERVED.",
+    "metadata": {
+      "page": 3,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_7",
+    "text": "No part of this work covered by the copyright Product Manager: Gary Whalen herein may be reproduced, transmitted, stored, or used in any form or by Senior Content Developer: Stacy Green any means graphic, electronic, or mechanical, including but not limited to photocopying, recording, scanning, digitizing, taping, Web distribution, Associate Content Developer: Samantha Lugtu information networks, or information storage and retrieval systems, except Product Assistant: Stephanie Kreuz as permitted",
+    "metadata": {
+      "page": 3,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_8",
+    "text": "under Section 107 or 108 of the 1976 United States Copyright Media Developer: Lynh Pham Act, without the prior written permission of the publisher. Marketing Manager: Ryan Ahern Content Project Manager: Cheryll Linthicum For permission to use material from this text or product, submit all requests online at www.cengage.com/permissions. Art Director: Vernon Boes Further permissions questions can be e-mailed to Manufacturing Planner: Becky Cross permissionrequest@cengage.com.",
+    "metadata": {
+      "page": 3,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_9",
+    "text": "Production Service: TECHarts Photo and Text Researcher: Lumina Datamatics Library of Congress Control Number: 2014951195 Copy Editor: Kathi Townes, TECHarts Illustrator: TECHarts ISBN: 978-1-305-27237-8 Text Designer: Diane Beasley Cengage Learning Global Offices Cover Designer: Denise Davidson Asia Australia / New Zealand Compositor: Stephanie Kuhns and www.cengageasia.com www.cengage.com.au Kristina Elliott, TECHarts tel: (65) 6410 1200 tel: (61) 3 9685 4111 Cover Image: iStock/Getty Images",
+    "metadata": {
+      "page": 3,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_10",
+    "text": "Plus Brazil India www.cengage.com.br www.cengage.co.in tel: (55) 11 3665 9900 tel: (91) 11 4364 1111 Latin America UK / Europe / Middle East / Africa www.cengage.com.mx www.cengage.co.uk tel: (52) 55 1500 6000 tel: (44) 0 1264 332 424 Cengage Learning is a leading provider of customized learning solutions with office locations around the globe, including Singapore, the United Kingdom, Australia, Mexico, Brazil, and Japan. Locate your local office at www.cengage.com.",
+    "metadata": {
+      "page": 3,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_11",
+    "text": "Cengage Learning products are represented in Canada by Nelson Education, Ltd. To learn more about Cengage Learning Solutions, visit www.cengage.com. Purchase any of our products at your local college store or at our preferred online store www.cengagebrain.com. Windows is a registered trademark of the Microsoft Corporation and used herein under license. Macintosh is a registered trademark of Apple Computer, Inc. Used herein under license. Maple is a registered trademark of Waterloo Maple, Inc.",
+    "metadata": {
+      "page": 3,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_12",
+    "text": "Mathematica is a registered trademark of Wolfram Research, Inc. Tools for Enriching Calculus is a trademark used herein under license. Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.",
+    "metadata": {
+      "page": 3,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_13",
+    "text": "Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 3,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_14",
+    "text": "contents PrEfacE xi To ThE sTudEnT xxiii calculaTors, comPuTErs, and oThEr graPhing dEvicEs xxiv diagnosTic TEsTs xxvi a Preview of calculus 1 1 1.1 Four Ways to Represent a Function 10 1.2 Mathematical Models: A Catalog of Essential Functions 23 1.3 New Functions from Old Functions 36 1.4 Exponential Functions 45 1.5 Inverse Functions and Logarithms 55 Review 68 Principles of Problem solving 71 2 2.1 The Tangent and Velocity Problems 78 2.2 The Limit of a Function 83 2.3 Calculating Limits",
+    "metadata": {
+      "page": 4,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_15",
+    "text": "Using the Limit Laws 95 2.4 The Precise Definition of a Limit 104 2.5 Continuity 114 2.6 Limits at Infinity; Horizontal Asymptotes 126 2.7 Derivatives and Rates of Change 140 Writing Project \u2022 Early Methods for Finding Tangents 152 2.8 The Derivative as a Function 152 Review 165 Problems Plus 169 iii Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 4,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_16",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 4,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_17",
+    "text": "iv Contents 3 3.1 Derivatives of Polynomials and Exponential Functions 172 Applied Project \u2022 Building a Better Roller Coaster 182 3.2 The Product and Quotient Rules 183 3.3 Derivatives of Trigonometric Functions 190 3.4 The Chain Rule 197 Applied Project \u2022 Where Should a Pilot Start Descent?",
+    "metadata": {
+      "page": 5,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_18",
+    "text": "208 3.5 Implicit Differentiation 208 Laboratory Project \u2022 Families of Implicit Curves 217 3.6 Derivatives of Logarithmic Functions 218 3.7 Rates of Change in the Natural and Social Sciences 224 3.8 Exponential Growth and Decay 237 Applied Project \u2022 Controlling Red Blood Cell Loss During Surgery 244 3.9 Related Rates 245 3.10 Linear Approximations and Differentials 251 Laboratory Project \u2022 Taylor Polynomials 258 3.11 Hyperbolic Functions 259 Review 266 Problems Plus 270 4 4.1 Maximum and Minimum",
+    "metadata": {
+      "page": 5,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_19",
+    "text": "Values 276 Applied Project \u2022 The Calculus of Rainbows 285 4.2 The Mean Value Theorem 287 4.3 How Derivatives Affect the Shape of a Graph 293 4.4 Indeterminate Forms and l\u2019Hospital\u2019s Rule 304 Writing Project \u2022 The Origins of l\u2019Hospital\u2019s Rule 314 4.5 Summary of Curve Sketching 315 4.6 Graphing with Calculus and Calculators 323 4.7 Optimization Problems 330 Applied Project \u2022 The Shape of a Can 343 Applied Project \u2022 Planes and Birds: Minimizing Energy 344 4.8 Newton\u2019s Method 345 4.9 Antiderivatives",
+    "metadata": {
+      "page": 5,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_20",
+    "text": "Contents v 5 5.1 Areas and Distances 366 5.2 The Definite Integral 378 Discovery Project \u2022 Area Functions 391 5.3 The Fundamental Theorem of Calculus 392 5.4 Indefinite Integrals and the Net Change Theorem 402 Writing Project \u2022 Newton, Leibniz, and the Invention of Calculus 411 5.5 The Substitution Rule 412 Review 421 Problems Plus 425 6 6.1 Areas Between Curves 428 Applied Project \u2022 The Gini Index 436 6.2 Volumes 438 6.3 Volumes by Cylindrical Shells 449 6.4 Work 455 6.5 Average Value of a",
+    "metadata": {
+      "page": 6,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_21",
+    "text": "Function 461 Applied Project \u2022 Calculus and Baseball 464 Applied Project \u2022 Where to Sit at the Movies 465 Review 466 Problems Plus 468 7 7.1 Integration by Parts 472 7.2 Trigonometric Integrals 479 7.3 Trigonometric Substitution 486 7.4 Integration of Rational Functions by Partial Fractions 493 7.5 Strategy for Integration 503 7.6 Integration Using Tables and Computer Algebra Systems 508 Discovery Project \u2022 Patterns in Integrals 513 7.7 Approximate Integration 514 7.8 Improper Integrals 527",
+    "metadata": {
+      "page": 6,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_22",
+    "text": "vi Contents 8 8.1 Arc Length 544 Discovery Project \u2022 Arc Length Contest 550 8.2 Area of a Surface of Revolution 551 Discovery Project \u2022 Rotating on a Slant 557 8.3 Applications to Physics and Engineering 558 Discovery Project \u2022 Complementary Coffee Cups 568 8.4 Applications to Economics and Biology 569 8.5 Probability 573 Review 581 Problems Plus 583 9 9.1 Modeling with Differential Equations 586 9.2 Direction Fields and Euler\u2019s Method 591 9.3 Separable Equations 599 Applied Project \u2022 How Fast",
+    "metadata": {
+      "page": 7,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_23",
+    "text": "Does a Tank Drain? 608 Applied Project \u2022 Which Is Faster, Going Up or Coming Down?",
+    "metadata": {
+      "page": 7,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_24",
+    "text": "609 9.4 Models for Population Growth 610 9.5 Linear Equations 620 9.6 Predator-Prey Systems 627 Review 634 Problems Plus 637 10 10.1 Curves Defined by Parametric Equations 640 Laboratory Project \u2022 Running Circles Around Circles 648 10.2 Calculus with Parametric Curves 649 Laboratory Project \u2022 B\u00e9zier Curves 657 10.3 Polar Coordinates 658 Laboratory Project \u2022 Families of Polar Curves 668 10.4 Areas and Lengths in Polar Coordinates",
+    "metadata": {
+      "page": 7,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_25",
+    "text": "Contents vii 10.5 Conic Sections 674 10.6 Conic Sections in Polar Coordinates 682 Review 689 Problems Plus 692 11 11.1 Sequences 694 Laboratory Project \u2022 Logistic Sequences 707 11.2 Series 707 11.3 The Integral Test and Estimates of Sums 719 11.4 The Comparison Tests 727 11.5 Alternating Series 732 11.6 Absolute Convergence and the Ratio and Root Tests 737 11.7 Strategy for Testing Series 744 11.8 Power Series 746 11.9 Representations of Functions as Power Series 752 11.10 Taylor and Maclaurin",
+    "metadata": {
+      "page": 8,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_26",
+    "text": "Series 759 Laboratory Project \u2022 An Elusive Limit 773 Writing Project \u2022 How Newton Discovered the Binomial Series 773 11.11 Applications of Taylor Polynomials 774 Applied Project \u2022 Radiation from the Stars 783 Review 784 Problems Plus 787 12 12.1 Three-Dimensional Coordinate Systems 792 12.2 Vectors 798 12.3 The Dot Product 807 12.4 The Cross Product 814 Discovery Project \u2022 The Geometry of a Tetrahedron 823 12.5 Equations of Lines and Planes 823 Laboratory Project \u2022 Putting 3D in Perspective 833",
+    "metadata": {
+      "page": 8,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_27",
+    "text": "12.6 Cylinders and Quadric Surfaces 834 Review 841 7et1206un03 04/21/10 Problems Plus 844 MasterID:",
+    "metadata": {
+      "page": 8,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_28",
+    "text": "viii Contents 13 13.1 Vector Functions and Space Curves 848 13.2 Derivatives and Integrals of Vector Functions 855 13.3 Arc Length and Curvature 861 13.4 Motion in Space: Velocity and Acceleration 870 Applied Project \u2022 Kepler\u2019s Laws 880 Review 881 Problems Plus 884 14 14.1 Functions of Several Variables 888 14.2 Limits and Continuity 903 14.3 Partial Derivatives 911 14.4 Tangent Planes and Linear Approximations 927 Applied Project \u2022 The Speedo LZR Racer 936 14.5 The Chain Rule 937 14.6",
+    "metadata": {
+      "page": 9,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_29",
+    "text": "Directional Derivatives and the Gradient Vector 946 14.7 Maximum and Minimum Values 959 Applied Project \u2022 Designing a Dumpster 970 Discovery Project \u2022 Quadratic Approximations and Critical Points 970 14.8 Lagrange Multipliers 971 Applied Project \u2022 Rocket Science 979 Applied Project \u2022 Hydro-Turbine Optimization 980 Review 981 Problems Plus 985 15 15.1 Double Integrals over Rectangles 988 15.2 Double Integrals over General Regions 1001 15.3 Double Integrals in Polar Coordinates 1010 15.4",
+    "metadata": {
+      "page": 9,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_30",
+    "text": "Applications of Double Integrals 1016 15.5 Surface Area",
+    "metadata": {
+      "page": 9,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_31",
+    "text": "Contents ix 15.6 Triple Integrals 1029 Discovery Project \u2022 Volumes of Hyperspheres 1040 15.7 Triple Integrals in Cylindrical Coordinates 1040 Discovery Project \u2022 The Intersection of Three Cylinders 1044 15.8 Triple Integrals in Spherical Coordinates 1045 Applied Project \u2022 Roller Derby 1052 15.9 Change of Variables in Multiple Integrals 1052 Review 1061 Problems Plus 1065 16 16.1 Vector Fields 1068 16.2 Line Integrals 1075 16.3 The Fundamental Theorem for Line Integrals 1087 16.4 Green\u2019s Theorem",
+    "metadata": {
+      "page": 10,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_32",
+    "text": "1096 16.5 Curl and Divergence 1103 16.6 Parametric Surfaces and Their Areas 1111 16.7 Surface Integrals 1122 16.8 Stokes\u2019 Theorem 1134 Writing Project \u2022 Three Men and Two Theorems 1140 16.9 The Divergence Theorem 1141 16.10 Summary 1147 Review 1148 Problems Plus 1151 17 17.1 Second-Order Linear Equations 1154 17.2 Nonhomogeneous Linear Equations 1160 17.3 Applications of Second-Order Differential Equations 1168 17.4 Series Solutions 1176 Review",
+    "metadata": {
+      "page": 10,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_33",
+    "text": "x Contents A Numbers, Inequalities, and Absolute Values A2 B Coordinate Geometry and Lines A10 C Graphs of Second-Degree Equations A16 D Trigonometry A24 E Sigma Notation A34 F Proofs of Theorems A39 G The Logarithm Defined as an Integral A50 H Complex Numbers A57 I Answers to Odd-Numbered Exercises A",
+    "metadata": {
+      "page": 11,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_34",
+    "text": "Preface This International Metric Version differs from the regular version of Calculus: Early Transcendentals, Eighth Edition, in several ways: The units used in almost all of the examples and exercises have been changed from US Customary units to metric units. There are a small number of exceptions: In some engineering applications (principally in Section 8.3) it may be useful for some engineers to be familiar with US units.",
+    "metadata": {
+      "page": 12,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_35",
+    "text": "And I wanted to retain a few exercises (for example, those involving baseball) where it would be inappropriate to use metric units. I\u2019ve changed the examples and exercises involving real-world data to be more international in nature, so that the vast majority of them now come from countries other than the United States.",
+    "metadata": {
+      "page": 12,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_36",
+    "text": "For example, there are now exercises and examples concerning Hong kong postal rates; Canadian public debt; unemployment rates in Australia; hours of daylight in Ankara, Turkey; isothermals in China; percentage of the population in rural Argentina; populations of Malaysia, Indonesia, Mexico, and India; and power consumption in Ontario, among many others.",
+    "metadata": {
+      "page": 12,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_37",
+    "text": "In addition to changing exercises so that the units are metric and the data have a more international flavor, a number of other exercises have been changed as well, the result being that about 10% of the exercises are different from those in the regular version. The art of teaching, Mark Van Doren said, is the art of assisting discovery. I have tried to write a book that assists students in discovering calculus\u2014both for its practical power and its surprising beauty.",
+    "metadata": {
+      "page": 12,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_38",
+    "text": "In this edition, as in the first seven editions, I aim to convey to the student a sense of the utility of calculus and develop technical competence, but I also strive to give some appreciation for the intrinsic beauty of the subject. Newton undoubtedly experienced a sense of triumph when he made his great discoveries. I want students to share some of that excitement. The emphasis is on understanding concepts.",
+    "metadata": {
+      "page": 12,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_39",
+    "text": "I think that nearly everybody agrees that this should be the primary goal of calculus instruction. In fact, the impetus for the current calculus reform movement came from the Tulane Conference in 1986, which formulated as their first recommendation: Focus on conceptual understanding.",
+    "metadata": {
+      "page": 12,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_40",
+    "text": "I have tried to implement this goal through the Rule of Three: \u201cTopics should be presented geometrically, numerically, and algebraically.\u201d Visualization, numerical and graphical experimentation, and other approaches have changed how we teach conceptual reasoning in fundamental ways. More recently, the Rule of Three has been expanded to become the Rule of Four by emphasizing the verbal, or descriptive, point of view as well.",
+    "metadata": {
+      "page": 12,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_41",
+    "text": "In writing the eighth edition my premise has been that it is possible to achieve conceptual understanding and still retain the best traditions of traditional calculus. The book contains elements of reform, but within the context of a traditional curriculum. xi Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 12,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_42",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 12,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_43",
+    "text": "xii Preface I have written several other calculus textbooks that might be preferable for some instructors. Most of them also come in single variable and multivariable versions. Calculus, Eighth Edition, International Metric Version, is similar to the present \u25cf textbook except that the exponential, logarithmic, and inverse trigonometric functions are covered in the second semester.",
+    "metadata": {
+      "page": 13,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_44",
+    "text": "Essential Calculus, Second Edition, International Edition, is a much briefer book \u25cf (840 pages), though it contains almost all of the topics in Calculus, Eighth Edition, International Metric Version. The relative brevity is achieved through briefer exposition of some topics and putting some features on the website.",
+    "metadata": {
+      "page": 13,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_45",
+    "text": "Essential Calculus: Early Transcendentals, Second Edition, International Edition, \u25cf resembles Essential Calculus, International Edition, but the exponential, logarithmic, and inverse trigonometric functions are covered in Chapter 3. Calculus: Concepts and Contexts, Fourth Edition, Metric International Edition, \u25cf emphasizes conceptual understanding even more strongly than this book.",
+    "metadata": {
+      "page": 13,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_46",
+    "text": "The coverage of topics is not encyclopedic and the material on transcendental functions and on parametric equations is woven throughout the book instead of being treated in separate chapters. Calculus: Early Vectors introduces vectors and vector functions in the first semester \u25cf and integrates them throughout the book. It is suitable for students taking engineering and physics courses concurrently with calculus.",
+    "metadata": {
+      "page": 13,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_47",
+    "text": "Brief Applied Calculus, International Edition, is intended for students in business, \u25cf the social sciences, and the life sciences. Biocalculus: Calculus for the Life Sciences is intended to show students in the life \u25cf sciences how calculus relates to biology. Biocalculus: Calculus, Probability, and Statistics for the Life Sciences contains all \u25cf the content of Biocalculus: Calculus for the Life Sciences as well as three additional chapters covering probability and statistics.",
+    "metadata": {
+      "page": 13,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_48",
+    "text": "The changes have resulted from talking with my colleagues and students at the University of Toronto and from reading journals, as well as suggestions from users and reviewers. Here are some of the many improvements that I\u2019ve incorporated into this edition: The data in examples and exercises have been updated to be more timely. \u25cf New examples have been added (see Examples 6.1.5, 11.2.5, and 14.3.3, for \u25cf instance). And the solutions to some of the existing examples have been amplified.",
+    "metadata": {
+      "page": 13,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_49",
+    "text": "Three new projects have been added: The project Controlling Red Blood Cell Loss \u25cf During Surgery (page 244) describes the ANH procedure, in which blood is extracted from the patient before an operation and is replaced by saline solution. This dilutes the patient\u2019s blood so that fewer red blood cells are lost during bleeding and the extracted blood is returned to the patient after surgery.",
+    "metadata": {
+      "page": 13,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_50",
+    "text": "The project Planes and Birds: Minimizing Energy (page 344) asks how birds can minimize power and energy by flapping their wings versus gliding. In the project The Speedo LZR Racer (page 936) it is explained that this suit reduces drag in the water and, as Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 13,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_51",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 13,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_52",
+    "text": "Preface xiii a result, many swimming records were broken. Students are asked why a small decrease in drag can have a big effect on performance. I have streamlined Chapter 15 (Multiple Integrals) by combining the first two sec- \u25cf tions so that iterated integrals are treated earlier. More than 20% of the exercises in each chapter are new.",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_53",
+    "text": "Here are some of my \u25cf favorites: 2.7.61, 2.8.36\u201338, 3.1.79\u201380, 3.11.54, 4.1.69, 4.3.34, 4.3.66, 4.4.80, 4.7.39, 4.7.67, 5.1.19\u201320, 5.2.67\u201368, 5.4.70, 6.1.51, 8.1.39, 12.5.81, 12.6.29\u201330, 14.6.65\u201366. In addition, there are some good new Problems Plus. (See Problems 12\u201314 on page 272, Problem 13 on page 363, Problems 16\u201317 on page 426, and Problem 8 on page 986.) conceptual Exercises The most important way to foster conceptual understanding is through the problems that we assign.",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_54",
+    "text": "To that end I have devised various types of problems. Some exercise sets begin with requests to explain the meanings of the basic concepts of the section. (See, for instance, the first few exercises in Sections 2.2, 2.5, 11.2, 14.2, and 14.3.) Similarly, all the review sections begin with a Concept Check and a True-False Quiz.",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_55",
+    "text": "Other exercises test conceptual understanding through graphs or tables (see Exercises 2.7.17, 2.8.35\u201338, 2.8.47\u201352, 9.1.11\u201313, 10.1.24\u201327, 11.10.2, 13.2.1\u20132, 13.3.33\u201339, 14.1.1\u20132, 14.1.32\u201338, 14.1.41\u201344, 14.3.3\u201310, 14.6.1\u20132, 14.7.3\u20134, 15.1.6\u20138, 16.1.11\u201318, 16.2.17\u201318, and 16.3.1\u20132). Another type of exercise uses verbal description to test conceptual understanding (see Exercises 2.5.10, 2.8.66, 4.3.69\u201370, and 7.8.67).",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_56",
+    "text": "I particularly value problems that combine and compare graphical, numerical, and algebraic approaches (see Exercises 2.6.45\u201346, 3.7.27, and 9.4.4). graded Exercise sets Each exercise set is carefully graded, progressing from basic conceptual exercises and skill-development problems to more challenging problems involving applications and proofs.",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_57",
+    "text": "real-world data My assistants and I spent a great deal of time looking in libraries, contacting companies and government agencies, and searching the Internet for interesting real-world data to introduce, motivate, and illustrate the concepts of calculus. As a result, many of the examples and exercises deal with functions defined by such numerical data or graphs.",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_58",
+    "text": "See, for instance, Figure 1 in Section 1.1 (seismograms from the Northridge earthquake), Exercise 2.8.35 (unemployment rates), Exercise 5.1.16 (velocity of the space shuttle Endeavour), and Figure 4 in Section 5.4 (San Francisco power consumption). Functions of two variables are illustrated by a table of values of the wind-chill index as a function of air temperature and wind speed (Example 14.1.2).",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_59",
+    "text": "Partial derivatives are introduced in Section 14.3 by examining a column in a table of values of the heat index (perceived air temperature) as a function of the actual temperature and the relative humidity. This example is pursued further in connection with linear approximations (Example 14.4.3). Directional derivatives are introduced in Section 14.6 by using a temperature contour map to estimate the rate of change of temperature at Reno in the direction of Las Vegas.",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_60",
+    "text": "Double integrals are used to estimate the average snowfall in Colorado on December Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_61",
+    "text": "Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 14,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_62",
+    "text": "xiv Preface 20\u201321, 2006 (Example 15.1.9). Vector fields are introduced in Section 16.1 by depictions of actual velocity vector fields showing San Francisco Bay wind patterns. Projects One way of involving students and making them active learners is to have them work (perhaps in groups) on extended projects that give a feeling of substantial accomplishment when completed.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_63",
+    "text": "I have included four kinds of projects: Applied Projects involve applications that are designed to appeal to the imagination of students. The project after Section 9.3 asks whether a ball thrown upward takes longer to reach its maximum height or to fall back to its original height.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_64",
+    "text": "(The answer might surprise you.) The project after Section 14.8 uses Lagrange multipliers to determine the masses of the three stages of a rocket so as to minimize the total mass while enabling the rocket to reach a desired velocity. Laboratory Projects involve technology; the one following Section 10.2 shows how to use B\u00e9zier curves to design shapes that represent letters for a laser printer.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_65",
+    "text": "Writing Projects ask students to compare present-day methods with those of the founders of calculus\u2014Fermat\u2019s method for finding tangents, for instance. Suggested references are supplied. Discovery Projects anticipate results to be discussed later or encourage discovery through pattern recognition (see the one following Section 7.6). Others explore aspects of geometry: tetrahedra (after Section 12.4), hyperspheres (after Section 15.6), and intersections of three cylinders (after Section 15.7).",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_66",
+    "text": "Additional projects can be found in the Instructor\u2019s Guide (see, for instance, Group Exercise 5.1: Position from Samples). Problem solving Students usually have difficulties with problems for which there is no single well-defined procedure for obtaining the answer. I think nobody has improved very much on George Polya\u2019s four-stage problem-solving strategy and, accordingly, I have included a version of his problem-solving principles following Chapter 1.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_67",
+    "text": "They are applied, both explicitly and implicitly, throughout the book. After the other chapters I have placed sections called Problems Plus, which feature examples of how to tackle challenging calculus problems.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_68",
+    "text": "In selecting the varied problems for these sections I kept in mind the following advice from David Hilbert: \u201cA mathematical problem should be difficult in order to entice us, yet not inaccessible lest it mock our efforts.\u201d When I put these challenging problems on assignments and tests I grade them in a different way. Here I reward a student significantly for ideas toward a solution and for recognizing which problem-solving principles are relevant.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_69",
+    "text": "Technology The availability of technology makes it not less important but more important to clearly understand the concepts that underlie the images on the screen. But, when properly used, graphing calculators and computers are powerful tools for discovering and understanding those concepts. This textbook can be used either with or without technology and I use two special symbols to indicate clearly when a particular type of machine is required.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_70",
+    "text": "The icon indicates an exercise that definitely requires the use of such technology, ; but that is not to say that it can\u2019t be used on the other exercises as well. The symbol CAS is reserved for problems in which the full resources of a computer algebra system (like Maple, Mathematica, or the TI-89) are required. But technology doesn\u2019t make pencil and paper obsolete. Hand calculation and sketches are often preferable to technology for illustrating and reinforcing some concepts.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_71",
+    "text": "Both instructors and students need to develop the ability to decide where the hand or the machine is appropriate. Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_72",
+    "text": "Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 15,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_73",
+    "text": "Preface xv Tools for Enriching calculus TEC is a companion to the text and is intended to enrich and complement its contents. (It is now accessible in the eBook via CourseMate and Enhanced WebAssign. Selected Visuals and Modules are available at www.stewartcalculus.com.) Developed by Harvey keynes, Dan Clegg, Hubert Hohn, and myself, TEC uses a discovery and exploratory approach.",
+    "metadata": {
+      "page": 16,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_74",
+    "text": "In sections of the book where technology is particularly appropriate, marginal icons direct students to TEC Modules that provide a laboratory environment in which they can explore the topic in different ways and at different levels. Visuals are animations of figures in text; Modules are more elaborate activities and include exercises.",
+    "metadata": {
+      "page": 16,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_75",
+    "text": "Instructors can choose to become involved at several different levels, ranging from simply encouraging students to use the Visuals and Modules for independent exploration, to assigning specific exercises from those included with each Module, or to creating additional exercises, labs, and projects that make use of the Visuals and Modules.",
+    "metadata": {
+      "page": 16,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_76",
+    "text": "TEC also includes Homework Hints for representative exercises (usually odd-numbered) in every section of the text, indicated by printing the exercise number in red. These hints are usually presented in the form of questions and try to imitate an effective teaching assistant by functioning as a silent tutor. They are constructed so as not to reveal any more of the actual solution than is minimally necessary to make further progress.",
+    "metadata": {
+      "page": 16,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_77",
+    "text": "Enhanced webassign Technology is having an impact on the way homework is assigned to students, particularly in large classes. The use of online homework is growing and its appeal depends on ease of use, grading precision, and reliability. With the Eighth Edition we have been working with the calculus community and WebAssign to develop an online homework system.",
+    "metadata": {
+      "page": 16,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_78",
+    "text": "Up to 70% of the exercises in each section are assignable as online homework, including free response, multiple choice, and multi-part formats. The system also includes Active Examples, in which students are guided in step-bystep tutorials through text examples, with links to the textbook and to video solutions.",
+    "metadata": {
+      "page": 16,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_79",
+    "text": "website Visit CengageBrain.com or stewartcalculus.com for these additional materials: Homework Hints \u25cf Algebra Review \u25cf Lies My Calculator and Computer Told Me \u25cf History of Mathematics, with links to the better historical websites \u25cf Additional Topics (complete with exercise sets): Fourier Series, Formulas for the \u25cf Remainder Term in Taylor Series, Rotation of Axes Archived Problems (Drill exercises that appeared in previous editions, together with \u25cf their solutions) Challenge Problems (some from",
+    "metadata": {
+      "page": 16,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_80",
+    "text": "the Problems Plus sections from prior editions) \u25cf Links, for particular topics, to outside Web resources \u25cf Selected Visuals and Modules from Tools for Enriching Calculus (TEC) \u25cf Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 16,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_81",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 16,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_82",
+    "text": "xvi Preface diagnostic Tests The book begins with four diagnostic tests, in Basic Algebra, Analytic Geometry, Functions, and Trigonometry. a Preview of calculus This is an overview of the subject and includes a list of questions to motivate the study of calculus. 1 functions and models From the beginning, multiple representations of functions are stressed: verbal, numerical, visual, and algebraic.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_83",
+    "text": "A discussion of mathematical models leads to a review of the standard functions, including exponential and logarithmic functions, from these four points of view. 2 limits and derivatives The material on limits is motivated by a prior discussion of the tangent and velocity problems. Limits are treated from descriptive, graphical, numerical, and algebraic points of view. Section 2.4, on the precise definition of a limit, is an optional section.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_84",
+    "text": "Sections 2.7 and 2.8 deal with derivatives (especially with functions defined graphically and numerically) before the differentiation rules are covered in Chapter 3. Here the examples and exercises explore the meanings of derivatives in various contexts. Higher derivatives are introduced in Section 2.8. 3 differentiation rules All the basic functions, including exponential, logarithmic, and inverse trigonometric functions, are differentiated here.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_85",
+    "text": "When derivatives are computed in applied situations, students are asked to explain their meanings. Exponential growth and decay are now covered in this chapter. 4 applications of differentiation The basic facts concerning extreme values and shapes of curves are deduced from the Mean Value Theorem. Graphing with technology emphasizes the interaction between calculus and calculators and the analysis of families of curves.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_86",
+    "text": "Some substantial optimization problems are provided, including an explanation of why you need to raise your head 42\u00b0 to see the top of a rainbow. 5 integrals The area problem and the distance problem serve to motivate the definite integral, with sigma notation introduced as needed. (Full coverage of sigma notation is provided in Appendix E.) Emphasis is placed on explaining the meanings of integrals in various contexts and on estimating their values from graphs and tables.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_87",
+    "text": "6 applications of integration Here I present the applications of integration\u2014area, volume, work, average value\u2014that can reasonably be done without specialized techniques of integration. General methods are emphasized. The goal is for students to be able to divide a quantity into small pieces, estimate with Riemann sums, and recognize the limit as an integral.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_88",
+    "text": "7 Techniques of integration All the standard methods are covered but, of course, the real challenge is to be able to recognize which technique is best used in a given situation. Accordingly, in Section 7.5, I present a strategy for integration. The use of computer algebra systems is discussed in Section 7.6.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_89",
+    "text": "8 further applications Here are the applications of integration\u2014arc length and surface area\u2014for which it is of integration useful to have available all the techniques of integration, as well as applications to biology, economics, and physics (hydrostatic force and centers of mass). I have also included a section on probability. There are more applications here than can realistically be covered in a given course.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_90",
+    "text": "Instructors should select applications suitable for their students and for which they themselves have enthusiasm. Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_91",
+    "text": "Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 17,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_92",
+    "text": "Preface xvii 9 differential Equations Modeling is the theme that unifies this introductory treatment of differential equations. Direction fields and Euler\u2019s method are studied before separable and linear equations are solved explicitly, so that qualitative, numerical, and analytic approaches are given equal consideration. These methods are applied to the exponential, logistic, and other models for population growth.",
+    "metadata": {
+      "page": 18,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_93",
+    "text": "The first four or five sections of this chapter serve as a good introduction to first-order differential equations. An optional final section uses predatorprey models to illustrate systems of differential equations. 10 Parametric Equations This chapter introduces parametric and polar curves and applies the methods of calculus and Polar coordinates to them. Parametric curves are well suited to laboratory projects; the two presented here involve families of curves and B\u00e9zier curves.",
+    "metadata": {
+      "page": 18,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_94",
+    "text": "A brief treatment of conic sections in polar coordinates prepares the way for Kepler\u2019s Laws in Chapter 13. 11 infinite sequences and series The convergence tests have intuitive justifications (see page 719) as well as formal proofs. Numerical estimates of sums of series are based on which test was used to prove convergence. The emphasis is on Taylor series and polynomials and their applications to physics. Error estimates include those from graphing devices.",
+    "metadata": {
+      "page": 18,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_95",
+    "text": "12 vectors and the The material on three-dimensional analytic geometry and vectors is divided into two geometry of space chapters. Chapter 12 deals with vectors, the dot and cross products, lines, planes, and surfaces. 13 vector functions This chapter covers vector-valued functions, their derivatives and integrals, the length and curvature of space curves, and velocity and acceleration along space curves, culminating in Kepler\u2019s laws.",
+    "metadata": {
+      "page": 18,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_96",
+    "text": "14 Partial derivatives Functions of two or more variables are studied from verbal, numerical, visual, and algebraic points of view. In particular, I introduce partial derivatives by looking at a specific column in a table of values of the heat index (perceived air temperature) as a function of the actual temperature and the relative humidity. 15 multiple integrals Contour maps and the Midpoint Rule are used to estimate the average snowfall and average temperature in given regions.",
+    "metadata": {
+      "page": 18,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_97",
+    "text": "Double and triple integrals are used to compute probabilities, surface areas, and (in projects) volumes of hyperspheres and volumes of intersections of three cylinders. Cylindrical and spherical coordinates are introduced in the context of evaluating triple integrals. 16 vector calculus Vector fields are introduced through pictures of velocity fields showing San Francisco Bay wind patterns.",
+    "metadata": {
+      "page": 18,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_98",
+    "text": "The similarities among the Fundamental Theorem for line integrals, Green\u2019s Theorem, Stokes\u2019 Theorem, and the Divergence Theorem are emphasized. 17 second-order Since first-order differential equations are covered in Chapter 9, this final chapter deals differential Equations with second-order linear differential equations, their application to vibrating springs and electric circuits, and series solutions.",
+    "metadata": {
+      "page": 18,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_99",
+    "text": "Calculus, Early Transcendentals, Eighth Edition, International Metric Version, is supported by a complete set of ancillaries developed under my direction. Each piece has been designed to enhance student understanding and to facilitate creative instruction. The tables on pages xxi\u2013xxii describe each of these ancillaries. Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 18,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_100",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 18,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_101",
+    "text": "xviii Preface The preparation of this and previous editions has involved much time spent reading the reasoned (but sometimes contradictory) advice from a large number of astute reviewers. I greatly appreciate the time they spent to understand my motivation for the approach taken. I have learned something from each of them.",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_102",
+    "text": "Eighth Edition reviewers Jay Abramson, Arizona State University Adam Bowers, University of California San Diego Neena Chopra, The Pennsylvania State University Edward Dobson, Mississippi State University Isaac Goldbring, University of Illinois at Chicago Lea Jenkins, Clemson University Rebecca Wahl, Butler University Technology reviewers Maria Andersen, Muskegon Community College Brian karasek, South Mountain Community College Eric Aurand, Eastfield College Jason kozinski, University of Florida",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_103",
+    "text": "Joy Becker, University of Wisconsin\u2013Stout Carole krueger, The University of Texas at Arlington Przemyslaw Bogacki, Old Dominion University ken kubota, University of Kentucky Amy Elizabeth Bowman, University of Alabama John Mitchell, Clark College in Huntsville Donald Paul, Tulsa Community College Monica Brown, University of Missouri\u2013St.",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_104",
+    "text": "Louis Chad Pierson, University of Minnesota, Duluth Roxanne Byrne, University of Colorado at Denver and Lanita Presson, University of Alabama in Huntsville Health Sciences Center karin Reinhold, State University of New York at Albany Teri Christiansen, University of Missouri\u2013Columbia Thomas Riedel, University of Louisville Bobby Dale Daniel, Lamar University Christopher Schroeder, Morehead State University Jennifer Daniel, Lamar University Angela Sharp, University of Minnesota, Duluth Andras",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_105",
+    "text": "Domokos, California State University, Sacramento Patricia Shaw, Mississippi State University Timothy Flaherty, Carnegie Mellon University Carl Spitznagel, John Carroll University Lee Gibson, University of Louisville Mohammad Tabanjeh, Virginia State University Jane Golden, Hillsborough Community College Capt.",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_106",
+    "text": "koichi Takagi, United States Naval Academy Semion Gutman, University of Oklahoma Lorna TenEyck, Chemeketa Community College Diane Hoffoss, University of San Diego Roger Werbylo, Pima Community College Lorraine Hughes, Mississippi State University David Williams, Clayton State University Jay Jahangiri, Kent State University Zhuan Ye, Northern Illinois University John Jernigan, Community College of Philadelphia Previous Edition reviewers B. D.",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_107",
+    "text": "Aggarwala, University of Calgary Martina Bode, Northwestern University John Alberghini, Manchester Community College Barbara Bohannon, Hofstra University Michael Albert, Carnegie-Mellon University Jay Bourland, Colorado State University Daniel Anderson, University of Iowa Philip L. Bowers, Florida State University Amy Austin, Texas A&M University Amy Elizabeth Bowman, University of Alabama in Huntsville Donna J. Bailey, Northeast Missouri State University Stephen W.",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_108",
+    "text": "Brady, Wichita State University Wayne Barber, Chemeketa Community College Michael Breen, Tennessee Technological University Marilyn Belkin, Villanova University Robert N. Bryan, University of Western Ontario Neil Berger, University of Illinois, Chicago David Buchthal, University of Akron David Berman, University of New Orleans Jenna Carpenter, Louisiana Tech University Anthony J.",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_109",
+    "text": "Bevelacqua, University of North Dakota Jorge Cassio, Miami-Dade Community College Richard Biggs, University of Western Ontario Jack Ceder, University of California, Santa Barbara Robert Blumenthal, Oglethorpe University Scott Chapman, Trinity University Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_110",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 19,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_111",
+    "text": "Preface xix Zhen-Qing Chen, University of Washington\u2014Seattle Amer Iqbal, University of Washington\u2014Seattle James Choike, Oklahoma State University Matthew A. Isom, Arizona State University Barbara Cortzen, DePaul University Gerald Janusz, University of Illinois at Urbana-Champaign Carl Cowen, Purdue University John H. Jenkins, Embry-Riddle Aeronautical University, Philip S. Crooke, Vanderbilt University Prescott Campus Charles N.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_112",
+    "text": "Curtis, Missouri Southern State College Clement Jeske, University of Wisconsin, Platteville Daniel Cyphert, Armstrong State College Carl Jockusch, University of Illinois at Urbana-Champaign Robert Dahlin Jan E. H. Johansson, University of Vermont M. Hilary Davies, University of Alaska Anchorage Jerry Johnson, Oklahoma State University Gregory J. Davis, University of Wisconsin\u2013Green Bay Zsuzsanna M. kadas, St.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_113",
+    "text": "Michael\u2019s College Elias Deeba, University of Houston\u2013Downtown Nets katz, Indiana University Bloomington Daniel DiMaria, Suffolk Community College Matt kaufman Seymour Ditor, University of Western Ontario Matthias kawski, Arizona State University Greg Dresden, Washington and Lee University Frederick W. keene, Pasadena City College Daniel Drucker, Wayne State University Robert L.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_114",
+    "text": "kelley, University of Miami kenn Dunn, Dalhousie University Akhtar khan, Rochester Institute of Technology Dennis Dunninger, Michigan State University Marianne korten, Kansas State University Bruce Edwards, University of Florida Virgil kowalik, Texas A&I University David Ellis, San Francisco State University kevin kreider, University of Akron John Ellison, Grove City College Leonard krop, DePaul University Martin Erickson, Truman State University Mark krusemeyer, Carleton College Garret Etgen,",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_115",
+    "text": "University of Houston John C. Lawlor, University of Vermont Theodore G. Faticoni, Fordham University Christopher C. Leary, State University of New York at Geneseo Laurene V. Fausett, Georgia Southern University David Leeming, University of Victoria Norman Feldman, Sonoma State University Sam Lesseig, Northeast Missouri State University Le Baron O.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_116",
+    "text": "Ferguson, University of California\u2014Riverside Phil Locke, University of Maine Newman Fisher, San Francisco State University Joyce Longman, Villanova University Jos\u00e9 D. Flores, The University of South Dakota Joan McCarter, Arizona State University William Francis, Michigan Technological University Phil McCartney, Northern Kentucky University James T.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_117",
+    "text": "Franklin, Valencia Community College, East Igor Malyshev, San Jose State University Stanley Friedlander, Bronx Community College Larry Mansfield, Queens College Patrick Gallagher, Columbia University\u2013New York Mary Martin, Colgate University Paul Garrett, University of Minnesota\u2013Minneapolis Nathaniel F. G. Martin, University of Virginia Frederick Gass, Miami University of Ohio Gerald Y.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_118",
+    "text": "Matsumoto, American River College Bruce Gilligan, University of Regina James Mckinney, California State Polytechnic University, Pomona Matthias k. Gobbert, University of Maryland, Baltimore County Tom Metzger, University of Pittsburgh Gerald Goff, Oklahoma State University Richard Millspaugh, University of North Dakota Stuart Goldenberg, California Polytechnic State University Lon H. Mitchell, Virginia Commonwealth University John A.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_119",
+    "text": "Graham, Buckingham Browne & Nichols School Michael Monta\u00f1o, Riverside Community College Richard Grassl, University of New Mexico Teri Jo Murphy, University of Oklahoma Michael Gregory, University of North Dakota Martin Nakashima, California State Polytechnic University, Charles Groetsch, University of Cincinnati Pomona Paul Triantafilos Hadavas, Armstrong Atlantic State University Ho kuen Ng, San Jose State University Salim M.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_120",
+    "text": "Ha\u00efdar, Grand Valley State University Richard Nowakowski, Dalhousie University D. W. Hall, Michigan State University Hussain S. Nur, California State University, Fresno Robert L. Hall, University of Wisconsin\u2013Milwaukee Norma Ortiz-Robinson, Virginia Commonwealth University Howard B. Hamilton, California State University, Sacramento Wayne N. Palmer, Utica College Darel Hardy, Colorado State University Vincent Panico, University of the Pacific Shari Harris, John Wood Community College F. J.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_121",
+    "text": "Papp, University of Michigan\u2013Dearborn Gary W. Harrison, College of Charleston Mike Penna, Indiana University\u2013Purdue University Indianapolis Melvin Hausner, New York University/Courant Institute Mark Pinsky, Northwestern University Curtis Herink, Mercer University Lothar Redlin, The Pennsylvania State University Russell Herman, University of North Carolina at Wilmington Joel W.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_122",
+    "text": "Robbin, University of Wisconsin\u2013Madison Allen Hesse, Rochester Community College Lila Roberts, Georgia College and State University Randall R. Holmes, Auburn University E. Arthur Robinson, Jr., The George Washington University James F. Hurley, University of Connecticut Richard Rockwell, Pacific Union College Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_123",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 20,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_124",
+    "text": "xx Preface Rob Root, Lafayette College Magdalena Toda, Texas Tech University Richard Ruedemann, Arizona State University Ruth Trygstad, Salt Lake Community College David Ryeburn, Simon Fraser University Paul Xavier Uhlig, St. Mary\u2019s University, San Antonio Richard St.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_125",
+    "text": "Andre, Central Michigan University Stan Ver Nooy, University of Oregon Ricardo Salinas, San Antonio College Andrei Verona, California State University\u2013Los Angeles Robert Schmidt, South Dakota State University klaus Volpert, Villanova University Eric Schreiner, Western Michigan University Russell C. Walker, Carnegie Mellon University Mihr J. Shah, Kent State University\u2013Trumbull William L.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_126",
+    "text": "Walton, McCallie School Qin Sheng, Baylor University Peiyong Wang, Wayne State University Theodore Shifrin, University of Georgia Jack Weiner, University of Guelph Wayne Skrapek, University of Saskatchewan Alan Weinstein, University of California, Berkeley Larry Small, Los Angeles Pierce College Theodore W.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_127",
+    "text": "Wilcox, Rochester Institute of Technology Teresa Morgan Smith, Blinn College Steven Willard, University of Alberta William Smith, University of North Carolina Robert Wilson, University of Wisconsin\u2013Madison Donald W. Solomon, University of Wisconsin\u2013Milwaukee Jerome Wolbert, University of Michigan\u2013Ann Arbor Edward Spitznagel, Washington University Dennis H.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_128",
+    "text": "Wortman, University of Massachusetts, Boston Joseph Stampfli, Indiana University Mary Wright, Southern Illinois University\u2013Carbondale kristin Stoley, Blinn College Paul M. Wright, Austin Community College M. B. Tavakoli, Chaffey College Xian Wu, University of South Carolina In addition, I would like to thank R. B.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_129",
+    "text": "Burckel, Bruce Colletti, David Behrman, John Dersch, Gove Effinger, Bill Emerson, Dan kalman, Quyan khan, Alfonso Gracia-Saz, Allan MacIsaac, Tami Martin, Monica Nitsche, Lamia Raffo, Norton Starr, and Jim Trefzger for their suggestions; Al Shenk and Dennis Zill for permission to use exercises from their calculus texts; COMAP for permission to use project material; George Bergman, David Bleecker, Dan Clegg, Victor kaftal, Anthony Lam, Jamie Lawson, Ira Rosenholtz, Paul Sally, Lowell Smylie, and",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_130",
+    "text": "Larry Wallen for ideas for exercises; Dan Drucker for the roller derby project; Thomas Banchoff, Tom Farmer, Fred Gass, John Ramsay, Larry Riddle, Philip Straffin, and klaus Volpert for ideas for projects; Dan Anderson, Dan Clegg, Jeff Cole, Dan Drucker, and Barbara Frank for solving the new exercises and suggesting ways to improve them; Marv Riedesel and Mary Johnson for accuracy in proofreading; Andy Bulman-Fleming, Lothar Redlin, Gina Sanders, and Saleem Watson for additional proofreading;",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_131",
+    "text": "and Jeff Cole and Dan Clegg for their careful preparation and proofreading of the answer manuscript. In addition, I thank those who have contributed to past editions: Ed Barbeau, George Bergman, Fred Brauer, Andy Bulman-Fleming, Bob Burton, David Cusick, Tom DiCiccio, Garret Etgen, Chris Fisher, Leon Gerber, Stuart Goldenberg, Arnold Good, Gene Hecht, Harvey keynes, E. L.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_132",
+    "text": "koh, Zdislav kovarik, kevin kreider, Emile LeBlanc, David Leep, Gerald Leibowitz, Larry Peterson, Mary Pugh, Lothar Redlin, Carl Riehm, John Ringland, Peter Rosenthal, Dusty Sabo, Doug Shaw, Dan Silver, Simon Smith, Saleem Watson, Alan Weinstein, and Gail Wolkowicz.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_133",
+    "text": "I also thank kathi Townes, Stephanie kuhns, kristina Elliott, and kira Abdallah of TECHarts for their production services and the following Cengage Learning staff: Cheryll Linthicum, content project manager; Stacy Green, senior content developer; Samantha Lugtu, associate content developer; Stephanie kreuz, product assistant; Lynh Pham, media developer; Ryan Ahern, marketing manager; and Vernon Boes, art director. They have all done an outstanding job.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_134",
+    "text": "I have been very fortunate to have worked with some of the best mathematics editors in the business over the past three decades: Ron Munro, Harry Campbell, Craig Barth, Jeremy Hayhurst, Gary Ostedt, Bob Pirtle, Richard Stratton, Liz Covello, and now Neha Taleja. All of them have contributed greatly to the success of this book. james stewart Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_135",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 21,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_136",
+    "text": "TEC TOOLS FOR ENRICHING\u2122 CALCULUS By James Stewart, Harvey keynes, Dan Clegg, and developer Instructor\u2019s Guide Hubert Hohn by Douglas Shaw Tools for Enriching Calculus (TEC) functions as both a ISBN 978-1-305-39371-4 powerful tool for instructors and as a tutorial environment Each section of the text is discussed from several viewpoints. in which students can explore and review selected topics.",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_137",
+    "text": "The The Instructor\u2019s Guide contains suggested time to allot, points Flash simulation modules in TEC include instructions, written to stress, text discussion topics, core materials for lecture, and audio explanations of the concepts, and exercises. TEC workshop/discussion suggestions, group work exercises in is accessible in the eBook via CourseMate and Enhanced a form suitable for handout, and suggested homework WebAssign. Selected Visuals and Modules are available at assignments.",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_138",
+    "text": "www.stewartcalculus.com. Complete Solutions Manual Enhanced WebAssign\u00ae www.webassign.net Single Variable Early Transcendentals ISBN 978-1-305-27262-0 Printed Access Code: ISBN 978-1-285-85826-5 Instant Access Code ISBN: 978-1-285-85825-8 Multivariable Exclusively from Cengage Learning, Enhanced WebAssign ISBN 978-1-305-38699-0 offers an extensive online program for Stewart\u2019s Calculus Includes worked-out solutions to all exercises in the text.",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_139",
+    "text": "to encourage the practice that is so critical for concept mastery. The meticulously crafted pedagogy and exercises in our proven texts become even more effective in Enhanced Printed Test Bank WebAssign, supplemented by multimedia tutorial support and By William Steven Harmon immediate feedback as students complete their assignments.",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_140",
+    "text": "ISBN 978-1-305-38722-5 Key features include: Contains text-specific multiple-choice and free response test n Thousands of homework problems that match your textitems.",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_141",
+    "text": "book\u2019s end-of-section exercises n Opportunities for students to review prerequisite skills and content both at the start of the course and at the beginning Cengage Learning Testing Powered by Cognero of each section (login.cengage.com) This flexible online system allows you to author, edit, and n Read It eBook pages, Watch It videos, Master It tutorials, manage test bank content from multiple Cengage Learning and Chat About It links solutions; create multiple test versions in an instant; and n A",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_142",
+    "text": "customizable Cengage YouBook with highlighting, notedeliver tests from your LMS, your classroom, or wherever you taking, and search features, as well as links to multimedia want.",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_143",
+    "text": "resources n Personal Study Plans (based on diagnostic quizzing) that identify chapter topics that students will need to master n A WebAssign Answer Evaluator that recognizes and accepts equivalent mathematical responses in the same way an Stewart Website instructor grades www.stewartcalculus.com Contents: Homework Hints n Algebra Review n Additional n A Show My Work feature that gives instructors the option Topics n Drill exercises n Challenge Problems n Web of seeing students\u2019 detailed",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_144",
+    "text": "solutions Links n History of Mathematics n Tools for Enriching n Visualizing Calculus Animations, Lecture Videos, and more Calculus (TEC) \u25a0 Electronic items \u25a0 Printed items (Table continues on page xxii) xxi Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_145",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 22,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_146",
+    "text": "Cengage Customizable YouBook to arrive at the answer. The Student Solutions Manual can be ordered or accessed online as an eBook at YouBook is an eBook that is both interactive and customizwww.cengagebrain.com by searching the ISBN. able. Containing all the content from Stewart\u2019s Calculus, YouBook features a text edit tool that allows instructors to modify the textbook narrative as needed.",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_147",
+    "text": "With YouBook, Study Guide instructors can quickly reorder entire sections and chapters Single Variable Early Transcendentals or hide any content they don\u2019t teach to create an eBook that By Richard St. Andre perfectly matches their syllabus. Instructors can further ISBN 978-1-305-27914-8 customize the text by adding instructor-created or YouTube video links. Additional media assets include animated figures, Multivariable video clips, highlighting and note-taking features, and more. By Richard St.",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_148",
+    "text": "Andre YouBook is available within Enhanced WebAssign. ISBN 978-1-305-27184-5 For each section of the text, the Study Guide provides students CourseMate with a brief introduction, a short list of concepts to master, CourseMate is a perfect self-study tool for students, and and summary and focus questions with explained answers. requires no set up from instructors.",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_149",
+    "text": "CourseMate brings course The Study Guide also contains self-tests with exam-style concepts to life with interactive learning, study, and exam questions. The Study Guide can be ordered or accessed online preparation tools that support the printed textbook. Courseas an eBook at www.cengagebrain.com by searching the Mate for Stewart\u2019s Calculus includes an interactive eBook, ISBN. Tools for Enriching Calculus, videos, quizzes, flashcards, and more.",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_150",
+    "text": "For instructors, CourseMate includes Engagement Tracker, a first-of-its-kind tool that monitors student A Companion to Calculus engagement. By Dennis Ebersole, Doris Schattschneider, Alicia Sevilla, and kay Somers CengageBrain.com ISBN 978-0-495-01124-8 To access additional course materials, please visit Written to improve algebra and problem-solving skills of www.cengagebrain.com.",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_151",
+    "text": "At the CengageBrain.com home students taking a calculus course, every chapter in this page, search for the ISBN of your title (from the back cover of companion is keyed to a calculus topic, providing concepyour book) using the search box at the top of the page. This tual background and specific algebra techniques needed to will take you to the product page where these resources can understand and solve calculus problems related to that topic. be found.",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_152",
+    "text": "It is designed for calculus courses that integrate the review of precalculus concepts or for individual use. Order a copy of the text or access the eBook online at www.cengagebrain.com by searching the ISBN. Student Solutions Manual Linear Algebra for Calculus by konrad J. Heuvers, William P. Francis, John H. kuisti, Single Variable Early Transcendentals Deborah F. Lockhart, Daniel S. Moak, and Gene M.",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_153",
+    "text": "Ortner ISBN 978-1-305-27263-7 ISBN 978-0-534-25248-9 Multivariable This comprehensive book, designed to supplement the calcuISBN 978-1-305-38698-3 lus course, provides an introduction to and review of the basic Provides completely worked-out solutions to all oddideas of linear algebra.",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_154",
+    "text": "Order a copy of the text or access numbered exercises in the text, giving students a chance to the eBook online at www.cengagebrain.com by searching the check their answer and ensure they took the correct steps ISBN. \u25a0 Electronic items \u25a0 Printed items xxii Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_155",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 23,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_156",
+    "text": "To the student Reading a calculus textbook is different from reading a which the full resources of a computer algebra system (like newspaper or a novel, or even a physics book. Don\u2019t be disMaple, Mathematica, or the TI-89) are required. couraged if you have to read a passage more than once You will also encounter the symbol |, which warns you in order to understand it. You should have pencil and paper against committing an error.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_157",
+    "text": "I have placed this symbol in and calculator at hand to sketch a diagram or make a the margin in situations where I have observed that a large calculation. proportion of my students tend to make the same mistake. Some students start by trying their homework problems Tools for Enriching Calculus, which is a companion to and read the text only if they get stuck on an exercise.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_158",
+    "text": "I sugthis text, is referred to by means of the symbol TEC and can gest that a far better plan is to read and understand a section be accessed in the eBook via Enhanced WebAssign and of the text before attempting the exercises. In particular, you CourseMate (selected Visuals and Modules are available at should look at the definitions to see the exact meanings of www.stewartcalculus.com). It directs you to modules in the terms.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_159",
+    "text": "And before you read each example, I suggest that which you can explore aspects of calculus for which the you cover up the solution and try solving the problem yourcomputer is particularly useful. self. You\u2019ll get a lot more from looking at the solution if You will notice that some exercise numbers are printed you do so. in red: 5. This indicates that Homework Hints are available Part of the aim of this course is to train you to think logifor the exercise.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_160",
+    "text": "These hints can be found on stewartcalcucally. Learn to write the solutions of the exercises in a conlus.com as well as Enhanced WebAssign and CourseMate. nected, step-by-step fashion with explanatory sentences\u2014 The homework hints ask you questions that allow you to not just a string of disconnected equations or formulas. make progress toward a solution without actually giving The answers to the odd-numbered exercises appear at the you the answer.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_161",
+    "text": "You need to pursue each hint in an active back of the book, in Appendix I. Some exercises ask for a manner with pencil and paper to work out the details. If a verbal explanation or interpretation or description. In such particular hint doesn\u2019t enable you to solve the problem, you cases there is no single correct way of expressing the can click to reveal the next hint. answer, so don\u2019t worry that you haven\u2019t found the definitive I recommend that you keep this book for reference puranswer.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_162",
+    "text": "In addition, there are often several different forms poses after you finish the course. Because you will likely in which to express a numerical or algebraic answer, so if forget some of the specific details of calculus, the book will your answer differs from mine, don\u2019t immediately assume serve as a useful reminder when you need to use calculus in you\u2019re wrong. For example, if the answer given in the back subsequent courses.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_163",
+    "text": "And, because this book contains more of the book is s 2 21 and you obtain 1y ( 11 s 2 ) , then material than can be covered in any one course, it can also you\u2019re right and rationalizing the denominator will show serve as a valuable resource for a working scientist or that the answers are equivalent. engineer.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_164",
+    "text": "The icon indicates an exercise that definitely requires Calculus is an exciting subject, justly considered to be ; the use of either a graphing calculator or a computer with one of the greatest achievements of the human intellect. I graphing software. But that doesn\u2019t mean that graphing hope you will discover that it is not only useful but also devices can\u2019t be used to check your work on the other exerintrinsically beautiful. cises as well.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_165",
+    "text": "The symbol CAS is reserved for problems in james stewart xxiii Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_166",
+    "text": "Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 24,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_167",
+    "text": "Advances in technology continue to bring a wider variety of tools for doing mathematics. Handheld calculators are becoming more powerful, as are software programs and Internet resources. In addition, many mathematical applications have been released for smartphones and tablets such as the iPad. Some exercises in this text are marked with a graphing icon , ; which indicates that the use of some technology is required.",
+    "metadata": {
+      "page": 25,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_168",
+    "text": "Often this means that we intend for a graphing device to be used in drawing the graph of a function or equation. You might also need technology to find the zeros of a graph or the points of intersection of two graphs. In some cases we will use a calculating device to solve an equation or evaluate a definite integral numerically. Many scientific and graphing calculators have these features built in, such as the Texas Instruments TI-84 or TI-Nspire CX.",
+    "metadata": {
+      "page": 25,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_169",
+    "text": "Similar calculators are made by Hewlett Packard, Casio, and Sharp. xxiv ggelC naD \u00a9 ggelC naD \u00a9 You can also use computer software such as Graphing Calculator by Pacific Tech (www.pacifict.com) to perform many of these functions, as well as apps for phones and tablets, like Quick Graph (Colombiamug) or Math-Studio (Pomegranate Apps). Similar functionality is available using a web interface at WolframAlpha.com.",
+    "metadata": {
+      "page": 25,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_170",
+    "text": "ggelC naD \u00a9 calculators, computers, and Other Graphing Devices Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.",
+    "metadata": {
+      "page": 25,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_171",
+    "text": "Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 25,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_172",
+    "text": "xxv ggelC naD \u00a9 In general, when we use the term \u201ccalculator\u201d in this book, we mean the use of any of the resources we have mentioned. The CAS icon is reserved for problems in which the full resources of a computer algebra system (CAS) are required. A CAS is capable of doing mathematics (like solving equations, computing derivatives or integrals) symbolically rather than just numerically.",
+    "metadata": {
+      "page": 26,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_173",
+    "text": "Examples of well-established computer algebra systems are the computer software packages Maple and Mathematica. The WolframAlpha website uses the Mathematica engine to provide CAS functionality via the Web. Many handheld graphing calculators have CAS capabilities, such as the TI-89 and TI-Nspire CX CAS from Texas Instruments. Some tablet and smartphone apps also provide these capabilities, such as the previously mentioned MathStudio. ggelC naD \u00a9 ggelC naD \u00a9 Copyright 2016 Cengage Learning.",
+    "metadata": {
+      "page": 26,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_174",
+    "text": "All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 26,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_175",
+    "text": "Diagnostic Tests Success in calculus depends to a large extent on knowledge of the mathematics that precedes calculus: algebra, analytic geometry, functions, and trigonometry. The following tests are intended to diagnose weaknesses that you might have in these areas. After taking each test you can check your answers against the given answers and, if necessary, refresh your skills by referring to the review materials that are provided. A 1. Evaluate each expression without using a calculator.",
+    "metadata": {
+      "page": 27,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_176",
+    "text": "(a) s23d4 (b) 234 (c) 324 523 S 2 D22 (d) (e) (f) 1623y4 521 3 2. Simplify each expression. Write your answer without negative exponents. (a) s200 2s32 (b) s3a3b3ds4ab2d2 S 3x3y2y3 D22 (c) x2y21y2 3. Expand and simplify. (a) 3sx16d14s2x25d (b) sx13ds4x25d (c) s sa 1sb ds sa 2sb d (d) s2x13d2 (e) sx12d3 4. Factor each expression. (a) 4x2225 (b) 2x215x212 (c) x323x224x112 (d) x4127x (e) 3x3y229x1y216x21y2 (f) x3y24xy 5. Simplify the rational expression. x213x12 2x22x21 x13 (a) (b) ?",
+    "metadata": {
+      "page": 27,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_177",
+    "text": "x22x22 x229 2x11 y x 2 x2 x11 x y (c) 2 (d) x224 x12 1 1 2 y x xxvi Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.",
+    "metadata": {
+      "page": 27,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_178",
+    "text": "Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 27,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_179",
+    "text": "diagnostic tests xxvii 6. Rationalize the expression and simplify. s10 s41h 22 (a) (b) s5 22 h 7. Rewrite by completing the square. (a) x21x11 (b) 2x2212x111 8. Solve the equation. (Find only the real solutions.) 2x 2x21 (a) x15\u22121421x (b) \u2212 2 x11 x (c) x22x212\u22120 (d) 2x214x11\u22120 (e) x423x212\u22120 (f) 3|x24|\u221210 (g) 2xs42xd21y223s42x \u22120 9. Solve each inequality. Write your answer using interval notation. (a) 24,523x<17 (b) x2,2x18 (c) xsx21dsx12d.0 (d) |x24|,3 2x23 (e) <1 x11 10.",
+    "metadata": {
+      "page": 28,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_180",
+    "text": "State whether each equation is true or false. (a) sp1qd2\u2212p21q2 (b) sab \u2212sa sb 11TC (c) sa21b2 \u2212a1b (d) \u221211T C 1 1 1 1yx 1 (e) \u2212 2 (f) \u2212 x2y x y ayx2byx a2b answers TO DiaGnOsTic TesT a: alGebra 1. (a) 81 (b) 281 (c) 8 1 1 6. (a) 5s2 12s10 (b) 1 (d) 25 (e) 9 (f) 1 s41h 12 4 8 2. (a) 6s2 (b) 48a5b7 (c) 9 x y7 7. (a) sx11 2 d213 4 (b) 2sx23d227 3. (a) 11x22 (b) 4x217x215 8. (a) 6 (b) 1 (c) 23, 4 (c) a2b (d) 4x2112x19 (d) 2161 2s2 (e) 61, 6s2 (f) 2 3 , 2 3 2 (e) x316x2112x18 (g) 12 5 4.",
+    "metadata": {
+      "page": 28,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_181",
+    "text": "(a) s2x25ds2x15d (b) s2x23dsx14d (c) sx23dsx22dsx12d (d) xsx13dsx223x19d 9. (a) f24, 3d (b) s22, 4d (e) 3x21y2sx21dsx22d (f) xysx22dsx12d (c) s22, 0d\u00f8s1, `d (d) s1, 7d (e) s21, 4g x12 x21 5. (a) (b) x22 x23 10. (a) False (b) True (c) False 1 (c) (d) 2sx1yd (d) False (e) False (f) True x22 If you had difficulty with these problems, you may wish to consult the Review of Algebra on the website www.stewartcalculus.com. Copyright 2016 Cengage Learning. All Rights Reserved.",
+    "metadata": {
+      "page": 28,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_182",
+    "text": "May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 28,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_183",
+    "text": "xxviii diagnostic tests B 1. Find an equation for the line that passes through the point s2, 25d and (a) has slope 23 (b) is parallel to the x-axis (c) is parallel to the y-axis (d) is parallel to the line 2x24y\u22123 2. Find an equation for the circle that has center s21, 4d and passes through the point s3, 22d. 3. Find the center and radius of the circle with equation x21y226x110y19\u22120. 4. Let As27, 4d and Bs5, 212d be points in the plane. (a) Find the slope of the line that contains A and B.",
+    "metadata": {
+      "page": 29,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_184",
+    "text": "(b) Find an equation of the line that passes through A and B. What are the intercepts? (c) Find the midpoint of the segment AB. (d) Find the length of the segment AB. (e) Find an equation of the perpendicular bisector of AB. (f) Find an equation of the circle for which AB is a diameter. 5. Sketch the region in the xy-plane defined by the equation or inequalities. (a) 21<y<3 (b) |x|,4 and |y|,2 (c) y,121x (d) y>x221 2 (e) x21y2,4 (f) 9x2116y2\u2212144 answers TO DiaGnOsTic TesT b: analyTic GeOmeTry 1.",
+    "metadata": {
+      "page": 29,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_185",
+    "text": "(a) y\u221223x11 (b) y\u221225 5. (c) x\u22122 (d) y\u22121 2 x26 (a) y (b) y (c) y 3 1 2. sx11d21sy24d2\u221252 2 1 y=12 x 0 3. Center s3, 25d, radius 5 x _4 0 4x 0 2 x _1 _2 4. (a) 24 3 (b) 4x13y116\u22120; x-intercept 24, y-intercept 21 3 6 (d) y (e) y (f) y (c) s21, 24d 2 \u2248+\u00a5=4 3 (d) 20 0 (e) 3x24y\u221213 1 x 0 2 x 0 4 x _1 (f) sx11d21sy14d2\u2212100 y=\u2248-1 If you had difficulty with these problems, you may wish to consult 6et-dtba05a-f the review of analytic geometry in A5p.2p0e.0n6dixes B and C. Copyright 2016 Cengage Learning.",
+    "metadata": {
+      "page": 29,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_186",
+    "text": "All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 29,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_187",
+    "text": "diagnostic tests xxix C y 1. The graph of a function f is given at the left. (a) State the value of fs21d. (b) Estimate the value of fs2d. 1 (c) For what values of x is fsxd\u22122? (d) Estimate the values of x such that fsxd\u22120. 0 1 x (e) State the domain and range of f. fs21hd2fs2d 2. If fsxd\u2212x3, evaluate the difference quotient and simplify your answer. h FIGURE FOR PROBLEM 1 3. Find the domain of the function. (a) fsxd\u2212 x2 2 1 x1 x2 1 2 (b) tsxd\u2212 x2 s3 1 x 1 (c) hsxd\u2212s42x 1sx221 4.",
+    "metadata": {
+      "page": 30,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_188",
+    "text": "How are graphs of the functions obtained from the graph of f? (a) y\u22122fsxd (b) y\u22122fsxd21 (c) y\u2212fsx23d12 5. Without using a calculator, make a rough sketch of the graph. (a) y\u2212x3 (b) y\u2212sx11d3 (c) y\u2212sx22d313 (d) y\u221242x2 (e) y\u2212sx (f) y\u22122sx (g) y\u221222x (h) y\u221211x21 H 12x2 if x<0 6. Let fsxd\u2212 2x11 if x.0 (a) Evaluate fs22d and fs1d. (b) Sketch the graph of f. 7. If fsxd\u2212x212x21 and tsxd\u22122x23, find each of the following functions. (a) f8t (b) t8f (c) t8t8t answers TO DiaGnOsTic TesT c: funcTiOns 1.",
+    "metadata": {
+      "page": 30,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_189",
+    "text": "(a) 22 (b) 2.8 5. (a) (b) (c) y y y (c) 23, 1 (d) 22.5, 0.3 (e) f23, 3g, f22, 3g (2, 3) 1 1 2. 1216h1h2 0 1 x _1 0 x 0 x 3. (a) s2`, 22d\u00f8s22, 1d\u00f8s1, `d (b) s2`, `d (d) y (e) y (f) y (c) s2`, 21g\u00f8f1, 4g 4 4. (a) Reflect about the x-axis 0 2 x 0 1 x 0 1 x (b) Stretch vertically by a factor of 2, then shift 1 unit downward (c) Shift 3 units to the right and 2 units upward (g) (h) y y 1 0 1 x 0 1 x _ 6et-dtCa05a-h 5.20.06",
+    "metadata": {
+      "page": 30,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_190",
+    "text": "xxx diagnostic tests 6. (a) 23, 3 (b) y 7. (a) sf8tdsxd\u22124x228x12 (b) st8fdsxd\u22122x214x25 1 (c) st8t8tdsxd\u22128x221 _1 0 x If you had difficulty with these problems, you should look at sections 1.1\u20131.3 of this book. 4c3DTCax06b 10/30/08 D 1. Convert from degrees to radians. (a) 3008 (b) 2188 2. Convert from radians to degrees. (a) 5(cid:31)y6 (b) 2 3. Find the length of an arc of a circle with radius 12 cm if the arc subtends a central angle of 308. 4. Find the exact values.",
+    "metadata": {
+      "page": 31,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_191",
+    "text": "(a) tans(cid:31)y3d (b) sins7(cid:31)y6d (c) secs5(cid:31)y3d 5. Express the lengths a and b in the figure in terms of (cid:30). 24 a 6. If sin x\u22121 and sec y\u22125, where x and y lie between 0 and (cid:31)y2, evaluate sinsx1yd. 3 4 \u00a8 7. Prove the identities. b 2 tan x (a) tan (cid:30) sin (cid:30)1cos (cid:30)\u2212sec (cid:30) (b) \u2212sin 2x FIGURE FOR PROBLEM 5 11tan2x 8. Find all values of x such that sin 2x\u2212sin x and 0<x<2(cid:31). 9.",
+    "metadata": {
+      "page": 31,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_192",
+    "text": "Sketch the graph of the function y\u221211sin 2x without using a calculator. answers TO DiaGnOsTic TesT D: TriGOnOmeTry 1. (a) 5(cid:31)y3 (b) 2(cid:31)y10 6. 1 1 5 s416s2 d 2. (a) 1508 (b) 3608y(cid:31)<114.68 8. 0, (cid:31)y3, (cid:31), 5(cid:31)y3, 2(cid:31) 3. 2(cid:31) cm 9. y 4. (a) s3 (b) 2 2 1 (c) 2 2 5. (a) 24 sin (cid:30) (b) 24 cos (cid:30) _\u03c0 0 \u03c0 x 4c3DTDax09 If you had difficulty with these problems, you should look at Appendix D of this book. 10/30/",
+    "metadata": {
+      "page": 31,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_193",
+    "text": "A Preview of Calculus By the time you finish this course, you will be able to calculate the length of the curve used to design the Gateway Arch in St. Louis, determine where a pilot should start descent for a smooth landing, compute the force on a baseball bat when it strikes the ball, and measure the amount of light sensed by the human eye as the pupil changes size.",
+    "metadata": {
+      "page": 32,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_194",
+    "text": "calculus is fundamentally different from the mathematics that you have studied previously: calculus is less static and more dynamic. It is concerned with change and motion; it deals with quantities that approach other quantities. For that reason it may be useful to have an overview of the subject before beginning its intensive study. Here we give a glimpse of some of the main ideas of calculus by showing how the concept of a limit arises when we attempt to solve a variety of problems.",
+    "metadata": {
+      "page": 32,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_195",
+    "text": "2 a preview of calculus A\u00a1 The area problem The origins of calculus go back at least 2500 years to the ancient Greeks, who found A\u221e A\u2122 areas using the \u201cmethod of exhaustion.\u201d They knew how to find the area A of any polyA\u00a2 gon by dividing it into triangles as in Figure 1 and adding the areas of these triangles. A\u00a3 It is a much more difficult problem to find the area of a curved figure.",
+    "metadata": {
+      "page": 33,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_196",
+    "text": "The Greek method of exhaustion was to inscribe polygons in the figure and circumscribe polygons A=A\u00a1+A\u2122+A\u00a3+A\u00a2+A\u221e about the figure and then let the number of sides of the polygons increase. Figure 2 illusFIGURE 1 trates this process for the special case of a circle with inscribed regular polygons. A\u00a3 A\u00a2 A\u221e A\u00df A\u00b6 (cid:31)(cid:31)(cid:31) A\u00a1\u2122 (cid:31)(cid:31)(cid:31) FIGURE 2 Let A be the area of the inscribed polygon with n sides.",
+    "metadata": {
+      "page": 33,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_197",
+    "text": "As n increases, it appears that n A becomes closer and closer to the area of the circle. We say that the area of the circle n is the limit of the areas of the inscribed polygons, and we write TEC In the Preview Visual, you can see how areas of inscribed and A\u2212 lim A n circumscribed polygons approximate nl` the area of a circle. The Greeks themselves did not use limits explicitly.",
+    "metadata": {
+      "page": 33,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_198",
+    "text": "However, by indirect reasoning, Eudoxus (fifth century bc) used exhaustion to prove the familiar formula for the area of a circle: A\u2212(cid:31)r2. We will use a similar idea in Chapter 5 to find areas of regions of the type shown in Figure 3. We will approximate the desired area A by areas of rectangles (as in Figure 4), let the width of the rectangles decrease, and then calculate A as the limit of these sums of areas of rectangles.",
+    "metadata": {
+      "page": 33,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_199",
+    "text": "y y y y (1, 1) (1, 1) (1, 1) (1, 1) y=\u2248 A 0 1 x 0 1 1 3 1 x 0 1 x 0 1 1 x 4 2 4 n FIGURE 3 The area problem is the central problem in the branch of calculus called integral calculus. The techniques that we will develop in Chapter 5 for finding areas will also enable us to compute the volume of a solid, the length of a curve, the force of water against a dam, the mass and center of gravity of a rod, and the work done in pumping water out of a tank.",
+    "metadata": {
+      "page": 33,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_200",
+    "text": "The Tangent problem Consider the problem of trying to find an equation of the tangent line t to a curve with equation y\u2212fsxd at a given point P. (We will give a precise definition of a tangent line in Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 33,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_201",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 33,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_202",
+    "text": "a preview of calculus 3 Chapter 2. For now you can think of it as a line that touches the curve at P as in Figure 5.) y t Since we know that the point P lies on the tangent line, we can find the equation of t if we know its slope m. The problem is that we need two points to compute the slope and we y=\u0192 know only one point, P, on t. To get around the problem we first find an approximation to m by taking a nearby point Q on the curve and computing the slope m of the secant P PQ line PQ.",
+    "metadata": {
+      "page": 34,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_203",
+    "text": "From Figure 6 we see that fsxd2fsad 1 m \u2212 0 x PQ x2a FIGURE 5\u0003 Now imagine that Q moves along the curve toward P as in Figure 7. You can see that The tangent line at P the secant line rotates and approaches the tangent line as its limiting position. This means that the slope m of the secant line becomes closer and closer to the slope m of the tanPQ y gent line. We write t m \u2212 lim m PQ QlP Q{x, \u0192} P{a, f(a)} \u0192-f(a) and we say that m is the limit of m as Q approaches P along the curve.",
+    "metadata": {
+      "page": 34,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_204",
+    "text": "Because x PQ x-a approaches a as Q approaches P, we could also use Equation 1 to write fsxd2fsad 2 m \u2212 lim 0 a x x xla x2a FIGURE 6\u0003 Specific examples of this procedure will be given in Chapter 2. The secant line at PQ The tangent problem has given rise to the branch of calculus called differential calculus, which was not invented until more than 2000 years after integral calculus.",
+    "metadata": {
+      "page": 34,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_205",
+    "text": "The main y t ideas behind differential calculus are due to the French mathematician Pierre Fermat (1601\u20131665) and were developed by the English mathematicians John Wallis (1616\u20131703), Isaac Barrow (1630\u20131677), and Isaac Newton (1642\u20131727) and the GerQ man mathematician Gottfried Leibniz (1646\u20131716). P The two branches of calculus and their chief problems, the area problem and the tangent problem, appear to be very different, but it turns out that there is a very close connection between them.",
+    "metadata": {
+      "page": 34,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_206",
+    "text": "The tangent problem and the area problem are inverse problems in a sense that will be described in Chapter 5. 0 x FIGURE 7\u0003 velocity Secant lines approaching the When we look at the speedometer of a car and read that the car is traveling at 48 kmyh, tangent line what does that information indicate to us? We know that if the velocity remains constant, then after an hour we will have traveled 48 km.",
+    "metadata": {
+      "page": 34,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_207",
+    "text": "But if the velocity of the car varies, what does it mean to say that the velocity at a given instant is 48 kmyh? In order to analyze this question, let\u2019s examine the motion of a car that travels along a straight road and assume that we can measure the distance traveled by the car (in meters) at l-second intervals as in the following chart: t\u2212Time elapsed ssd 0 1 2 3 4 5 d\u2212Distance smd 0 2 9 24 42",
+    "metadata": {
+      "page": 34,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_208",
+    "text": "4 a preview of calculus As a first step toward finding the velocity after 2 seconds have elapsed, we find the average velocity during the time interval 2< t<4: change in position average velocity\u2212 time elapsed 4229 \u2212 422 \u221216.5 mys Similarly, the average velocity in the time interval 2< t<3 is 2429 average velocity\u2212 \u221215 mys 322 We have the feeling that the velocity at the instant t\u22122 can\u2019t be much different from the average velocity during a short time interval starting at t\u22122.",
+    "metadata": {
+      "page": 35,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_209",
+    "text": "So let\u2019s imagine that the distance traveled has been measured at 0.l-second time intervals as in the following chart: t 2.0 2.1 2.2 2.3 2.4 2.5 d 9.00 10.02 11.16 12.45 13.96 15.80 Then we can compute, for instance, the average velocity over the time interval f2, 2.5g: 15.8029.00 average velocity\u2212 \u221213.6 mys 2.522 The results of such calculations are shown in the following chart: Time interval f2, 3g f2, 2.5g f2, 2.4g f2, 2.3g f2, 2.2g f2, 2.1g Average velocity smysd 15.0 13.6 12.4 11.5 10.8 10.2",
+    "metadata": {
+      "page": 35,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_210",
+    "text": "The average velocities over successively smaller intervals appear to be getting closer to a number near 10, and so we expect that the velocity at exactly t\u22122 is about 10 mys. In Chapter 2 we will define the instantaneous velocity of a moving object as the limiting value d of the average velocities over smaller and smaller time intervals. In Figure 8 we show a graphical representation of the motion of the car by plotting the distance traveled as a function of time.",
+    "metadata": {
+      "page": 35,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_211",
+    "text": "If we write d\u2212fstd, then fstd is the number of meters traveled after t seconds. The average velocity in the time interval f2, tg is Q{t, f(t)} change in position fstd2fs2d average velocity\u2212 \u2212 time elapsed t22 which is the same as the slope of the secant line PQ in Figure 8.",
+    "metadata": {
+      "page": 35,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_212",
+    "text": "The velocity v when 20 t\u22122 is the limiting value of this average velocity as t approaches 2; that is, 10 P{2, f(2)} fstd2fs2d v\u2212 lim 0 1 2 3 4 5 t tl2 t22 and we recognize from Equation 2 that this is the same as the slope of the tangent line FIGURE 8 to the curve at P. Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 35,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_213",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 35,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_214",
+    "text": "a preview of calculus 5 Thus, when we solve the tangent problem in differential calculus, we are also solving problems concerning velocities. The same techniques also enable us to solve problems involving rates of change in all of the natural and social sciences.",
+    "metadata": {
+      "page": 36,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_215",
+    "text": "The limit of a sequence In the fifth century bc the Greek philosopher Zeno of Elea posed four problems, now known as Zeno\u2019s paradoxes, that were intended to challenge some of the ideas concerning space and time that were held in his day. Zeno\u2019s second paradox concerns a race between the Greek hero Achilles and a tortoise that has been given a head start.",
+    "metadata": {
+      "page": 36,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_216",
+    "text": "Zeno argued, as follows, that Achilles could never pass the tortoise: Suppose that Achil les starts at position a and the tortoise starts at position t. (See Figure 9.) When Achilles reaches the point 1 1 a \u2212t, the tortoise is farther ahead at position t. When Achilles reaches a \u2212t, the tor2 1 2 3 2 toise is at t. This process continues indefinitely and so it appears that the tortoise will 3 always be ahead! But this defies common sense. a\u00a1 a\u2122 a\u00a3 a\u00a2 a\u221e . . . Achilles tortoise . . .",
+    "metadata": {
+      "page": 36,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_217",
+    "text": "FIGURE 9 t\u00a1 t\u2122 t\u00a3 t\u00a2 One way of explaining this paradox is with the idea of a sequence. The successive positions of Achilles sa , a , a , ...d or the successive positions of the tortoise st, t , t , ...d 1 2 3 1 2 3 form what is known as a sequence. In general, a sequence ha j is a set of numbers written in a definite order.",
+    "metadata": {
+      "page": 36,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_218",
+    "text": "For instance, n the sequence h1, 1, 1, 1, 1, ...j 2 3 4 5 can be described by giving the following formula for the nth term: 1 a \u2212 n n We can visualize this sequence by plotting its terms on a number line as in Figa\u00a2a\u00a3 a\u2122 a\u00a1 ure 10(a) or by drawing its graph as in Figure 10(b). Observe from either picture that the 0 1 terms of the sequence a \u22121yn are becoming closer and closer to 0 as n increases. In n (a) fact, we can find terms as small as we please by making n large enough.",
+    "metadata": {
+      "page": 36,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_219",
+    "text": "We say that the limit of the sequence is 0, and we indicate this by writing 1 1 lim \u22120 nl` n 1 2 3 4 5 6 7 8 n In general, the notation (b) lim a \u2212L FIGURE 10 nl` n is used if the terms a approach the number L as n becomes large. This means that the numn bers a can be made as close as we like to the number L by taking n sufficiently large. n Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 36,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_220",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 36,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_221",
+    "text": "6 a preview of calculus The concept of the limit of a sequence occurs whenever we use the decimal representation of a real number. For instance, if a \u22123.1 1 a \u22123.14 2 a \u22123.141 3 a \u22123.1415 4 a \u22123.14159 5 a \u22123.141592 6 a \u22123.1415926 7 f then lim a \u2212(cid:31) n n l ` The terms in this sequence are rational approximations to (cid:31). Let\u2019s return to Zeno\u2019s paradox. The successive positions of Achilles and the tortoise form sequences ha j and ht j, where a ,t for all n.",
+    "metadata": {
+      "page": 37,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_222",
+    "text": "It can be shown that both sequences n n n n have the same limit: lim a \u2212p\u2212 lim t n n nl` nl` It is precisely at this point p that Achilles overtakes the tortoise. The sum of a series Another of Zeno\u2019s paradoxes, as passed on to us by Aristotle, is the following: \u201cA man standing in a room cannot walk to the wall. In order to do so, he would first have to go half the distance, then half the remaining distance, and then again half of what still remains.",
+    "metadata": {
+      "page": 37,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_223",
+    "text": "This process can always be continued and can never be ended.\u201d (See Figure 11.) 1 1 1 1 FIGURE 11 2 4 8 16 Of course, we know that the man can actually reach the wall, so this suggests that perhaps the total distance can be expressed as the sum of infinitely many smaller distances as follows: 1 1 1 1 1 3 1\u2212 1 1 1 1\u2219\u2219\u22191 1\u2219\u2219\u2219 2 4 8 16 2n Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 37,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_224",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 37,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_225",
+    "text": "a preview of calculus 7 Zeno was arguing that it doesn\u2019t make sense to add infinitely many numbers together. But there are other situations in which we implicitly use infinite sums. For instance, in decimal notation, the symbol 0.3\u22120.3333...",
+    "metadata": {
+      "page": 38,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_226",
+    "text": "means 3 3 3 3 1 1 1 1\u2219\u2219\u2219 10 100 1000 10,000 and so, in some sense, it must be true that 3 3 3 3 1 1 1 1 1\u2219\u2219\u2219\u2212 10 100 1000 10,000 3 More generally, if d denotes the nth digit in the decimal representation of a number, then n d d d d 0.d d d d ...\u2212 1 1 2 1 3 1\u2219\u2219\u22191 n 1\u2219\u2219\u2219 1 2 3 4 10 102 103 10n Therefore some infinite sums, or infinite series as they are called, have a meaning. But we must define carefully what the sum of an infinite series is.",
+    "metadata": {
+      "page": 38,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_227",
+    "text": "Returning to the series in Equation 3, we denote by s the sum of the first n terms of n the series.",
+    "metadata": {
+      "page": 38,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_228",
+    "text": "Thus s \u22121 \u22120.5 1 2 s \u22121 11 \u22120.75 2 2 4 s \u22121 11 11 \u22120.875 3 2 4 8 s \u22121 11 11 1 1 \u22120.9375 4 2 4 8 16 s \u22121 11 11 1 1 1 1 \u22120.96875 5 2 4 8 16 32 s \u22121 11 11 1 1 1 1 1 1 \u22120.984375 6 2 4 8 16 32 64 s \u22121 11 11 1 1 1 1 1 1 1 1 \u22120.9921875 7 2 4 8 16 32 64 128 f s \u22121 11 1\u2219\u2219\u22191 1 <0.99902344 10 2 4 1024 f 1 1 1 s \u2212 1 1\u2219\u2219\u22191 <0.99998474 16 2 4 216 Observe that as we add more and more terms, the partial sums become closer and closer to 1.",
+    "metadata": {
+      "page": 38,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_229",
+    "text": "In fact, it can be shown that by taking n large enough (that is, by adding sufficiently many terms of the series), we can make the partial sum s as close as we please to the numn ber 1. It therefore seems reasonable to say that the sum of the infinite series is 1 and to write 1 1 1 1 1 1 1\u2219\u2219\u22191 1\u2219\u2219\u2219\u22121 2 4 8 2n Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 38,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_230",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 38,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_231",
+    "text": "8 a preview of calculus In other words, the reason the sum of the series is 1 is that lim s \u22121 n nl` In Chapter 11 we will discuss these ideas further. We will then use Newton\u2019s idea of combining infinite series with differential and integral calculus. summary We have seen that the concept of a limit arises in trying to find the area of a region, the slope of a tangent to a curve, the velocity of a car, or the sum of an infinite series.",
+    "metadata": {
+      "page": 39,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_232",
+    "text": "In each case the common theme is the calculation of a quantity as the limit of other, easily calculated quantities. It is this basic idea of a limit that sets calculus apart from other areas of mathematics. In fact, we could define calculus as the part of mathematics that deals with limits. After Sir Isaac Newton invented his version of calculus, he used it to explain the motion of the planets around the sun.",
+    "metadata": {
+      "page": 39,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_233",
+    "text": "Today calculus is used in calculating the orbits of satellites and spacecraft, in predicting population sizes, in estimating how fast oil prices rise or fall, in forecasting weather, in measuring the cardiac output of the heart, in calculating life insurance premiums, and in a great variety of other areas. We will explore some of these uses of calculus in this book.",
+    "metadata": {
+      "page": 39,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_234",
+    "text": "In order to convey a sense of the power of the subject, we end this preview with a list of some of the questions that you will be able to answer using calculus: rays from sun 1. How can we explain the fact, illustrated in Figure 12, that the angle of elevation from an observer up to the highest point in a rainbow is 42\u00b0? (See page 285.) 2. How can we explain the shapes of cans on supermarket shelves? (See page 343.) 138\u00b0 3. Where is the best place to sit in a movie theater?",
+    "metadata": {
+      "page": 39,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_235",
+    "text": "(See page 465.) rays from sun 42\u00b0 4. How can we design a roller coaster for a smooth ride? (See page 182.) 5. How far away from an airport should a pilot start descent? (See page 208.) observer 6. How can we fit curves together to design shapes to represent letters on a laser FIGURE 12 printer? (See page 657.) 7. How can we estimate the number of workers that were needed to build the Great Pyramid of Khufu in ancient Egypt? (See page 460.) 8.",
+    "metadata": {
+      "page": 39,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_236",
+    "text": "Where should an infielder position himself to catch a baseball thrown by an outfielder and relay it to home plate? (See page 465.) 9. Does a ball thrown upward take longer to reach its maximum height or to fall back to its original height? (See page 609.) 10. How can we explain the fact that planets and satellites move in elliptical orbits? (See page 876.) 11. How can we distribute water flow among turbines at a hydroelectric station so as to maximize the total energy production?",
+    "metadata": {
+      "page": 39,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_237",
+    "text": "(See page 980.) 12. If a marble, a squash ball, a steel bar, and a lead pipe roll down a slope, which of them reaches the bottom first? (See page 1052.) Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.",
+    "metadata": {
+      "page": 39,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_238",
+    "text": "Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 39,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_239",
+    "text": "1 Functions and Models Often a graph is the best way to represent a function because it conveys so much information at a glance. Shown is a graph of the vertical ground acceleration created by the 2011 Pictura Collectus/Alamy earthquake near Tohoku, Japan. The earthquake (cm/s@) had a magnitude of 9.0 on 2000 the Richter scale and was so powerful that it moved 1000 northern Japan 2.4 meters closer to North America.",
+    "metadata": {
+      "page": 40,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_240",
+    "text": "0 time _1000 _2000 0 50 100 150 200 Seismological Society of America The fundamenTal objecTs ThaT we deal with in calculus are functions. This chapter pre\u00ad pares the way for calculus by discussing the basic ideas concerning functions, their graphs, and ways of transforming and combining them. We stress that a function can be represented in different ways: by an equation, in a table, by a graph, or in words.",
+    "metadata": {
+      "page": 40,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_241",
+    "text": "We look at the main types of functions that occur in calculus and describe the process of using these functions as mathematical models of real\u00adworld phenomena.",
+    "metadata": {
+      "page": 40,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_242",
+    "text": "10 Chapter 1 Functions and Models Functions arise whenever one quantity depends on another. Consider the following four situations. A. The area A of a circle depends on the radius r of the circle. The rule that connects r and A is given by the equation A\u2212(cid:31)r2. With each positive number r there is associ\u00ad ated one value of A, and we say that A is a function of r. B. T he human population of the world P depends on the time t.",
+    "metadata": {
+      "page": 41,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_243",
+    "text": "The table gives esti\u00ad Population mates of the world population Pstd at time t, for certain years. For instance, Year (millions) 1900 1650 Ps1950d<2,560,000,000 1910 1750 1920 1860 But for each value of the time t there is a corresponding value of P, and we say that 1930 2070 P is a function of t. 1940 2300 C. The cost C of mailing an envelope depends on its weight w.",
+    "metadata": {
+      "page": 41,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_244",
+    "text": "Although there is no 1950 2560 simple formula that connects w and C, the post office has a rule for determining C 1960 3040 when w is known. 1970 3710 D. The vertical acceleration a of the ground as measured by a seismograph during an 1980 4450 earthquake is a function of the elapsed time t. Figure 1 shows a graph generated by 1990 5280 seismic activity during the Northridge earthquake that shook Los Angeles in 1994.",
+    "metadata": {
+      "page": 41,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_245",
+    "text": "2000 6080 For a given value of t, the graph provides a corresponding value of a. 2010 6870 a {cm/s@} 100 50 5 10 15 20 25 30 t(seconds) FIGURE 1 _50 Vertical ground acceleration during the Northridge earthquake Calif. Dept. of Mines and Geology Each of these examples describes a rule whereby, given a number (r, t, w, or t), another number (A, P, C, or a) is assigned. In each case we say that the second number is a function of the first number.",
+    "metadata": {
+      "page": 41,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_246",
+    "text": "A function f is a rule that assigns to each element x in a set D exactly one element, called fsxd, in a set E. We usually consider functions for which the sets D and E are sets of real numbers. The set D is called the domain of the function. The number fsxd is the value of f at x and is read \u201cf of x.\u201d The range of f is the set of all possible values of fsxd as x varies throughout the domain.",
+    "metadata": {
+      "page": 41,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_247",
+    "text": "A symbol that represents an arbitrary number in the domain of a function f is called an independent variable. A symbol that represents a number in the range of f is called a dependent variable. In Example A, for instance, r is the indepen\u00ad dent variable and A is the dependent variable. Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 41,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_248",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 41,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_249",
+    "text": "SeCtion 1.1 Four Ways to Represent a Function 11 It\u2019s helpful to think of a function as a machine (see Figure 2). If x is in the domain of x f \u0192 the function f, then when x enters the machine, it\u2019s accepted as an input and the machine (input) (output) produces an output fsxd according to the rule of the function. Thus we can think of the domain as the set of all possible inputs and the range as the set of all possible outputs.",
+    "metadata": {
+      "page": 42,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_250",
+    "text": "FIGURE 2 The preprogrammed functions in a calculator are good examples of a function as a Machine diagram for a function f machine. For example, the square root key on your calculator computes such a function. You press the key labeled s (or s x ) and enter the input x. If x,0, then x is not in the domain of this function; that is, x is not an acceptable input, and the calculator will indi\u00ad cate an error. If x>0, then an approximation to x will appear in the display.",
+    "metadata": {
+      "page": 42,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_251",
+    "text": "Thus the s x key on your calculator is not quite the same as the exact mathematical function f s defined by fsxd\u2212s x . Another way to picture a function is by an arrow diagram as in Figure 3. Each arrow connects an element of D to an element of E. The arrow indicates that fsxd is associated x \u0192 with x, fsad is associated with a, and so on. a f(a) The most common method for visualizing a function is its graph.",
+    "metadata": {
+      "page": 42,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_252",
+    "text": "If f is a function with domain D, then its graph is the set of ordered pairs hsx,fsxdd | x[Dj f D E (Notice that these are input\u00adoutput pairs.) In other words, the graph of f consists of all FIGURE 3 points sx,yd in the coordinate plane such that y\u2212fsxd and x is in the domain of f. Arrow diagram for f The graph of a function f gives us a useful picture of the behavior or \u201clife history\u201d of a function.",
+    "metadata": {
+      "page": 42,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_253",
+    "text": "Since the y\u00adcoordinate of any point sx,yd on the graph is y\u2212fsxd, we can read the value of fsxd from the graph as being the height of the graph above the point x (see Figure 4). The graph of f also allows us to picture the domain of f on the x\u00adaxis and its range on the y\u00adaxis as in Figure 5. y {x, \u0192} y range y(cid:31) \u0192(x) \u0192 f(2) f(1) 0 1 2 x x 0 x domain FIGURE 4 FIGURE 5 y example 1\u0003 The graph of a function f is shown in Figure 6. (a) Find the values of fs1d and fs5d.",
+    "metadata": {
+      "page": 42,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_254",
+    "text": "(b) What are the domain and range of f? 1 Solution (a) We see from Figure 6 that the point s1,3d lies on the graph of f, so the value of f 0 1 x at 1 is fs1d\u22123. (In other words, the point on the graph that lies above x\u22121 is 3 units above the x\u00adaxis.) When x\u22125, the graph lies about 0.7 units below the x\u00adaxis, so we estimate that fs5d<20.7. FIGURE 6 (b) We see that fsxd is defined when 0<x<7, so the domain of f is the closed inter\u00ad val f0,7g.",
+    "metadata": {
+      "page": 42,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_255",
+    "text": "Notice that f takes on all values from 22 to 4, so the range of f is The notation for intervals is given in Appendix A. hy | 22<y<4j\u2212f22,4g \u25a0 Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience.",
+    "metadata": {
+      "page": 42,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_256",
+    "text": "Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 42,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_257",
+    "text": "12 Chapter 1 Functions and Models y example 2\u0003 Sketch the graph and find the domain and range of each function. (a) fsxd\u22122x21 (b) tsxd\u2212x2 Solution y=2x-1 (a) The equation of the graph is y\u22122x21, and we recognize this as being the equa\u00ad tion of a line with slope 2 and y\u00adintercept 21. (Recall the slope\u00adintercept form of the 0 1 x equation of a line: y\u2212mx1b. See Appendix B.) This enables us to sketch a portion -1 2 of the graph of f in Figure 7.",
+    "metadata": {
+      "page": 43,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_258",
+    "text": "The expression 2x21 is defined for all real numbers, so the domain of f is the set of all real numbers, which we denote by R. The graph shows that the range is also R. FIGURE 7 (b) Since ts2d\u221222 \u22124 and ts21d\u2212s21d2 \u22121, we could plot the points s2,4d and s21,1d, together with a few other points on the graph, and join them to produce the y (2, 4) graph (Figure 8). The equation of the graph is y\u2212x2, which represents a parabola (see Appendix C). The domain of t is R.",
+    "metadata": {
+      "page": 43,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_259",
+    "text": "The range of t consists of all values of tsxd, that is, all numbers of the form x2. But x2 >0 for all numbers x and any positive number y is a y=\u2248 square. So the range of t is hy|y>0j\u2212f0,`d. This can also be seen from Figure 8. \u25a0 (_1, 1) 1 fsa1hd2fsad example 3\u0003 If fsxd\u22122x2 25x11 and h\u00b10, evaluate .",
+    "metadata": {
+      "page": 43,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_260",
+    "text": "0 1 x h Solution We first evaluate fsa1hd by replacing x by a1h in the expression for fsxd: FIGURE 8 fsa1hd\u22122sa1hd2 25sa1hd11 \u22122sa2 12ah1h2d25sa1hd11 \u22122a2 14ah12h2 25a25h11 Then we substitute into the given expression and simplify: The expression fsa1hd2fsad fsa1hd2fsad s2a2 14ah12h2 25a25h11d2s2a2 25a11d \u2212 h h h in Example 3 is called a difference 2a2 14ah12h2 25a25h1122a2 15a21 \u2212 quotient and occurs frequently in h calculus.",
+    "metadata": {
+      "page": 43,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_261",
+    "text": "As we will see in Chapter 4ah12h2 25h 2, it represents the average rate of \u2212 \u22124a12h25 change of fsxd between x\u2212a and h \u25a0 x\u2212a1h.",
+    "metadata": {
+      "page": 43,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_262",
+    "text": "representations of Functions There are four possible ways to represent a function: verbally (by a description in words) \u25cf numerically (by a table of values) \u25cf visually (by a graph) \u25cf algebraically (by an explicit formula) \u25cf If a single function can be represented in all four ways, it\u2019s often useful to go from one representation to another to gain additional insight into the function.",
+    "metadata": {
+      "page": 43,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_263",
+    "text": "(In Example 2, for instance, we started with algebraic formulas and then obtained the graphs.) But certain functions are described more naturally by one method than by another. With this in mind, let\u2019s reexamine the four situations that we considered at the beginning of this section. Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 43,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_264",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 43,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_265",
+    "text": "SeCtion 1.1 Four Ways to Represent a Function 13 A. The most useful representation of the area of a circle as a function of its radius is probably the algebraic formula Asrd\u2212(cid:31)r2, though it is possible to compile a table of values or to sketch a graph (half a parabola). Because a circle has to have a posi\u00ad tive radius, the domain is hr | r .0j\u2212s0,`d, and the range is also s0,`d. B. We are given a description of the function in words: Pstd is the human population of t the world at time t.",
+    "metadata": {
+      "page": 44,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_266",
+    "text": "Let\u2019s measure t so that t\u22120 corresponds to the year 1900. The (years Population table of values of world population provides a convenient representation of this func\u00ad since 1900) (millions) tion. If we plot these values, we get the graph (called a scatter plot) in Figure 9. It 0 1650 too is a useful representation; the graph allows us to absorb all the data at once. What 10 1750 about a formula?",
+    "metadata": {
+      "page": 44,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_267",
+    "text": "Of course, it\u2019s impossible to devise an explicit formula that gives 20 1860 the exact human population Pstd at any time t. But it is possible to find an expression 30 2070 for a function that approximates Pstd. In fact, using methods explained in Section 40 2300 1.2, we obtain the approximation 50 2560 60 3040 Pstd<fstd\u2212s1.436533109d \u2219 s1.01395dt 70 3710 Figure 10 shows that it is a reasonably good \u201cfit.\u201d The function f is called a mathe80 4450 matical model for population growth.",
+    "metadata": {
+      "page": 44,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_268",
+    "text": "In other words, it is a function with an explicit 90 5280 formula that approximates the behavior of our given function. We will see, however, 100 6080 that the ideas of calculus can be applied to a table of values; an explicit formula is 110 6870 not necessary. P P 5x10' 5x10' 0 20 40 60 80 100 120 t 0 20 40 60 80 100 120 t Years since 1900 Years since 1900 FIGURE 9 FIGURE 10 The function P is typical of the functions that arise whenever we attempt to apply calculus to the real world.",
+    "metadata": {
+      "page": 44,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_269",
+    "text": "We start with a verbal description of a function. Then we may be able to construct a table of values of the function, perhaps from instrument A function defined by a table of readings in a scientific experiment. Even though we don\u2019t have complete knowledge values is called a tabular function. of the values of the function, we will see throughout the book that it is still possible to perform the operations of calculus on such a function. C.",
+    "metadata": {
+      "page": 44,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_270",
+    "text": "Again the function is described in words: Let Cswd be the cost of mailing a large w (grams) Cswd (dollars) envelope with weight w. The rule that the Hong Kong Post Office used as of 2015 for mail to Taiwan is as follows: the cost is $2.90 for 20 g or less, $5.50 for 30 g or less, 0,w<20 2.90 and $1.50 for each additional 10 g or part thereof.",
+    "metadata": {
+      "page": 44,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_271",
+    "text": "The table of values shown in the 20,w<30 5.50 margin is the most convenient representation for this function, though it is possible to 30,w<40 7.00 sketch a graph (see Example 10). 40,w<50 8.50 D. The graph shown in Figure 1 is the most natural representation of the vertical accel\u00ad \u2219 \u2219 \u2219 \u2219 eration function astd. It\u2019s true that a table of values could be compiled, and it is \u2219 \u2219 even possible to devise an approximate formula. But everything a geologist needs to Copyright 2016 Cengage Learning.",
+    "metadata": {
+      "page": 44,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_272",
+    "text": "All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 44,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_273",
+    "text": "14 Chapter 1 Functions and Models know\u2014 amplitudes and patterns \u2014 can be seen easily from the graph. (The same is true for the patterns seen in electrocardiograms of heart patients and polygraphs for lie\u00addetection.) In the next example we sketch the graph of a function that is defined verbally. example 4 When you turn on a hot\u00adwater faucet, the temperature T of the water depends on how long the water has been running.",
+    "metadata": {
+      "page": 45,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_274",
+    "text": "Draw a rough graph of T as a func\u00ad T tion of the time t that has elapsed since the faucet was turned on. Solution The initial temperature of the running water is close to room temperature because the water has been sitting in the pipes. When the water from the hot\u00adwater tank starts flowing from the faucet, T increases quickly. In the next phase, T is constant at 0 t the tempera ture of the heated water in the tank. When the tank is drained, T decreases to the temperature of the water supply.",
+    "metadata": {
+      "page": 45,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_275",
+    "text": "This enables us to make the rough sketch of T FIGURE 11 as a function of t in Figure 11. \u25a0 In the following example we start with a verbal description of a function in a physical situation and obtain an explicit algebraic formula. The ability to do this is a useful skill in solving calculus problems that ask for the maximum or minimum values of quantities. example 5\u0003 A rectangular storage container with an open top has a volume of 10 m3. The length of its base is twice its width.",
+    "metadata": {
+      "page": 45,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_276",
+    "text": "Material for the base costs $10 per square meter; material for the sides costs $6 per square meter. Express the cost of mate\u00ad rials as a function of the width of the base. Solution We draw a diagram as in Figure 12 and introduce notation by letting w and 2w be the width and length of the base, respectively, and h be the height. The area of the base is s2wdw\u22122w2, so the cost, in dollars, of the material for the h base is 10s2w2d.",
+    "metadata": {
+      "page": 45,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_277",
+    "text": "Two of the sides have area wh and the other two have area 2wh, so the cost of the material for the sides is 6f2swhd12s2whdg. The total cost is therefore w C\u221210s2w2d16f2swhd12s2whdg \u221220w2 136wh 2w FIGURE 12 To express C as a function of w alone, we need to eliminate h and we do so by using the fact that the volume is 10 m3.",
+    "metadata": {
+      "page": 45,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_278",
+    "text": "Thus ws2wdh\u221210 10 5 which gives h\u2212 \u2212 2w2 w2 Substituting this into the expression for C, we have PS In setting up applied functions as S D in Example 5, it may be useful to review 5 180 C\u221220w2 136w \u221220w2 1 the principles of problem solving as w2 w discussed on page 71, particularly Therefore the equation Step 1: Understand the Problem. 180 Cswd\u221220w2 1 w.0 w expresses C as a function of w. \u25a0 example 6\u0003 Find the domain of each function.",
+    "metadata": {
+      "page": 45,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_279",
+    "text": "1 (a) fsxd\u2212s x12 (b) tsxd\u2212 x2 2x Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 45,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_280",
+    "text": "SeCtion 1.1 Four Ways to Represent a Function 15 domain convention Solution If a function is given by a formula (a) Because the square root of a negative number is not defined (as a real number), and the domain is not stated explic\u00ad the domain of f consists of all values of x such that x12>0. This is equivalent to itly, the convention is that the domain x>22, so the domain is the interval f22,`d. is the set of all numbers for which (b) Since the formula makes sense and defines 1 1 a real number.",
+    "metadata": {
+      "page": 46,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_281",
+    "text": "tsxd\u2212 \u2212 x2 2x xsx21d and division by 0 is not allowed, we see that tsxd is not defined when x\u22120 or x\u22121. Thus the domain of t is hx | x\u00b10, x\u00b11j which could also be written in interval notation as s2`, 0d\u00f8s0, 1d\u00f8s1, `d \u25a0 y The graph of a function is a curve in the xy\u00adplane. But the question arises: Which x=a curves in the xy\u00adplane are graphs of functions? This is answered by the following test.",
+    "metadata": {
+      "page": 46,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_282",
+    "text": "(a, b) The Vertical Line Test A curve in the xy\u00adplane is the graph of a function of x if and only if no vertical line intersects the curve more than once. 0 a x The reason for the truth of the Vertical Line Test can be seen in Figure 13. If each (a) This curve represents a function. vertical line x\u2212a intersects a curve only once, at sa,bd, then exactly one function value is defined by fsad\u2212b.",
+    "metadata": {
+      "page": 46,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_283",
+    "text": "But if a line x\u2212a intersects the curve twice, at sa,bd and sa,cd, y then the curve can\u2019t represent a function because a function can\u2019t assign two different x=a (a, c) values to a. For example, the parabola x\u2212y2 22 shown in Figure 14(a) is not the graph of a function of x because, as you can see, there are vertical lines that intersect the parabola (a, b) twice. The parabola, however, does contain the graphs of two functions of x. Notice that the equation x\u2212y2 22 implies y2 \u2212x12, so y\u22126 s x12 .",
+    "metadata": {
+      "page": 46,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_284",
+    "text": "Thus the upper 0 a x and lower halves of the parabola are the graphs of the functions fsxd\u2212s x12 [from Example 6(a)] and tsxd\u22122 s x12 . [See Figures 14(b) and (c).] (b) This curve doesn\u2019t represent We observe that if we reverse the roles of x and y, then the equation x\u2212hsyd\u2212y2 22 a function. does define x as a function of y (with y as the independent variable and x as the depen\u00ad FIGURE 13 dent variable) and the parabola now appears as the graph of the function h.",
+    "metadata": {
+      "page": 46,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_285",
+    "text": "y y y _2 (_2, 0) 0 x _2 0 x 0 x FIGURE 14 (a) x=\u00a5-2 (b) y=\u0153\u201ex+\u201e\u201e2\u201e (c) y=_\u0153\u201ex+\u201e\u201e2\u201e piecewise Defined Functions The functions in the following four examples are defined by different formulas in dif\u00ad ferent parts of their domains. Such functions are called piecewise defined functions. Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 46,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_286",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 46,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_287",
+    "text": "16 Chapter 1 Functions and Models example 7 A function f is defined by H 12x if x<21 fsxd\u2212 x2 if x.21 Evaluate fs22d, fs21d, and fs0d and sketch the graph. Solution Remember that a function is a rule. For this particular function the rule is the following: First look at the value of the input x. If it happens that x<21, then the value of fsxd is 12x. On the other hand, if x.21, then the value of fsxd is x2. Since 22<21, we have fs22d\u221212s22d\u22123. Since 21<21, we have fs21d\u221212s21d\u22122.",
+    "metadata": {
+      "page": 47,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_288",
+    "text": "y Since 0.21, we have fs0d\u221202 \u22120. How do we draw the graph of f? We observe that if x<21, then fsxd\u221212x, so the part of the graph of f that lies to the left of the vertical line x\u221221 must coin\u00ad 1 cide with the line y\u221212x, which has slope 21 and y\u00adintercept 1. If x.21, then fsxd\u2212x2, so the part of the graph of f that lies to the right of the line x\u221221 _1 0 1 x must coincide with the graph of y\u2212x2, which is a parabola. This enables us to sketch the graph in Figure 15.",
+    "metadata": {
+      "page": 47,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_289",
+    "text": "The solid dot indicates that the point s21, 2d is included on the FIGURE 15 graph; the open dot indicates that the point s21,1d is excluded from the graph. \u25a0 The next example of a piecewise defined function is the absolute value function. Recall that the absolute value of a number a, denoted by |a|, is the distance from a to 0 on the real number line. Distances are always positive or 0, so we have For a more extensive review of |a|>0 for every number a absolute values, see Appendix A.",
+    "metadata": {
+      "page": 47,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_290",
+    "text": "For example, |3|\u22123 |23|\u22123 |0|\u22120 | s 2 21|\u2212s 2 21 |32(cid:31)|\u2212(cid:31)23 In general, we have |a|\u2212a if a>0 |a|\u22122a if a,0 (Remember that if a is negative, then 2a is positive.) example 8 Sketch the graph of the absolute value function fsxd\u2212|x|.",
+    "metadata": {
+      "page": 47,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_291",
+    "text": "y Solution From the preceding discussion we know that y=|x| H x if x>0 |x|\u2212 2x if x,0 0 x Using the same method as in Example 7, we see that the graph of f coincides with the line y\u2212x to the right of the y\u00adaxis and coincides with the line y\u22122x to the left of the FIGURE 16 y\u00adaxis (see Figure 16). \u25a0 Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part.",
+    "metadata": {
+      "page": 47,
+      "has_math": true
+    }
+  },
+  {
+    "id": "chunk_292",
+    "text": "Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s). Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 47,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_293",
+    "text": "SeCtion 1.1 Four Ways to Represent a Function 17 y example 9 Find a formula for the function f graphed in Figure 17. Solution The line through s0,0d and s1,1d has slope m \u22121 and y\u00adintercept b\u22120, so its equation is y\u2212x.",
+    "metadata": {
+      "page": 48,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_294",
+    "text": "Thus, for the part of the graph of f that joins s0,0d to s1,1d, 1 we have 0 1 x fsxd\u2212x if 0< x<1 FIGURE 17 The line through s1,1d and s2,0d has slope m \u221221, so its point\u00adslope form is Point\u00adslope form of the equation of y20\u2212s21dsx22d or y\u221222x a line: y2y \u2212msx2x d 1 1 See Appendix B. So we have fsxd\u221222x if 1,x<2 We also see that the graph of f coincides with the x\u00adaxis for x.2.",
+    "metadata": {
+      "page": 48,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_295",
+    "text": "Putting this infor\u00ad mation together, we have the following three\u00adpiece formula for f: H x if 0<x<1 fsxd\u2212 22x if 1,x<2 0 if x.2 \u25a0 example 1\u00030\u0003 In Example C at the beginning of this section we considered the cost C Cswd of mailing a large envelope with weight w.",
+    "metadata": {
+      "page": 48,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_296",
+    "text": "In effect, this is a piecewise defined 10.00 function because, from the table of values on page 13, we have 8.00 2.90 if 0,w<20 6.00 5.50 if 20,w<30 Cswd\u2212 7.00 if 30, w<40 4.00 8.50 if 40,w<50 \u2219 2.00 \u2219 \u2219 0 10 20 30 40 50 w The graph is shown in Figure 18. You can see why functions similar to this one are called step functions\u2014they jump from one value to the next. Such functions will be \u25a0 FIGURE 18 studied in Chapter 2.",
+    "metadata": {
+      "page": 48,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_297",
+    "text": "Symmetry If a function f satisfies fs2xd\u2212fsxd for every number x in its domain, then f is called an even function. For instance, the function fsxd\u2212x2 is even because y fs2xd\u2212s2xd2 \u2212x2 \u2212fsxd f(_x) \u0192 _x 0 x x The geometric significance of an even function is that its graph is symmetric with respect to the y\u00adaxis (see Figure 19). This means that if we have plotted the graph of f for x>0, we obtain the entire graph simply by reflecting this portion about the y\u00adaxis.",
+    "metadata": {
+      "page": 48,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_298",
+    "text": "If f satisfies fs2xd\u22122fsxd for every number x in its domain, then f is called an odd function. For example, the function fsxd\u2212x3 is odd because FIGURE 19 An even function fs2xd\u2212s2xd3 \u22122x3 \u22122fsxd Copyright 2016 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).",
+    "metadata": {
+      "page": 48,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_299",
+    "text": "Editorial review has deemed that any suppressed content does not materially affect the overall learning experience. Cengage Learning reserves the right to remove additional content at any time if subsequent rights restrictions require it.",
+    "metadata": {
+      "page": 48,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_300",
+    "text": "18 Chapter 1 Functions and Models The graph of an odd function is symmetric about the origin (see Figure 20). If we already y have the graph of f for x>0, we can obtain the entire graph by rotating this portion through 1808 about the origin. _x 0 \u0192 example 1\u00031\u0003 Determine whether each of the following functions is even, odd, or x x neither even nor odd.",
+    "metadata": {
+      "page": 49,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_301",
+    "text": "(a) fsxd\u2212x5 1x (b) tsxd\u221212x4 (c) hsxd\u22122x2x2 Solution (a) fs2xd\u2212s2xd5 1s2xd\u2212s21d5x5 1s2xd FIGURE 20 An odd function \u22122x5 2x\u22122sx5 1xd \u22122fsxd Therefore f is an odd function. (b) ts2xd\u221212s2xd4 \u221212x4 \u2212tsxd So t is even. (c) hs2xd\u22122s2xd2s2xd2 \u221222x2x2 Since hs2xd\u00b1hsxd and hs2xd\u00b12hsxd, we conclude that h is neither even nor odd. \u25a0 The graphs of the functions in Example 11 are shown in Figure 21. Notice that the graph of h is symmetric neither about the y\u00adaxis nor about the origin.",
+    "metadata": {
+      "page": 49,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_302",
+    "text": "y y y 1 f 1 g 1 h 1 _1 1 x x 1 x _1 FIGURE 21 (a) (b) (c) increasing and Decreasing Functions The graph shown in Figure 22 rises from A to B, falls from B to C, and rises again from C to D. The function f is said to be increasing on the interval fa, bg, decreasing on fb, cg, and increasing again on fc, dg. Notice that if x and x are any two numbers between 1 2 a and b with x ,x , then fsx d,fsx d. We use this as the defining property of an 1 2 1 2 increasing function.",
+    "metadata": {
+      "page": 49,
+      "has_math": false
+    }
+  },
+  {
+    "id": "chunk_303",
+    "text": "y B D y=\u0192 C f(x\u2122) A f(x\u00a1) 0 a x\u00a1 x\u2122 b c d x FIGURE",
+    "metadata": {
+      "page": 49,
+      "has_math": true
+    }
+  }
+]
