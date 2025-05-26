@@ -5,6 +5,7 @@ import os
 import uuid
 import warnings
 import re, json
+import base64
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel, Field
 from langchain_core.messages import HumanMessage, AIMessage
@@ -161,6 +162,68 @@ async def answer_query(payload: QARequest):
         )
 
 
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+# 질의응답 이미지 + 문자 api
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+class QAImageRequest(BaseModel):
+    query: str = Field(..., example="함수의 극한이란 무엇인가요?")
+    image_base64: str = Field(
+        ...,
+        description="data:image/png;base64, 로 시작하는 Base64 인코딩 이미지 문자열",
+        example="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+    )
+
+@app.post(
+    "/qnaimg",
+    response_model=QAResponse,
+    summary="사용자 질의응답",
+    status_code=status.HTTP_200_OK,
+)
+async def answer_query(payload: QAImageRequest):
+    try:
+
+
+        # 3) 질의 + 이미지 데이터를 그래프 상태에 삽입
+        state = {
+            "messages": [
+                HumanMessage(
+                    content=[
+                        {
+                            "type": "text",
+                            "text": ""
+                        },
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": payload.image_base64
+                            }
+                        }
+                    ],
+                    name="User"
+                )
+            ]
+        }
+
+        for step in graph.stream(state, config=config):
+            if step:
+                node_name = list(step.keys())[0]
+                print(f"🔄 실행 중: {node_name}")
+
+        final_state = graph.get_state(config=config)
+        messages = final_state.values['messages']
+
+        ai_messages = [msg for msg in messages if isinstance(msg, AIMessage)]
+        if ai_messages:
+            final_message = ai_messages[-1].content
+        else:
+            final_message = messages[-1].content if messages else "응답을 생성할 수 없습니다."
+
+        return QAResponse(answer=final_message)
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e),
+        )
 
 if __name__ == "__main__":
     import uvicorn
