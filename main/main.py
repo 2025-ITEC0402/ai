@@ -14,10 +14,7 @@ from workflow import graph
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 
-
 warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
-warnings.filterwarnings("ignore", message=".*get_relevant_documents.*")
-# 설정
 config = RunnableConfig(recursion_limit=10, configurable={"thread_id": str(uuid.uuid4())})
 
 def process_query(query: str) -> str:
