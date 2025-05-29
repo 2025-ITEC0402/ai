@@ -1,4 +1,4 @@
-# Chapter 07 Techniques of Integration<br>
+# Chapter 06 Techniques of Integration<br>
 <br>
 # 적분 기법<br>
 <br>

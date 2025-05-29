@@ -1,4 +1,4 @@
-# Chapter 09 Differential Equations<br>
+# Chapter 07 Differential Equations<br>
 <br>
 # 미분 방정식 소개 <br>
 <br>
