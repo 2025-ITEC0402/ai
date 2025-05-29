@@ -125,6 +125,71 @@ async def create_question(payload: QuestionRequest):
             detail=str(e),
         )
 
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+# new 문제생성 api
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+class QuestionRequest(BaseModel):
+    topics: str           = Field(..., example="함수의 극한 확인문제")
+    range_: str           = Field(..., alias="range", example="2.2 The Limit of Functions")
+    summarized: str       = Field(..., example="극한의 정의, 한쪽·무한 극한, 수직 점근선")
+    difficulty: str       = Field(..., example="3")
+    quiz_examples: str    = Field(..., example="(예시 문제)")
+
+class QuestionResponse(BaseModel):
+    chapter : str
+    question: str
+    choice1: str
+    choice2: str
+    choice3: str
+    choice4: str
+    answer: int
+    solution: str
+
+@app.post(
+    "/newquestions",
+    response_model=QuestionResponse,
+    summary="객관식 문제 생성",
+    status_code=status.HTTP_201_CREATED,
+)
+async def create_question(payload: QuestionRequest):
+    """
+    LangChain + OpenAI 모델을 사용해 객관식 문제를 생성하여 JSON 으로 반환합니다.
+    """
+    try:
+        # 1) payload → JSON string
+        payload_str = payload.model_dump_json(by_alias=True)
+        print("***** payload_str = ", payload_str)
+        # 2) 1차 LLM 요청: “문제 생성”
+        query = (
+            "다음 JSON을 기반으로 객관식 문제를 하나 만들고 그 문제를 풀어줘.\n"
+            f"{payload_str}"
+        )
+        print("***** query = ", query)
+        raw_result: str = process_query(query)
+        print("***** raw_result = ", raw_result)
+        # 3) 2차 LLM 요청: “JSON으로 변환”
+        json_prompt = (
+            "위에서 생성된 문제를, 아래 스키마에 맞춰 **순수 JSON**으로만 변환해줘.\n"
+            "키: chapter, question, choice1~choice4, answer(정답 번호, 1~4), solution\n\n"
+            f"{raw_result}"
+        )
+        response = await llm.agenerate([[HumanMessage(content=json_prompt)]])
+        print("***** response = ", response)
+        json_str = response.generations[0][0].text.strip()
+        print("***** json_str = ", json_str)
+        # 3-4) JSON → Pydantic 모델
+        match = re.search(r"```(?:json)?\s*(\{.*\})\s*```", json_str, re.S)
+        clean_json = match.group(1) if match else json_str
+        data = json.loads(clean_json)
+        return QuestionResponse(**data)
+
+    except Exception as e:
+        # 필요 시 세분화된 예외 처리
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e),
+        )
+    
 # ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 # 질의응답 api
 # ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
