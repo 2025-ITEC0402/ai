@@ -98,15 +98,12 @@ async def create_question(payload: QuestionRequest):
     try:
         # 1) payload → JSON string
         payload_str = payload.model_dump_json(by_alias=True)
-        print("***** payload_str = ", payload_str)
         # 2) 1차 LLM 요청: “문제 생성”
         query = (
             "다음 JSON을 기반으로, 객관식 문제를 ‘사람이 읽기 편한’ 형식으로 만들어줘.\n"
             f"{payload_str}"
         )
-        print("***** query = ", query)
         raw_result: str = process_query(query)
-        print("***** raw_result = ", raw_result)
         # 3) 2차 LLM 요청: “JSON으로 변환”
         json_prompt = (
             "위에서 생성된 문제를, 아래 스키마에 맞춰 **순수 JSON**으로만 변환해줘.\n"
@@ -114,9 +111,7 @@ async def create_question(payload: QuestionRequest):
             f"{raw_result}"
         )
         response = await llm.agenerate([[HumanMessage(content=json_prompt)]])
-        print("***** response = ", response)
         json_str = response.generations[0][0].text.strip()
-        print("***** json_str = ", json_str)
         # 3-4) JSON → Pydantic 모델
         match = re.search(r"```(?:json)?\s*(\{.*\})\s*```", json_str, re.S)
         clean_json = match.group(1) if match else json_str
@@ -152,6 +147,47 @@ async def answer_query(payload: QARequest):
     try:
         result = process_query(payload.query)
         return QAResponse(answer=result)
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e),
+        )
+
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+# 질의응답 + 제목 api
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+class QATResponse(BaseModel):
+    answer: str
+    title: str
+
+@app.post(
+    "/qnantitle",
+    response_model=QATResponse,
+    summary="사용자 질의응답",
+    status_code=status.HTTP_200_OK,
+)
+async def answer_query(payload: QARequest):
+    """
+    사용자로부터 받은 질의를 AI 그래프에 전달해 답변을 생성합니다.
+    """
+    try:
+        result = process_query(payload.query)
+        prompt = f"""System:
+        당신은 ‘채팅방 제목 생성기(Chat Title Generator)’입니다.
+        사용자가 보낸 메시지를 입력으로 받아, 그 메시지의 핵심 주제를 3~6개의 단어로 요약한 짧고 명확한 제목을 출력하세요.
+        • 제목에는 불필요한 조사나 접속사를 쓰지 마세요.
+        • 구체적인 키워드를 포함해 대화 내용을 한눈에 알 수 있게 작성하세요.
+        • 출력 형식은 **제목** 텍스트만, 따옴표나 추가 설명 없이 제공해야 합니다.
+
+        User:
+        {payload.query}"""
+
+
+        response = await llm.agenerate([[HumanMessage(content=prompt)]])
+        tit = response.generations[0][0].text.strip()
+        print("***** tit = ", tit)
+
+        return QATResponse(answer=result, title=tit)
     except Exception as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
