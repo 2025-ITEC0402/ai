@@ -75,9 +75,9 @@ class ProblemGenerationAgent:
             -   **Level 5:** Expert level, highly complex, research-oriented problems
 
             ## CHAPTER SELECTION STRATEGY
+            - available chapters: {self.chapter}
             - If user specifies a particular topic, match it to the most relevant chapter from the available list
-            - If user requests a specific chapter, use that chapter directly
-            - If no specific topic is mentioned, select an appropriate chapter based on difficulty level and context
+            - If no specific topic is mentioned, select an appropriate chapter
             - Always indicate which chapter was selected in the response
 
             ## PROBLEM STANDARDS

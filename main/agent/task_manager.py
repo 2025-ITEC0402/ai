@@ -198,14 +198,6 @@ class TaskManager:
             - **Maintain conversation context**: Track state and avoid redundant successful calls
             - **Preserve mathematical accuracy**: Ensure rigorous information processing throughout
 
-            ## OUTPUT FORMAT
-            Return routing decision using RouteResponse model:
-            ```json
-            {{
-            "next": "AgentName"
-            }}
-            ```
-
             **Valid Agents**: `ExternalSearch`, `ExplainTheoryAgent`, `ProblemGeneration`, `ProblemSolving`, `GeneratingResponse`
 
             ---

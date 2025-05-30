@@ -13,7 +13,7 @@ from langchain_core.runnables import RunnableConfig
 from workflow import graph
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-
+import traceback 
 warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
 config = RunnableConfig(recursion_limit=10, configurable={"thread_id": str(uuid.uuid4())})
 
@@ -158,25 +158,22 @@ async def create_question(payload: QuestionRequest):
     try:
         # 1) payload → JSON string
         payload_str = payload.model_dump_json(by_alias=True)
-        print("***** payload_str = ", payload_str)
         # 2) 1차 LLM 요청: “문제 생성”
         query = (
             "다음 JSON을 기반으로 객관식 문제를 하나 만들고 그 문제를 풀어줘.\n"
+            "중요 : 사용자에게 답변을 하는 것이 아니니 chapter: 챕터, question : 문제, choice1~choice4 : 선택지, answer : 정답 번호, 1~4, solution : 해설 등을 구조화해 줘"
             f"{payload_str}"
         )
-        print("***** query = ", query)
         raw_result: str = process_query(query)
-        print("***** raw_result = ", raw_result)
         # 3) 2차 LLM 요청: “JSON으로 변환”
         json_prompt = (
-            "위에서 생성된 문제를, 아래 스키마에 맞춰 **순수 JSON**으로만 변환해줘.\n"
-            "키: chapter, question, choice1~choice4, answer(정답 번호, 1~4), solution\n\n"
             f"{raw_result}"
+            "위에서 생성된 문제와 풀이를 아래 스키마에 맞춰 **순수 JSON**으로만 변환해줘.\n"
+            "**키:** chapter: 챕터, question : 문제, choice1~choice4 : 선택지, answer : 정답 번호, 1~4, solution : 해설\n"
+            "Chapter는 제공된 그대로 옮겨(e.g. 함수와 모델 (Functions and Models))"
         )
         response = await llm.agenerate([[HumanMessage(content=json_prompt)]])
-        print("***** response = ", response)
         json_str = response.generations[0][0].text.strip()
-        print("***** json_str = ", json_str)
         # 3-4) JSON → Pydantic 모델
         match = re.search(r"```(?:json)?\s*(\{.*\})\s*```", json_str, re.S)
         clean_json = match.group(1) if match else json_str
@@ -184,7 +181,10 @@ async def create_question(payload: QuestionRequest):
         return QuestionResponse(**data)
 
     except Exception as e:
-        # 필요 시 세분화된 예외 처리
+        print(f"오류 발생: {e}")
+        print(f"오류 타입: {type(e)}")
+        print(f"오류 상세 정보 (Traceback): \n{traceback.format_exc()}")
+
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e),
