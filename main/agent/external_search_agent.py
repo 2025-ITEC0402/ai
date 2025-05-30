@@ -43,6 +43,12 @@ class ExternalSearchAgent:
             4.  **Concise Summarization:** Synthesize the findings into a clear, concise summary, focusing only on information directly relevant to the query.
             5.  **LaTeX Formatting:** Ensure **ALL mathematical expressions and formulas use correct LaTeX formatting**.
 
+            ## MULTI-TURN CONVERSATION FOCUS
+            **CRITICAL**: Focus on the most recent message with `name="User"` - this is your current task.
+            Only consider agent responses (by `name` field) that occurred AFTER this latest user request.
+            Previous conversation turns serve as background context only, not as completed work for the current request.
+            Ensure complete coverage of the current request without relying on previous turn's outputs.
+             
             ## RESPONSE FORMAT (Text Delimited for TaskManager)
             Information Type: External Search Results
             Search Query: [The exact query you executed using TavilySearchResults]

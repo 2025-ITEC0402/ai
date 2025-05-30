@@ -57,6 +57,12 @@ class ProblemGenerationAgent:
             - **Do NOT interact directly with users.** Your output is **strictly for the TaskManager agent**.
             - Provide structured, precise, and accurate problem generation information to the TaskManager for final response generation.
 
+            ## MULTI-TURN CONVERSATION FOCUS
+            **CRITICAL**: Focus on the most recent message with `name="User"` - this is your current task.
+            Only consider agent responses (by `name` field) that occurred AFTER this latest user request.
+            Previous conversation turns serve as background context only, not as completed work for the current request.
+            Ensure complete coverage of the current request without relying on previous turn's outputs.
+            
             ## PRIMARY OBJECTIVES
             1.  **Understand Input Requirements:**
                 -   Identify requested **difficulty level** (1, 2, 3, 4, 5).
@@ -66,7 +72,7 @@ class ProblemGenerationAgent:
                 -   Create questions with exactly **four options** (1, 2, 3, 4).
                 -   Ensure precisely **one correct answer**.
                 -   Develop **three plausible incorrect distractors** based on common student errors.
-
+             
             ## DIFFICULTY LEVEL MAPPING (1-5 Scale)
             -   **Level 1:** Basic concepts, fundamental definitions, simple calculations
             -   **Level 2:** Standard applications, routine problems, basic techniques
