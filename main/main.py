@@ -160,25 +160,20 @@ async def create_question(payload: QuestionRequest):
         payload_str = payload.model_dump_json(by_alias=True)
         # 2) 1차 LLM 요청: “문제 생성”
         query = (
-            "다음 JSON을 기반으로 객관식 문제를 하나 만들고 그 문제를 풀어줘.\n"
-            "중요 : 사용자에게 답변을 하는 것이 아니니 chapter: 챕터, question : 문제, choice1~choice4 : 선택지, answer : 정답 번호, 1~4, solution : 해설 등을 구조화해 줘"
+            "다음 JSON을 기반으로 객관식 문제를 만들어줘. 그리고 그 문제를 풀어줘.\n"
             f"{payload_str}"
         )
         raw_result: str = process_query(query)
         # 3) 2차 LLM 요청: “JSON으로 변환”
         json_prompt = (
             f"{raw_result}"
-            "위에서 생성된 문제와 풀이를 아래 스키마에 맞춰 **순수 JSON**으로만 변환해줘.\n"
+            "위에서 생성된 문제와 풀이를 스키마에 맞춰 변환해줘.\n"
             "**키:** chapter: 챕터, question : 문제, choice1~choice4 : 선택지, answer : 정답 번호, 1~4, solution : 해설\n"
             "Chapter는 제공된 그대로 옮겨(e.g. 함수와 모델 (Functions and Models))"
         )
-        response = await llm.agenerate([[HumanMessage(content=json_prompt)]])
-        json_str = response.generations[0][0].text.strip()
-        # 3-4) JSON → Pydantic 모델
-        match = re.search(r"```(?:json)?\s*(\{.*\})\s*```", json_str, re.S)
-        clean_json = match.group(1) if match else json_str
-        data = json.loads(clean_json)
-        return QuestionResponse(**data)
+        structured_llm = llm.with_structured_output(QuestionResponse)
+        response = await structured_llm.ainvoke([HumanMessage(content=json_prompt)])
+        return response
 
     except Exception as e:
         print(f"오류 발생: {e}")

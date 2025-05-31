@@ -2,7 +2,7 @@ from typing import TypedDict, Sequence, Annotated
 import operator
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
-from langchain_core.messages import HumanMessage, BaseMessage, AIMessage
+from langchain_core.messages import HumanMessage, AIMessage
 from agent.external_search_agent import ExternalSearchAgent
 from agent.problem_solving_agent import ProblemSolvingAgent
 from agent.problem_generation_agent import ProblemGenerationAgent
@@ -28,18 +28,13 @@ def agent_node(state, agent, name):
     msg = HumanMessage(content=agent_response["messages"][-1].content, name=name)
     return {"messages": [msg]}
 
-def response_node(state):
-    agent_response = response_agent.agent.invoke(state)
-    msg = AIMessage(content=agent_response["messages"][-1].content, name="GeneratingResponse")
-    return {"messages": [msg]}
-
 search_node = partial(agent_node, agent=search_agent, name="ExternalSearch")
 solving_node = partial(agent_node, agent=solving_agent, name="ProblemSolving")
 generating_node = partial(agent_node, agent=generating_agent, name="ProblemGeneration")
 explain_node = partial(agent_node, agent=explain_theory_agent, name="ExplainTheoryAgent")
-
+response_node = partial(agent_node, agent=response_agent, name="GeneratingResponse")
 class AgentState(TypedDict):
-    messages: Annotated[Sequence[BaseMessage], operator.add]
+    messages: Annotated[Sequence[HumanMessage], operator.add]
     next: str
 
 workflow = StateGraph(AgentState)

@@ -12,6 +12,7 @@ load_dotenv()
 members = ["ExternalSearch", "ProblemSolving", "ProblemGeneration", "GeneratingResponse", "ExplainTheoryAgent"]
 class RouteResponse(BaseModel):
     next: Literal[*members]
+
 class TaskManager:
     """
     사용자의 요청을 분석하고 적절한 에이전트를 선택하는 슈퍼바이저
@@ -32,13 +33,7 @@ class TaskManager:
             You are the **TaskManager** - the intelligent orchestrator of the Engineering Mathematics Assistant (EMA) multi-agent system. Your primary responsibility is analyzing user requests and routing them to specialized agents in optimal sequences to maximize educational value and efficiency.
 
             **Critical**: You coordinate agents but NEVER respond directly to users. Your output is exclusively routing decisions for the system workflow.
-
-            ## MULTI-TURN CONVERSATION FOCUS
-            **CRITICAL**: Focus on the most recent message with `name="User"` - this is your current task.
-            Only consider agent responses (by `name` field) that occurred AFTER this latest user request.
-            Previous conversation turns serve as background context only, not as completed work for the current request.
-            Ensure complete coverage of the current request without relying on previous turn's outputs.
-             
+   
             ## AVAILABLE SPECIALIZED AGENTS
 
             ### Information Gathering Agents
