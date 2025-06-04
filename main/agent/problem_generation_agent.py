@@ -65,7 +65,7 @@ class ProblemGenerationAgent:
     
             ## PRIMARY OBJECTIVES
             1.  **Understand Input Requirements:**
-                -   Identify requested **difficulty level** (1, 2, 3).
+                -   Identify requested **difficulty level** (Easy, Normal, Hard).
                 -   Pinpoint specific **mathematical topic/domain** or **chapter**.
                 -   Determine **number of problems** to generate (default: 1).
             2.  **Generate Multiple-Choice Problems:**
@@ -74,9 +74,9 @@ class ProblemGenerationAgent:
                 -   Develop **three plausible incorrect distractors** based on common student errors.
       
             ## DIFFICULTY LEVEL MAPPING (1-3 Scale)
-            -   **Level 1:** Easy – Basic concepts, fundamental definitions, simple calculations
-            -   **Level 2 (Default):** Medium – Standard applications, routine problems, basic techniques
-            -   **Level 3:** Hard – Intermediate problems, moderate complexity, multi-step solutions
+            -   **Easy:** Basic concepts, fundamental definitions, simple calculations
+            -   **Normal:** (Default) Standard applications, routine problems, basic techniques
+            -   **Hard:** Intermediate problems, moderate complexity, multi-step solutions
 
             ## CHAPTER SELECTION STRATEGY
             - available chapters: {self.chapter}
@@ -95,7 +95,7 @@ class ProblemGenerationAgent:
 
             ## RESPONSE FORMAT (Text Delimited for TaskManager consumption)
             Information Type: Multiple-Choice Problem Generation
-            Recognized Difficulty: [Level 1/Level 2/Level 3]
+            Recognized Difficulty: [Easy/Normal/Hard]
             Selected Chapter: [Chapter name from the available chapters list]
 
             Problem Statement: [Clear, complete problem question with all mathematical notation in LaTeX.]
@@ -107,6 +107,7 @@ class ProblemGenerationAgent:
             4. [Option 4 with LaTeX, e.g., "$$6$$"]
 
             Correct Answer: [1/2/3/4]
+            brief comentary: [Provide a summary that captures the essence of the problem (e.g. This problem checks whether students can correctly compute derivatives and analyze sign changes to find local minima or maxima.)]
             Status: [COMPLETE/FAILED]
 
             ## QUALITY CHECKLIST (Self-Validation)

@@ -144,7 +144,8 @@ class NewQuestionResponse(BaseModel):
     choice4: str
     answer: int
     solution: str
-    difficulty: int
+    difficulty: str
+    ai_summary: str
 
 @app.post(
     "/newquestions",
@@ -180,8 +181,9 @@ async def create_question(payload: NewQuestionRequest):
         - choice4    : 문자열 (선택지 4)
         - answer     : 정수 (1~4 중 하나; 정답이 몇 번 선택지인지)
         - solution   : 문자열 (문제 풀이 과정이나 해설)
-        - difficulty : 정수 (1~3 중 하나; 1=쉬움, 2=보통(default), 3=어려움)
-        
+        - difficulty : 문자열(Easy,Normal,Hard 중 하나)
+        - ai_summary : 문자열(문제 한줄평)
+
         ※ 주의사항
         1. **answer** 필드는 반드시 1, 2, 3, 4 중 하나여야 합니다.
         2. **difficulty** 필드는 반드시 1, 2, 3 중 하나여야 합니다.
@@ -202,14 +204,16 @@ async def create_question(payload: NewQuestionRequest):
           "choice4": "x=2",
           "answer": 1,
           "solution": "도함수 f'(x)=2x+2. f'(x)=0 ⇒ x=-1이 극값이고, f''(x)=2>0이므로 최솟값이다.",
-          "difficulty": 2
+          "difficulty": "Normal"
+          "ai_summary": "기본적인 도함수 계산과 극값 판별을 묻는 문제입니다."
+          ""
         }}
         ```
         위 예시에서는
         
         "answer": 1 (선택지 1이 정답)
         
-        "difficulty": 2 (보통 난이도)
+        "difficulty": "Normal" (보통 난이도)
         
         위 input 문자열 텍스트를 바탕으로, 동일한 형식의 JSON 객체를 출력해 주세요. 출력 시 따옴표(“)와 이스케이프 문자(\)를 정확히 지켜야 하며, 불필요한 설명은 포함하지 말고 오로지 JSON 객체만 반환하시기 바랍니다.
         """
