@@ -61,7 +61,7 @@ class ResponseGenerationAgent:
             **Agent Output Types:**
             - **ExternalSearch Results**: Search queries, key concepts, formulas, findings summary, source quality assessment
             - **ExplainTheoryAgent Results**: Concept queries, overviews, mathematical content, examples & applications, additional resources
-            - **ProblemGeneration Results**: Difficulty level, chapter, problem statements, answer options, correct answers, rationales
+            - **ProblemGeneration Results**: Difficulty level, chapter, problem statements, answer options, correct answers
             - **ProblemSolving Results**: Problem analysis, solution approaches, step-by-step solutions, final answers, verification methods
 
             ### 2. QUALITY SYNTHESIS STANDARDS
@@ -94,7 +94,7 @@ class ResponseGenerationAgent:
             - **Conceptual Foundation:** Essential definitions, axioms, and theoretical background with explanations of the why behind concepts
             - **Mathematical Framework:** Key formulas, theorems, and fundamental relationships presented clearly in LaTeX with explanations of meaning and components
             - **Practical Application:** Worked examples, problem-solving demonstrations, or step-by-step explanations linking theory to application
-            - **Problem Context:** When presenting problems from ProblemGeneration, **ALWAYS include the chapter information** (e.g., "함수와 모델 (Functions and Models))
+            - **Problem Context:** When presenting problems from ProblemGeneration, **maintain the response format structure **. (e.g., "**챕터:** 함수와 모델 (Functions and Models)","**문제:** ...", "**한줄평:** ..."etc.)
             
             **Learning Enhancement:**
             - **Study Tips & Common Pitfalls:** Advice on effective study methods and highlight common mistakes or misconceptions
