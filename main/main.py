@@ -166,12 +166,52 @@ async def create_question(payload: NewQuestionRequest):
         )
         raw_result: str = process_query(query)
         # 3) 2차 LLM 요청: “JSON으로 변환”
-        json_prompt = (
-            f"{raw_result}"
-            "위에서 생성된 문제와 풀이를 스키마에 맞춰 변환해줘.\n"
-            "**키:** chapter: 챕터, question : 문제, choice1~choice4 : 선택지, answer : 정답 번호, 1~4, solution : 해설, difficulty: 어려움 난이도 \n"
-            "Chapter는 제공된 그대로 옮겨(e.g. 함수와 모델 (Functions and Models))"
-        )
+        json_prompt = f"""
+        당신은 교육용 문제 데이터를 JSON으로 포맷팅하는 전문가입니다.
+        아래 입력(input) 문자열에 포함된 모든 정보를 사용하여, 반드시 다음 스키마에 맞는 JSON을 생성하세요.
+        
+        --- 스키마 설명 (NewQuestionResponse) ---
+        - chapter    : 문자열 (예: "함수와 모델 (Functions and Models)", "적분론" 등)
+        - question   : 문자열 (문제 지문)
+        - choice1    : 문자열 (선택지 1)
+        - choice2    : 문자열 (선택지 2)
+        - choice3    : 문자열 (선택지 3)
+        - choice4    : 문자열 (선택지 4)
+        - answer     : 정수 (1~4 중 하나; 정답이 몇 번 선택지인지)
+        - solution   : 문자열 (문제 풀이 과정이나 해설)
+        - difficulty : 정수 (1~3 중 하나; 1=쉬움, 2=보통(default), 3=어려움)
+        
+        ※ 주의사항
+        1. **answer** 필드는 반드시 1, 2, 3, 4 중 하나여야 합니다.
+        2. **difficulty** 필드는 반드시 1, 2, 3 중 하나여야 합니다.
+        3. 출력은 JSON 형식으로만 이루어져야 하고, 다른 텍스트나 주석을 포함하면 안 됩니다.
+        4. 하나의 JSON 객체만 출력하세요.
+        
+        --- input 문자열 ---
+        {raw_result}
+        
+        --- JSON 예시 ---
+        ```json
+        {
+          "chapter": "함수와 모델 (Functions and Models)",
+          "question": "함수 f(x)=x^2+2x+1의 극값을 구하시오.",
+          "choice1": "x=-1",
+          "choice2": "x=0",
+          "choice3": "x=1",
+          "choice4": "x=2",
+          "answer": 1,
+          "solution": "도함수 f'(x)=2x+2. f'(x)=0 ⇒ x=-1이 극값이고, f''(x)=2>0이므로 최솟값이다.",
+          "difficulty": 2
+        }
+        ```
+        위 예시에서는
+        
+        "answer": 1 (선택지 1이 정답)
+        
+        "difficulty": 2 (보통 난이도)
+        
+        위 input 문자열 텍스트를 바탕으로, 동일한 형식의 JSON 객체를 출력해 주세요. 출력 시 따옴표(“)와 이스케이프 문자(\)를 정확히 지켜야 하며, 불필요한 설명은 포함하지 말고 오로지 JSON 객체만 반환하시기 바랍니다.
+        """
         structured_llm = llm.with_structured_output(QuestionResponse)
         response = await structured_llm.ainvoke([HumanMessage(content=json_prompt)])
         return response
