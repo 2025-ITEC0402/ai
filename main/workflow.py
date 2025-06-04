@@ -60,6 +60,6 @@ def get_next(state):
 workflow.add_conditional_edges("TaskManager", get_next, conditional_map)
 workflow.add_edge(START, "TaskManager")
 workflow.add_edge("GeneratingResponse", END)
-graph = workflow.compile(checkpointer=MemorySaver())
+graph = workflow.compile()
 
 

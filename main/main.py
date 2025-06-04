@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 import traceback 
 warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
-config = RunnableConfig(recursion_limit=10, configurable={"thread_id": str(uuid.uuid4())})
+config = RunnableConfig(recursion_limit=10)
 
 def process_query(query: str) -> str:
     """
@@ -366,4 +366,4 @@ async def answer_query(payload: QAImageRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app",host="0.0.0.0", port=8000, reload=False, log_level="info")
+    uvicorn.run("main:app",host="0.0.0.0", port=8000, reload=False, log_level="debug")
