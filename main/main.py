@@ -13,7 +13,7 @@ from langchain_core.runnables import RunnableConfig
 from workflow import graph
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-
+import traceback 
 warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
 config = RunnableConfig(recursion_limit=10, configurable={"thread_id": str(uuid.uuid4())})
 
@@ -125,6 +125,66 @@ async def create_question(payload: QuestionRequest):
             detail=str(e),
         )
 
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+# new 문제생성 api
+# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+class QuestionRequest(BaseModel):
+    topics: str           = Field(..., example="함수의 극한 확인문제")
+    range_: str           = Field(..., alias="range", example="2.2 The Limit of Functions")
+    summarized: str       = Field(..., example="극한의 정의, 한쪽·무한 극한, 수직 점근선")
+    difficulty: str       = Field(..., example="3")
+    quiz_examples: str    = Field(..., example="(예시 문제)")
+
+class QuestionResponse(BaseModel):
+    chapter : str
+    question: str
+    choice1: str
+    choice2: str
+    choice3: str
+    choice4: str
+    answer: int
+    solution: str
+
+@app.post(
+    "/newquestions",
+    response_model=QuestionResponse,
+    summary="객관식 문제 생성",
+    status_code=status.HTTP_201_CREATED,
+)
+async def create_question(payload: QuestionRequest):
+    """
+    LangChain + OpenAI 모델을 사용해 객관식 문제를 생성하여 JSON 으로 반환합니다.
+    """
+    try:
+        # 1) payload → JSON string
+        payload_str = payload.model_dump_json(by_alias=True)
+        # 2) 1차 LLM 요청: “문제 생성”
+        query = (
+            "다음 JSON을 기반으로 객관식 문제를 만들어줘. 그리고 그 문제를 풀어줘.\n"
+            f"{payload_str}"
+        )
+        raw_result: str = process_query(query)
+        # 3) 2차 LLM 요청: “JSON으로 변환”
+        json_prompt = (
+            f"{raw_result}"
+            "위에서 생성된 문제와 풀이를 스키마에 맞춰 변환해줘.\n"
+            "**키:** chapter: 챕터, question : 문제, choice1~choice4 : 선택지, answer : 정답 번호, 1~4, solution : 해설\n"
+            "Chapter는 제공된 그대로 옮겨(e.g. 함수와 모델 (Functions and Models))"
+        )
+        structured_llm = llm.with_structured_output(QuestionResponse)
+        response = await structured_llm.ainvoke([HumanMessage(content=json_prompt)])
+        return response
+
+    except Exception as e:
+        print(f"오류 발생: {e}")
+        print(f"오류 타입: {type(e)}")
+        print(f"오류 상세 정보 (Traceback): \n{traceback.format_exc()}")
+
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=str(e),
+        )
+    
 # ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 # 질의응답 api
 # ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ

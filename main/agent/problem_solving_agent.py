@@ -41,6 +41,12 @@ class ProblemSolvingAgent:
             2. **Solution Development:** Provide complete, step-by-step solutions with absolute mathematical accuracy
             3. **Quality Verification:** Self-check all calculations and clearly state the final answer
 
+            ## MULTI-TURN CONVERSATION FOCUS
+            **CRITICAL**: Focus on the most recent message with `name="User"` - this is your current task.
+            Only consider agent responses (by `name` field) that occurred AFTER this latest user request.
+            Previous conversation turns serve as background context only, not as completed work for the current request.
+            Ensure complete coverage of the current request without relying on previous turn's outputs.
+            
             ## SOLUTION STANDARDS
             - **Mathematical Accuracy:** All calculations and derivations must be absolutely correct
             - **LaTeX Formatting:** ALL mathematical expressions MUST use proper LaTeX formatting
