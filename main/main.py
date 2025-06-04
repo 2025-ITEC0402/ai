@@ -128,14 +128,14 @@ async def create_question(payload: QuestionRequest):
 # ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 # new 문제생성 api
 # ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-class QuestionRequest(BaseModel):
+class NewQuestionRequest(BaseModel):
     topics: str           = Field(..., example="함수의 극한 확인문제")
     range_: str           = Field(..., alias="range", example="2.2 The Limit of Functions")
     summarized: str       = Field(..., example="극한의 정의, 한쪽·무한 극한, 수직 점근선")
     difficulty: str       = Field(..., example="3")
     quiz_examples: str    = Field(..., example="(예시 문제)")
 
-class QuestionResponse(BaseModel):
+class NewQuestionResponse(BaseModel):
     chapter : str
     question: str
     choice1: str
@@ -144,14 +144,15 @@ class QuestionResponse(BaseModel):
     choice4: str
     answer: int
     solution: str
+    difficulty: int
 
 @app.post(
     "/newquestions",
-    response_model=QuestionResponse,
+    response_model=NewQuestionResponse,
     summary="객관식 문제 생성",
     status_code=status.HTTP_201_CREATED,
 )
-async def create_question(payload: QuestionRequest):
+async def create_question(payload: NewQuestionRequest):
     """
     LangChain + OpenAI 모델을 사용해 객관식 문제를 생성하여 JSON 으로 반환합니다.
     """
@@ -168,7 +169,7 @@ async def create_question(payload: QuestionRequest):
         json_prompt = (
             f"{raw_result}"
             "위에서 생성된 문제와 풀이를 스키마에 맞춰 변환해줘.\n"
-            "**키:** chapter: 챕터, question : 문제, choice1~choice4 : 선택지, answer : 정답 번호, 1~4, solution : 해설\n"
+            "**키:** chapter: 챕터, question : 문제, choice1~choice4 : 선택지, answer : 정답 번호, 1~4, solution : 해설, difficulty: 어려움 난이도 \n"
             "Chapter는 제공된 그대로 옮겨(e.g. 함수와 모델 (Functions and Models))"
         )
         structured_llm = llm.with_structured_output(QuestionResponse)
