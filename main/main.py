@@ -165,6 +165,7 @@ async def create_question(payload: NewQuestionRequest):
             f"{payload_str}"
         )
         raw_result: str = process_query(query)
+        print("***** raw_result = ", raw_result)
         # 3) 2차 LLM 요청: “JSON으로 변환”
         json_prompt = f"""
         당신은 교육용 문제 데이터를 JSON으로 포맷팅하는 전문가입니다.
@@ -192,7 +193,7 @@ async def create_question(payload: NewQuestionRequest):
         
         --- JSON 예시 ---
         ```json
-        {
+        {{
           "chapter": "함수와 모델 (Functions and Models)",
           "question": "함수 f(x)=x^2+2x+1의 극값을 구하시오.",
           "choice1": "x=-1",
@@ -202,7 +203,7 @@ async def create_question(payload: NewQuestionRequest):
           "answer": 1,
           "solution": "도함수 f'(x)=2x+2. f'(x)=0 ⇒ x=-1이 극값이고, f''(x)=2>0이므로 최솟값이다.",
           "difficulty": 2
-        }
+        }}
         ```
         위 예시에서는
         
@@ -212,7 +213,7 @@ async def create_question(payload: NewQuestionRequest):
         
         위 input 문자열 텍스트를 바탕으로, 동일한 형식의 JSON 객체를 출력해 주세요. 출력 시 따옴표(“)와 이스케이프 문자(\)를 정확히 지켜야 하며, 불필요한 설명은 포함하지 말고 오로지 JSON 객체만 반환하시기 바랍니다.
         """
-        structured_llm = llm.with_structured_output(QuestionResponse)
+        structured_llm = llm.with_structured_output(NewQuestionResponse)
         response = await structured_llm.ainvoke([HumanMessage(content=json_prompt)])
         return response
 
