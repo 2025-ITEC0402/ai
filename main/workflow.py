@@ -18,6 +18,7 @@ response_agent = ResponseGenerationAgent()
 explain_theory_agent = ExplainTheoryAgent()
 Task_Manager = TaskManager()
 
+#GeneratingResponse는 뒤에 추가 - 최종 응답 생성 후 종료 위함
 members = ["ExternalSearch", "ProblemSolving", "ProblemGeneration", "ExplainTheoryAgent"]
 def supervisor_agent(state):
     return Task_Manager.agent.invoke(state)
