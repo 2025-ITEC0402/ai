@@ -2,10 +2,8 @@
 EMA (Engineering Mathematics Assistant) 메인 실행 파일
 """
 import os
-import uuid
 import warnings
 import re, json
-import base64
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel, Field
 from langchain_core.messages import HumanMessage, AIMessage
@@ -18,15 +16,7 @@ warnings.filterwarnings("ignore", message="Convert_system_message_to_human will 
 config = RunnableConfig(recursion_limit=10)
 
 def process_query(query: str) -> str:
-    """
-    사용자 질의를 처리하고 응답을 반환합니다.
 
-    Args:
-        query (str): 사용자의 질의
-
-    Returns:
-        str: 시스템의 응답
-    """
     print(f"사용자 질의 처리 시작: {query}")
 
     state = {"messages": [HumanMessage(content=query, name="User")]}
@@ -65,9 +55,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-# 문제생성 api
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
 class QuestionRequest(BaseModel):
     topics: str           = Field(..., example="함수의 극한 확인문제")
     range_: str           = Field(..., alias="range", example="2.2 The Limit of Functions")
@@ -92,9 +80,7 @@ class QuestionResponse(BaseModel):
     status_code=status.HTTP_201_CREATED,
 )
 async def create_question(payload: QuestionRequest):
-    """
-    LangChain + OpenAI 모델을 사용해 객관식 문제를 생성하여 JSON 으로 반환합니다.
-    """
+
     try:
         # 1) payload → JSON string
         payload_str = payload.model_dump_json(by_alias=True)
@@ -125,9 +111,6 @@ async def create_question(payload: QuestionRequest):
             detail=str(e),
         )
 
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-# new 문제생성 api
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 class NewQuestionRequest(BaseModel):
     topics: str           = Field(..., example="함수의 극한 확인문제")
     range_: str           = Field(..., alias="range", example="2.2 The Limit of Functions")
@@ -154,9 +137,7 @@ class NewQuestionResponse(BaseModel):
     status_code=status.HTTP_201_CREATED,
 )
 async def create_question(payload: NewQuestionRequest):
-    """
-    LangChain + OpenAI 모델을 사용해 객관식 문제를 생성하여 JSON 으로 반환합니다.
-    """
+
     try:
         # 1) payload → JSON string
         payload_str = payload.model_dump_json(by_alias=True)
@@ -230,10 +211,7 @@ async def create_question(payload: NewQuestionRequest):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e),
         )
-    
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-# 질의응답 api
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
 class QARequest(BaseModel):
     query: str = Field(..., example="함수의 극한이란 무엇인가요?")
 
@@ -247,9 +225,7 @@ class QAResponse(BaseModel):
     status_code=status.HTTP_200_OK,
 )
 async def answer_query(payload: QARequest):
-    """
-    사용자로부터 받은 질의를 AI 그래프에 전달해 답변을 생성합니다.
-    """
+
     try:
         result = process_query(payload.query)
         return QAResponse(answer=result)
@@ -259,9 +235,6 @@ async def answer_query(payload: QARequest):
             detail=str(e),
         )
 
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-# 질의응답 + 제목 api
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 class QATResponse(BaseModel):
     answer: str
     title: str
@@ -301,9 +274,6 @@ async def answer_query(payload: QARequest):
         )
 
 
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-# 질의응답 이미지 + 문자 api
-# ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 class QAImageRequest(BaseModel):
     query: str = Field(..., example="함수의 극한이란 무엇인가요?")
     image_base64: str = Field(

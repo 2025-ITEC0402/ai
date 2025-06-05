@@ -9,9 +9,6 @@ import os
 
 load_dotenv()
 class ExplainTheoryAgent:
-    """
-    LangChain 도구를 사용하여 외부 정보를 검색하고 요약하는 에이전트
-    """
 
     def __init__(self):
         GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
@@ -27,7 +24,6 @@ class ExplainTheoryAgent:
             model="models/gemini-embedding-exp-03-07"
         )
 
-        #calculus rag 툴
         cal_vectorstore = FAISS.load_local("vectorstore", base_embeddings, allow_dangerous_deserialization=True)
         cal_retriever = cal_vectorstore.as_retriever()
         def calculus_search_fn(query: str) -> list[dict]:
@@ -51,7 +47,6 @@ class ExplainTheoryAgent:
             )
         )
 
-        #md파일 rag 툴
         md_vectorstore = FAISS.load_local("md_vectorstore", base_embeddings, allow_dangerous_deserialization=True)
         md_retriever = md_vectorstore.as_retriever()
         def md_search_fn(query: str) -> list[dict]:
@@ -77,7 +72,6 @@ class ExplainTheoryAgent:
             )
         )
 
-        # 4) tools 리스트에 이 래퍼만 추가
         self.tools = [self.cal_tool, self.md_tool]
 
         self.theory_explanation_prompt = ChatPromptTemplate.from_messages(
