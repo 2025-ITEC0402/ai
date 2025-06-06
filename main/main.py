@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 import traceback 
 warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
+config = RunnableConfig(recursion_limit=10)
 
 def process_query(query: str) -> str:
     """
@@ -29,7 +30,7 @@ def process_query(query: str) -> str:
     print(f"사용자 질의 처리 시작: {query}")
 
     state = {"messages": [HumanMessage(content=query, name="User")]}
-    config = RunnableConfig(recursion_limit=10)
+    
     try:
         final_state = graph.invoke(state, config=config)
         messages = final_state['messages']
@@ -56,7 +57,9 @@ app = FastAPI(
     description="미적분 객관식 문제를 생성하는 REST API",
     version="1.0.0",
 )
-
+@app.get("/")
+async def root():
+    return {"message": "EMA Backend API"}
 # ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 # 문제생성 api
 # ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
@@ -275,7 +278,7 @@ async def answer_query(payload: QARequest):
         사용자가 보낸 메시지를 입력으로 받아, 그 메시지의 핵심 주제를 3~6개의 단어로 요약한 짧고 명확한 제목을 출력하세요.
         • 제목에는 불필요한 조사나 접속사를 쓰지 마세요.
         • 구체적인 키워드를 포함해 대화 내용을 한눈에 알 수 있게 작성하세요.
-        • 출력 형식은 **제목** 텍스트만, 따옴표나 추가 설명 없이 제공해야 합니다.
+        • 출력 형식은 제목 텍스트만, 따옴표나 볼드체 등의 스타일, 추가 설명 없이 제공해야 합니다.
 
         User:
         {payload.query}"""
@@ -335,20 +338,9 @@ async def answer_query(payload: QAImageRequest):
             ]
         }
 
-        for step in graph.stream(state, config=config):
-            if step:
-                node_name = list(step.keys())[0]
-                print(f"🔄 실행 중: {node_name}")
-
-        final_state = graph.get_state(config=config)
-        messages = final_state.values['messages']
-
-        ai_messages = [msg for msg in messages if isinstance(msg, AIMessage)]
-        if ai_messages:
-            final_message = ai_messages[-1].content
-        else:
-            final_message = messages[-1].content if messages else "응답을 생성할 수 없습니다."
-
+        final_state = graph.invoke(state, config=config)
+        messages = final_state['messages']
+        final_message = messages[-1].content if messages else "응답을 생성할 수 없습니다."
         return QAResponse(answer=final_message)
     except Exception as e:
         raise HTTPException(
