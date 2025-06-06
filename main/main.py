@@ -29,21 +29,11 @@ def process_query(query: str) -> str:
     print(f"사용자 질의 처리 시작: {query}")
 
     state = {"messages": [HumanMessage(content=query, name="User")]}
-    config = RunnableConfig(recursion_limit=10, configurable={"thread_id": str(uuid.uuid4())})
+    config = RunnableConfig(recursion_limit=10)
     try:
-        for step in graph.stream(state, config=config):
-            if step:
-                node_name = list(step.keys())[0]
-                print(f"🔄 실행 중: {node_name}")
-
-        final_state = graph.get_state(config=config)
-        messages = final_state.values['messages']
-
-        ai_messages = [msg for msg in messages if isinstance(msg, AIMessage)]
-        if ai_messages:
-            final_message = ai_messages[-1].content
-        else:
-            final_message = messages[-1].content if messages else "응답을 생성할 수 없습니다."
+        final_state = graph.invoke(state, config=config)
+        messages = final_state['messages']
+        final_message = messages[-1].content if messages else "응답을 생성할 수 없습니다."
 
         return final_message
 

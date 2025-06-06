@@ -21,7 +21,9 @@ Task_Manager = TaskManager()
 #GeneratingResponse는 뒤에 추가 - 최종 응답 생성 후 종료 위함
 members = ["ExternalSearch", "ProblemSolving", "ProblemGeneration", "ExplainTheoryAgent"]
 def supervisor_agent(state):
-    return Task_Manager.agent.invoke(state)
+    result = Task_Manager.agent.invoke(state)
+    print(f"TaskManager: {result.next} 에이전트로 라우팅")
+    return result
 
 def agent_node(state, agent, name):
     agent_response = agent.agent.invoke(state)
@@ -58,6 +60,6 @@ def get_next(state):
 workflow.add_conditional_edges("TaskManager", get_next, conditional_map)
 workflow.add_edge(START, "TaskManager")
 workflow.add_edge("GeneratingResponse", END)
-graph = workflow.compile(checkpointer=MemorySaver())
+graph = workflow.compile()
 
 
