@@ -15,7 +15,6 @@ from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 import traceback 
 warnings.filterwarnings("ignore", message="Convert_system_message_to_human will be deprecated!")
-config = RunnableConfig(recursion_limit=10)
 
 def process_query(query: str) -> str:
     """
@@ -30,7 +29,7 @@ def process_query(query: str) -> str:
     print(f"사용자 질의 처리 시작: {query}")
 
     state = {"messages": [HumanMessage(content=query, name="User")]}
-
+    config = RunnableConfig(recursion_limit=10, configurable={"thread_id": str(uuid.uuid4())})
     try:
         for step in graph.stream(state, config=config):
             if step:
@@ -49,7 +48,10 @@ def process_query(query: str) -> str:
         return final_message
 
     except Exception as e:
-        return f"오류 발생: {str(e)}"
+        print(f"오류 발생: {e}")
+        print(f"오류 타입: {type(e)}")
+        print(f"오류 상세 정보 (Traceback): \n{traceback.format_exc()}")
+        return
 
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
@@ -366,4 +368,4 @@ async def answer_query(payload: QAImageRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app",host="0.0.0.0", port=8000, reload=False, log_level="debug")
+    uvicorn.run("main:app",host="0.0.0.0", port=8000, reload=True, log_level="debug")
