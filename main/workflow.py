@@ -49,8 +49,6 @@ workflow.add_node("TaskManager", supervisor_agent)
 for m in members:
     workflow.add_edge(m, "TaskManager")
 
-workflow.add_edge(START, "TaskManager")
-
 members.append("GeneratingResponse")
 conditional_map = {name: name for name in members}
 
@@ -60,6 +58,6 @@ def get_next(state):
 workflow.add_conditional_edges("TaskManager", get_next, conditional_map)
 workflow.add_edge(START, "TaskManager")
 workflow.add_edge("GeneratingResponse", END)
-graph = workflow.compile()
+graph = workflow.compile(checkpointer=MemorySaver())
 
 

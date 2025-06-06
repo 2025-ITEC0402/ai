@@ -29,7 +29,7 @@ class ProblemGenerationAgent:
             model="gemini-2.5-flash-preview-05-20",
             google_api_key=GOOGLE_API_KEY,
             convert_system_message_to_human=True,
-            temperature=0.3
+            temperature=0.7
         )
 
         # --- 에이전트가 참조할 챕터(주제) 목록 정의 ---
