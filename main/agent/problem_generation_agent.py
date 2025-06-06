@@ -1,27 +1,39 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
-from langgraph.prebuilt import create_react_agent
-from langchain_core.tools import tool
-from dotenv import load_dotenv
-import os
+from langchain_google_genai import ChatGoogleGenerativeAI  # Google Generative AI 기반 채팅 LLM을 사용하기 위한 모듈
+from langchain_core.prompts import ChatPromptTemplate       # LangChain에서 프롬프트 템플릿을 생성하기 위한 클래스
+from langchain_core.output_parsers import StrOutputParser   # (미사용) 문자열 출력 파서를 위한 클래스
+from langgraph.prebuilt import create_react_agent           # React 형태의 에이전트를 생성하기 위한 함수 (LangGraph 사용)
+from langchain_core.tools import tool                        # LangChain의 @tool 데코레이터를 제공하는 모듈
+from dotenv import load_dotenv                               # .env 파일에 정의된 환경 변수를 로드하기 위한 함수
+import os                                                    # 운영체제 환경 변수 및 파일 경로 접근을 위한 표준 라이브러리
 
+# .env 파일에 설정된 API 키 등을 환경 변수로 로드
 load_dotenv()
 
 class ProblemGenerationAgent:
     """
-    공학수학 문제를 생성하는 에이전트
+    공학수학 문제를 생성하는 에이전트 클래스
+    이 에이전트는 주어진 난이도와 주제에 따라 다지선다형(calculus) 문제를 생성하고,
+    TaskManager에게 구조화된 형태로 전달합니다.
     """
+
     def __init__(self):
+        # 환경 변수에서 Google API 키를 가져옴
         GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-        
+
+        # ChatGoogleGenerativeAI 모델을 초기화
+        # - model: 사용할 Gemini 모델 버전
+        # - google_api_key: 위에서 가져온 Google API 키
+        # - convert_system_message_to_human: 시스템 메시지를 인간 메시지처럼 변환할지 여부
+        # - temperature: 생성 응답의 랜덤성 정도 (0~1, 낮을수록 결정적이며 같은 입력에 대해 비슷한 응답을 생성)
         self.llm = ChatGoogleGenerativeAI(
             model="gemini-2.5-flash-preview-05-20",
             google_api_key=GOOGLE_API_KEY,
             convert_system_message_to_human=True,
-            temperature=0.3
+            temperature=0.7
         )
-        
+
+        # --- 에이전트가 참조할 챕터(주제) 목록 정의 ---
+        # 사용자가 요청한 주제나 챕터를 이 목록과 매칭하여 문제를 생성
         self.chapter = [
             "함수와 모델 (Functions and Models)",
             "극한과 도함수 (Limits and Derivatives)",
@@ -41,16 +53,22 @@ class ProblemGenerationAgent:
             "벡터 미적분학 (Vector Calculus)",
             "2계 미분방정식 (Second-Order Differential Equations)"
         ]
-        
+
+        # --- 문제 생성을 위한 더미 Tool 정의 ---
         @tool
         def generate_math_problem() -> None:
-            """더미 툴로, 아무 기능이 없습니다"""
+            """더미 툴: 실제 기능은 없으며, LangChain Tool 데코레이터 예시용"""
             return None
 
+        # 툴 리스트에 더미 generate_math_problem 함수 추가
         self.tools = [generate_math_problem]
 
+        # --- 문제 생성용 프롬프트 템플릿 정의 ---
+        # ChatPromptTemplate.from_messages(): system 메시지(에이전트 역할 규정)와 placeholder를 사용
         self.generation_prompt = ChatPromptTemplate.from_messages([
-            ("system", f"""You are the **University Calculus Problem Generation Agent** within a multi-agent AI system. 
+            (
+                "system",
+                f"""You are the **University Calculus Problem Generation Agent** within a multi-agent AI system. 
             Your core responsibility is to craft high-quality, college-level, multiple-choice calculus problems.
 
             ## ROLE & COMMUNICATION
@@ -130,9 +148,17 @@ class ProblemGenerationAgent:
             2.  **FAILED:**
                 * If **ANY** Quality check is **NOT** met.
                 * Set status to 'FAILED'.
-            """),
-            ("placeholder", "{messages}")
+            """
+            ),
+            ("placeholder", "{messages}")  # 실제 사용자 메시지가 이 위치에 삽입됨
         ])
 
-
-        self.agent = create_react_agent(self.llm, self.tools, state_modifier=self.generation_prompt)
+        # create_react_agent 함수를 통해 에이전트를 생성
+        # - llm: 위에서 초기화한 ChatGoogleGenerativeAI LLM
+        # - tools: 문제 생성을 위한 더미 툴 리스트
+        # - state_modifier: ChatPromptTemplate으로 구성한 문제 생성용 프롬프트
+        self.agent = create_react_agent(
+            self.llm,
+            self.tools,
+            state_modifier=self.generation_prompt
+        )
