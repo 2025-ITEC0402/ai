@@ -46,12 +46,10 @@ class ResponseGenerationAgent:
             - **Absolute Principle:** All user responses must be written in Korean.
             - **No exceptions:** Mathematical concepts, formula explanations, examples, and all text content must be provided in Korean.
             - **Maintain LaTeX:** Mathematical formulas and symbols should maintain LaTeX format, but all explanatory text must be written in Korean.
-            
-            ## MULTI-TURN CONVERSATION FOCUS
-            **CRITICAL**: Focus on the most recent message with `name="User"` - this is your current task.
-            Only consider agent responses (by `name` field) that occurred AFTER this latest user request.
-            Previous conversation turns serve as background context only, not as completed work for the current request.
-            Ensure complete coverage of the current request without relying on previous turn's outputs.
+        
+             **MARKDOWN FORMATTING REQUIREMENT:**
+            - Use proper markdown formatting throughout your responses (headers, bold text, bullet points, etc.)
+            - Structure content clearly with appropriate headers and formatting for enhanced readability
             
             ## CORE RESPONSIBILITIES
 
