@@ -1,13 +1,11 @@
-from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings  # Google Generative AI LLM 및 임베딩 모델 제공 라이브러리
-from langchain_core.prompts import ChatPromptTemplate  # LangChain용 프롬프트 템플릿 생성 도구
-from dotenv import load_dotenv  # .env 파일 로딩을 위한 라이브러리
-from langgraph.prebuilt import create_react_agent  # React Agent 생성 함수 (LangGraph 기반)
-from langchain_core.messages import HumanMessage  # LangChain 메시지 포맷 중 인간(Human) 메시지 타입
-from langchain_community.vectorstores import FAISS  # FAISS 벡터스토어 인터페이스 (벡터 검색용)
-from langchain.tools import Tool  # LangChain에서 Tool 객체로 함수 래핑
-import os  # 운영체제 환경 변수 접근 등 유틸리티 모듈
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+from langchain_core.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
+from langgraph.prebuilt import create_react_agent
+from langchain_community.vectorstores import FAISS
+from langchain.tools import Tool
+import os
 
-# .env 파일에 정의된 환경 변수를 불러온다 (예: GOOGLE_API_KEY)
 load_dotenv()
 
 class ExplainTheoryAgent:
