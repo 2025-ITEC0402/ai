@@ -5,7 +5,7 @@ from langgraph.prebuilt import create_react_agent
 from langchain_community.vectorstores import FAISS
 from langchain.tools import Tool
 import os
-from langchain_openai import ChatOpenAI
+
 load_dotenv()
 
 class ExplainTheoryAgent:
@@ -15,14 +15,17 @@ class ExplainTheoryAgent:
     """
 
     def __init__(self):
-        # 환경 변수에서 API 키를 로드
-        OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-        # OpenAI Chat 모델을 초기화
-        self.llm = ChatOpenAI(
-            model="gpt-4",                              # 사용할 LLM 모델 이름
-            openai_api_key=OPENAI_API_KEY,              # 인증을 위한 API 키
-            temperature=0.2                             # 응답 랜덤성 정도 (0 ~ 1)
+        # 환경 변수에서 Google API 키를 가져온다.
+        GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+        # Google Generative AI Chat 모델을 초기화
+        self.llm = ChatGoogleGenerativeAI(
+            model="gemini-2.5-pro-preview-05-06",      # 사용할 LLM 모델 이름
+            google_api_key=GOOGLE_API_KEY,                # 인증을 위한 API 키
+            convert_system_message_to_human=True,          # 시스템 메시지를 인간 메시지처럼 변환
+            temperature=0.2                                # 응답 랜덤성 정도 (0 ~ 1)
         )
+
         # Google Generative AI 임베딩 모델을 초기화
         base_embeddings = GoogleGenerativeAIEmbeddings(
             model="models/gemini-embedding-exp-03-07"      # 사용할 임베딩 모델 경로/이름
@@ -36,7 +39,7 @@ class ExplainTheoryAgent:
             allow_dangerous_deserialization=True           # 위험할 수 있는 직렬화 해제 허용 여부
         )
         # 벡터스토어를 검색기(retriever) 형태로 변환
-        cal_retriever = cal_vectorstore.as_retriever()
+        cal_retriever = cal_vectorstore.as_retriever(search_kwargs={"k": 2})
 
         # 실제 검색을 수행하는 함수 정의 (질문을 입력하면 관련 문서 리스트 반환)
         def calculus_search_fn(query: str) -> list[dict]:
@@ -72,7 +75,7 @@ class ExplainTheoryAgent:
             allow_dangerous_deserialization=True           # 위험할 수 있는 직렬화 해제 허용 여부
         )
         # 벡터스토어를 검색기로 변환
-        md_retriever = md_vectorstore.as_retriever()
+        md_retriever = md_vectorstore.as_retriever(search_kwargs={"k": 2})
 
         # Markdown 검색 함수 정의 (한글 쿼리 입력 시 관련 문서 반환)
         def md_search_fn(query: str) -> list[dict]:
