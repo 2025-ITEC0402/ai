@@ -1,10 +1,9 @@
-from langchain_google_genai import ChatGoogleGenerativeAI  # Google Generative AI 채팅 모델을 사용하기 위한 모듈
-from langchain_core.prompts import ChatPromptTemplate        # LangChain에서 프롬프트 템플릿을 생성하기 위한 클래스
-from langchain_core.output_parsers import StrOutputParser    # 문자열 형식 출력을 파싱하기 위한 클래스 (현재는 사용되지 않음)
-from langgraph.prebuilt import create_react_agent            # React 에이전트(Agent) 생성 함수 (LangGraph 기반)
-from langchain_core.tools import tool                        # LangChain의 @tool 데코레이터를 제공하는 모듈
-from dotenv import load_dotenv                                # .env 파일에 정의된 환경 변수를 로드하기 위한 함수
-import os                                                     # 운영체제 환경 변수 및 파일 경로 접근을 위한 표준 라이브러리
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.prompts import ChatPromptTemplate
+from langgraph.prebuilt import create_react_agent
+from langchain_core.tools import tool
+from dotenv import load_dotenv
+import os
 
 # .env 파일을 읽어서 환경 변수로 로드 (예: GOOGLE_API_KEY 등이 .env에 저장되어 있어야 함)
 load_dotenv()
@@ -26,7 +25,7 @@ class ProblemSolvingAgent:
         # - convert_system_message_to_human: 시스템 메시지를 인간 메시지처럼 변환할지 여부
         # - temperature: 생성 응답의 랜덤성 정도 (0~1, 낮을수록 결정적)
         self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash-preview-05-20",
+            model="gemini-2.5-pro-preview-05-06",
             google_api_key=GOOGLE_API_KEY,
             convert_system_message_to_human=True,
             temperature=0.1

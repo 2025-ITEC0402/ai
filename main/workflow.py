@@ -1,5 +1,6 @@
 from typing import TypedDict, Sequence, Annotated
 import operator
+import time
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_core.messages import HumanMessage, AIMessage
@@ -18,15 +19,22 @@ response_agent = ResponseGenerationAgent()
 explain_theory_agent = ExplainTheoryAgent()
 Task_Manager = TaskManager()
 
-#GeneratingResponse는 뒤에 추가 - 최종 응답 생성 후 종료 위함
 members = ["ExternalSearch", "ProblemSolving", "ProblemGeneration", "ExplainTheoryAgent"]
+
 def supervisor_agent(state):
+    start_time = time.time()
     result = Task_Manager.agent.invoke(state)
-    print(f"TaskManager: {result.next} 에이전트로 라우팅")
+    end_time = time.time()
+    
+    print(f"TaskManager: {end_time - start_time:.3f}초 → {result.next} 선택")
     return result
 
 def agent_node(state, agent, name):
+    start_time = time.time()
     agent_response = agent.agent.invoke(state)
+    end_time = time.time()
+    print(f"{name}: {end_time - start_time:.3f}초")
+    
     msg = HumanMessage(content=agent_response["messages"][-1].content, name=name)
     return {"messages": [msg]}
 
@@ -35,6 +43,7 @@ solving_node = partial(agent_node, agent=solving_agent, name="ProblemSolving")
 generating_node = partial(agent_node, agent=generating_agent, name="ProblemGeneration")
 explain_node = partial(agent_node, agent=explain_theory_agent, name="ExplainTheoryAgent")
 response_node = partial(agent_node, agent=response_agent, name="GeneratingResponse")
+
 class AgentState(TypedDict):
     messages: Annotated[Sequence[HumanMessage], operator.add]
     next: str
@@ -60,6 +69,25 @@ def get_next(state):
 workflow.add_conditional_edges("TaskManager", get_next, conditional_map)
 workflow.add_edge(START, "TaskManager")
 workflow.add_edge("GeneratingResponse", END)
-graph = workflow.compile()
 
+original_graph = workflow.compile()
 
+class TimedGraph:
+    def __init__(self, graph):
+        self.graph = graph
+    
+    def invoke(self, state, config=None):
+        print(f"\n 처리 시작: {state['messages'][0].content[:50]}...")
+        print("="*60)
+        
+        start_time = time.time()
+        result = self.graph.invoke(state, config)
+        end_time = time.time()
+        
+        print("="*60)
+        print(f" 총 처리시간: {end_time - start_time:.3f}초")
+        print("="*60)
+        
+        return result
+
+graph = TimedGraph(original_graph)

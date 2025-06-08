@@ -1,10 +1,9 @@
-from langchain_google_genai import ChatGoogleGenerativeAI  # Google Generative AI 기반 채팅 LLM을 사용하기 위한 모듈
-from langchain_core.prompts import ChatPromptTemplate       # LangChain에서 프롬프트 템플릿을 생성하기 위한 클래스
-from langchain_core.output_parsers import StrOutputParser   # (미사용) 문자열 출력 파서를 위한 클래스
-from langgraph.prebuilt import create_react_agent           # React 형태의 에이전트를 생성하기 위한 함수 (LangGraph 사용)
-from langchain_core.tools import tool                        # LangChain의 @tool 데코레이터를 제공하는 모듈
-from dotenv import load_dotenv                               # .env 파일에 정의된 환경 변수를 로드하기 위한 함수
-import os                                                    # 운영체제 환경 변수 및 파일 경로 접근을 위한 표준 라이브러리
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.prompts import ChatPromptTemplate
+from langgraph.prebuilt import create_react_agent
+from langchain_core.tools import tool
+from dotenv import load_dotenv
+import os
 
 # .env 파일에 설정된 API 키 등을 환경 변수로 로드
 load_dotenv()

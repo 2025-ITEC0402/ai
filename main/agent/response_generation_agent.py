@@ -1,11 +1,10 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 from langgraph.prebuilt import create_react_agent
 from langchain_core.tools import tool
 from dotenv import load_dotenv
 import os
-
+from langchain_openai import ChatOpenAI
 load_dotenv()
 
 class ResponseGenerationAgent:
@@ -13,12 +12,11 @@ class ResponseGenerationAgent:
     다른 에이전트들의 결과를 종합하여 최종 사용자 응답을 생성하는 에이전트
     """
     def __init__(self):
-        GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+        OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
         
-        self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-pro-preview-05-06", # 성능 우선-> gemini-2.5-pro-preview-05-06
-            google_api_key=GOOGLE_API_KEY,
-            convert_system_message_to_human=True,
+        self.llm = ChatOpenAI(
+            model="gpt-4",
+            openai_api_key=OPENAI_API_KEY,
             temperature=0.2
         )
         
