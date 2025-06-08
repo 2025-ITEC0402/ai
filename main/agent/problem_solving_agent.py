@@ -25,7 +25,7 @@ class ProblemSolvingAgent:
         # - convert_system_message_to_human: 시스템 메시지를 인간 메시지처럼 변환할지 여부
         # - temperature: 생성 응답의 랜덤성 정도 (0~1, 낮을수록 결정적)
         self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash-preview-05-20",
+            model="gemini-2.5-pro-preview-05-06",
             google_api_key=GOOGLE_API_KEY,
             convert_system_message_to_human=True,
             temperature=0.1
