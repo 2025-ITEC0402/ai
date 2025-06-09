@@ -15,7 +15,7 @@ class ResponseGenerationAgent:
         GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
         
         self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-pro-preview-05-06", # 성능 우선-> gemini-2.5-pro-preview-05-06
+            model="gemini-2.5-pro-preview-06-05",
             google_api_key=GOOGLE_API_KEY,
             convert_system_message_to_human=True,
             temperature=0.2
