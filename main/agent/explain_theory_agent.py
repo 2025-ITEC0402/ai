@@ -20,7 +20,7 @@ class ExplainTheoryAgent:
 
         # Google Generative AI Chat 모델을 초기화
         self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-pro-preview-05-06",      # 사용할 LLM 모델 이름
+            model="gemini-2.5-pro-preview-06-05",      # 사용할 LLM 모델 이름
             google_api_key=GOOGLE_API_KEY,                # 인증을 위한 API 키
             convert_system_message_to_human=True,          # 시스템 메시지를 인간 메시지처럼 변환
             temperature=0.2                                # 응답 랜덤성 정도 (0 ~ 1)
@@ -126,13 +126,7 @@ class ExplainTheoryAgent:
                     3.  **Source Integration:** Clearly incorporate relevant information from search results into your explanation.
                     4.  **Educational Value:** Provide clear, systematic explanations suitable for college-level students, starting from basic concepts and progressing to applications.
                     5.  **LaTeX Formatting:** Ensure **ALL mathematical expressions and formulas use correct LaTeX formatting**. Use `$` for inline math and `$$` for display math.
-
-                    ## MULTI-TURN CONVERSATION FOCUS
-                    **CRITICAL**: Focus on the most recent message with `name="User"` - this is your current task.
-                    Only consider agent responses (by `name` field) that occurred AFTER this latest user request.
-                    Previous conversation turns serve as background context only, not as completed work for the current request.
-                    Ensure complete coverage of the current request without relying on previous turn's outputs.
-                    
+                   
                     ## AVAILABLE TOOLS
                     - **calculus_search:** Academic textbooks with formal definitions, theorems, and rigorous mathematical content. **(Use ENGLISH queries)**
                     - **md_search:** User-friendly markdown learning guides with accessible explanations, examples, and additional resource URLs. **(Use KOREAN queries)**

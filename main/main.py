@@ -63,10 +63,10 @@ async def root():
 # new 문제생성 api
 # ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 class NewQuestionRequest(BaseModel):
-    topics: str           = Field(..., example="함수의 극한 확인문제")
-    range_: str           = Field(..., alias="range", example="2.2 The Limit of Functions")
-    summarized: str       = Field(..., example="극한의 정의, 한쪽·무한 극한, 수직 점근선")
-    difficulty: str       = Field(..., example="3")
+    topics: str           = Field(..., example="함수와 모델 (Functions and Models)")
+    range_: str           = Field(..., alias="range", example="1")
+    summarized: str       = Field(..., example="공학수학의 기초 개념인 함수, 극한, 미분을 먼저 학습하여 기본기를 다져야 합니다.")
+    difficulty: str       = Field(..., example="Normal")
     quiz_examples: str    = Field(..., example="(예시 문제)")
 
 class NewQuestionResponse(BaseModel):
@@ -97,6 +97,7 @@ async def create_question(payload: NewQuestionRequest):
         # 2) 1차 LLM 요청: “문제 생성”
         query = (
             "다음 JSON을 기반으로 객관식 문제를 만들어줘. 그리고 그 문제를 풀어줘.\n"
+            "summarized에서 사용자를 위한 요구 목표를 반영해줘"
             f"{payload_str}"
         )
         raw_result: str = process_query(query)
@@ -115,7 +116,7 @@ async def create_question(payload: NewQuestionRequest):
         - choice4    : 문자열 (선택지 4)
         - answer     : 정수 (1~4 중 하나; 정답이 몇 번 선택지인지)
         - solution   : 문자열 (문제 풀이 과정이나 해설)
-        - difficulty : 문자열(Easy,Normal,Hard 중 하나)
+        - difficulty : 문자열(EASY,NORMAL,HARD 중 하나)
         - ai_summary : 문자열(문제 한줄평)
 
         ※ 주의사항
