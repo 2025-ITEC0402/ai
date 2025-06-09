@@ -126,13 +126,7 @@ class ExplainTheoryAgent:
                     3.  **Source Integration:** Clearly incorporate relevant information from search results into your explanation.
                     4.  **Educational Value:** Provide clear, systematic explanations suitable for college-level students, starting from basic concepts and progressing to applications.
                     5.  **LaTeX Formatting:** Ensure **ALL mathematical expressions and formulas use correct LaTeX formatting**. Use `$` for inline math and `$$` for display math.
-
-                    ## MULTI-TURN CONVERSATION FOCUS
-                    **CRITICAL**: Focus on the most recent message with `name="User"` - this is your current task.
-                    Only consider agent responses (by `name` field) that occurred AFTER this latest user request.
-                    Previous conversation turns serve as background context only, not as completed work for the current request.
-                    Ensure complete coverage of the current request without relying on previous turn's outputs.
-                    
+                   
                     ## AVAILABLE TOOLS
                     - **calculus_search:** Academic textbooks with formal definitions, theorems, and rigorous mathematical content. **(Use ENGLISH queries)**
                     - **md_search:** User-friendly markdown learning guides with accessible explanations, examples, and additional resource URLs. **(Use KOREAN queries)**
