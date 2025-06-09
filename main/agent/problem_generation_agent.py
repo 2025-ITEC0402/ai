@@ -34,23 +34,23 @@ class ProblemGenerationAgent:
         # --- 에이전트가 참조할 챕터(주제) 목록 정의 ---
         # 사용자가 요청한 주제나 챕터를 이 목록과 매칭하여 문제를 생성
         self.chapter = [
-            "CHAPTER 1. 함수와 모델 (Functions and Models)",
-            "CHAPTER 2. 극한과 도함수 (Limits and Derivatives)",
-            "CHAPTER 3. 미분 법칙 (Differentiation Rules)",
-            "CHAPTER 4. 미분의 응용 (Applications of Differentiation)",
-            "CHAPTER 5. 적분 (Integrals)",
-            "CHAPTER 6. 적분의 응용 (Applications of Integration)",
-            "CHAPTER 7. 적분 기법 (Techniques of Integration)",
-            "CHAPTER 8. 적분의 추가 응용 (Further Applications of Integration)",
-            "CHAPTER 9. 미분방정식 (Differential Equations)",
-            "CHAPTER 10. 매개변수 방정식과 극좌표 (Parametric Equations and Polar Coordinates)",
-            "CHAPTER 11. 무한 수열과 급수 (Infinite Sequences and Series)",
-            "CHAPTER 12. 벡터와 공간 기하학 (Vectors and the Geometry of Space)",
-            "CHAPTER 13. 벡터 함수 (Vector Functions)",
-            "CHAPTER 14. 편미분 (Partial Derivatives)",
-            "CHAPTER 15. 다중 적분 (Multiple Integrals)",
-            "CHAPTER 16. 벡터 미적분학 (Vector Calculus)",
-            "CHAPTER 17. 2계 미분방정식 (Second-Order Differential Equations)"
+            "함수와 모델 (Functions and Models)",
+            "극한과 도함수 (Limits and Derivatives)",
+            "미분 법칙 (Differentiation Rules)",
+            "미분의 응용 (Applications of Differentiation)",
+            "적분 (Integrals)",
+            "적분의 응용 (Applications of Integration)",
+            "적분 기법 (Techniques of Integration)",
+            "적분의 추가 응용 (Further Applications of Integration)",
+            "미분방정식 (Differential Equations)",
+            "매개변수 방정식과 극좌표 (Parametric Equations and Polar Coordinates)",
+            "무한 수열과 급수 (Infinite Sequences and Series)",
+            "벡터와 공간 기하학 (Vectors and the Geometry of Space)",
+            "벡터 함수 (Vector Functions)",
+            "편미분 (Partial Derivatives)",
+            "다중 적분 (Multiple Integrals)",
+            "벡터 미적분학 (Vector Calculus)",
+            "2계 미분방정식 (Second-Order Differential Equations)"
         ]
 
         # --- 문제 생성을 위한 더미 Tool 정의 ---
@@ -76,7 +76,7 @@ class ProblemGenerationAgent:
    
             ## PRIMARY OBJECTIVES
             1.  **Understand Input Requirements:**
-                -   Identify requested **difficulty level** (Easy, Normal, Hard).
+                -   Identify requested **difficulty level** (EASY, NORMAL, HARD).
                 -   Pinpoint specific **mathematical topic/domain** or **chapter**.
                 -   Determine **number of problems** to generate (default: 1).
             2.  **Generate Multiple-Choice Problems:**
@@ -85,9 +85,9 @@ class ProblemGenerationAgent:
                 -   Develop **three plausible incorrect distractors** based on common student errors.
       
             ## DIFFICULTY LEVEL MAPPING (1-3 Scale)
-            -   **Easy:** Basic concepts, fundamental definitions, simple calculations
-            -   **Normal:** (Default) Standard applications, routine problems, basic techniques
-            -   **Hard:** Intermediate problems, moderate complexity, multi-step solutions
+            -   **EASY:** Basic concepts, fundamental definitions, simple calculations
+            -   **NORMAL:** (Default) Standard applications, routine problems, basic techniques
+            -   **HARD:** Intermediate problems, moderate complexity, multi-step solutions
 
             ## CHAPTER SELECTION STRATEGY
             - available chapters: {self.chapter}

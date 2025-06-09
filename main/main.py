@@ -106,51 +106,54 @@ async def create_question(payload: NewQuestionRequest):
         json_prompt = f"""
         당신은 교육용 문제 데이터를 JSON으로 포맷팅하는 전문가입니다.
         아래 입력(input) 문자열에 포함된 모든 정보를 사용하여, 반드시 다음 스키마에 맞는 JSON을 생성하세요.
-        
+
         --- 스키마 설명 (NewQuestionResponse) ---
         - chapter    : 문자열 (예: "함수와 모델 (Functions and Models)", "적분론" 등)
-        - question   : 문자열 (문제 지문)
-        - choice1    : 문자열 (선택지 1)
-        - choice2    : 문자열 (선택지 2)
-        - choice3    : 문자열 (선택지 3)
-        - choice4    : 문자열 (선택지 4)
+        - question   : 문자열 (문제 지문, LaTeX 수식 포함)
+        - choice1    : 문자열 (선택지 1, LaTeX 수식 포함)
+        - choice2    : 문자열 (선택지 2, LaTeX 수식 포함)
+        - choice3    : 문자열 (선택지 3, LaTeX 수식 포함)
+        - choice4    : 문자열 (선택지 4, LaTeX 수식 포함)
         - answer     : 정수 (1~4 중 하나; 정답이 몇 번 선택지인지)
-        - solution   : 문자열 (문제 풀이 과정이나 해설)
-        - difficulty : 문자열(EASY,NORMAL,HARD 중 하나)
+        - solution   : 문자열 (문제 풀이 과정이나 해설, LaTeX 수식 포함)
+        - difficulty : 문자열(EASY, NORMAL, HARD 중 하나)
         - ai_summary : 문자열(문제 한줄평)
 
         ※ 주의사항
         1. **answer** 필드는 반드시 1, 2, 3, 4 중 하나여야 합니다.
-        2. **difficulty** 필드는 반드시 1, 2, 3 중 하나여야 합니다.
-        3. 출력은 JSON 형식으로만 이루어져야 하고, 다른 텍스트나 주석을 포함하면 안 됩니다.
-        4. 하나의 JSON 객체만 출력하세요.
-        
+        2. **difficulty** 필드는 반드시 EASY, NORMAL, HARD 중 하나여야 합니다.
+        3. **LaTeX 구조 보존**: 모든 수학 표현식은 원본의 LaTeX 형식을 정확히 유지해야 합니다.
+        - 인라인 수식: `$...$` 형태 유지
+        - 디스플레이 수식: `$$...$$` 형태 유지
+        - JSON 내에서 백슬래시는 이중 이스케이프 처리: `\\`로 표현
+        4. 출력은 JSON 형식으로만 이루어져야 하고, 다른 텍스트나 주석을 포함하면 안 됩니다.
+        5. 하나의 JSON 객체만 출력하세요.
+
         --- input 문자열 ---
         {raw_result}
-        
+
         --- JSON 예시 ---
         ```json
         {{
-          "chapter": "함수와 모델 (Functions and Models)",
-          "question": "함수 f(x)=x^2+2x+1의 극값을 구하시오.",
-          "choice1": "x=-1",
-          "choice2": "x=0",
-          "choice3": "x=1",
-          "choice4": "x=2",
-          "answer": 1,
-          "solution": "도함수 f'(x)=2x+2. f'(x)=0 ⇒ x=-1이 극값이고, f''(x)=2>0이므로 최솟값이다.",
-          "difficulty": "Normal"
-          "ai_summary": "기본적인 도함수 계산과 극값 판별을 묻는 문제입니다."
-          ""
+        "chapter": "함수와 모델 (Functions and Models)",
+        "question": "함수 $f(x) = x^2 + 2x + 1$의 극값을 구하시오.",
+        "choice1": "$x = -1$에서 최솟값 $0$",
+        "choice2": "$x = 0$에서 최댓값 $1$",
+        "choice3": "$x = 1$에서 최솟값 $4$",
+        "choice4": "극값이 존재하지 않음",
+        "answer": 1,
+        "solution": "주어진 함수 $f(x) = x^2 + 2x + 1 = (x+1)^2$이다. 도함수를 구하면 $f'(x) = 2x + 2$이다. $f'(x) = 0$에서 $2x + 2 = 0$, 즉 $x = -1$이다. 이계도함수 $f''(x) = 2 > 0$이므로 $x = -1$에서 최솟값을 가진다. $f(-1) = (-1)^2 + 2(-1) + 1 = 0$이므로 최솟값은 $0$이다.",
+        "difficulty": "NORMAL",
+        "ai_summary": "기본적인 도함수 계산과 극값 판별을 묻는 문제입니다."
         }}
         ```
-        위 예시에서는
-        
-        "answer": 1 (선택지 1이 정답)
-        
-        "difficulty": "Normal" (보통 난이도)
-        
-        위 input 문자열 텍스트를 바탕으로, 동일한 형식의 JSON 객체를 출력해 주세요. 출력 시 따옴표(“)와 이스케이프 문자(\)를 정확히 지켜야 하며, 불필요한 설명은 포함하지 말고 오로지 JSON 객체만 반환하시기 바랍니다.
+
+        위 예시에서:
+        - "answer": 1 (선택지 1이 정답)
+        - "difficulty": "NORMAL" (보통 난이도)
+        - LaTeX 수식은 `$...$` 형태로 보존됨
+
+        위 input 문자열 텍스트를 바탕으로, 동일한 형식의 JSON 객체를 출력해 주세요. 출력 시 LaTeX 구조를 정확히 보존하고, 따옴표(")와 이스케이프 문자(\\)를 정확히 지켜야 하며, 불필요한 설명은 포함하지 말고 오로지 JSON 객체만 반환하시기 바랍니다.
         """
         structured_llm = llm.with_structured_output(NewQuestionResponse)
         response = await structured_llm.ainvoke([HumanMessage(content=json_prompt)])

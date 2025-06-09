@@ -4,7 +4,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import os
-
+from langchain_openai import ChatOpenAI
 load_dotenv()
 members = ["ExternalSearch", "ProblemSolving", "ProblemGeneration", "GeneratingResponse", "ExplainTheoryAgent"]
 class RouteResponse(BaseModel):
@@ -17,10 +17,11 @@ class TaskManager:
     def __init__(self):
         GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-        self.llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-pro-preview-05-06", # 성능 우선-> gemini-2.5-pro-preview-05-06
-            google_api_key=GOOGLE_API_KEY,
-            convert_system_message_to_human=True,
+        OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+        self.llm = ChatOpenAI(
+            model_name="gpt-4-turbo",
+            openai_api_key=OPENAI_API_KEY,
             temperature=0.1,
         )
         
