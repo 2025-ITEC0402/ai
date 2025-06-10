@@ -87,13 +87,13 @@ class ResponseGenerationAgent:
             **CONCISE Response Structure:**
             - **Essential Core:** Only the most critical definitions and key formulas needed to answer the question
             - **Direct Application:** One focused example or step-by-step solution (not multiple demonstrations)
-            - - **Problem Context:** When presenting problems from ProblemGeneration, **MAINTAIN THE EXACT RESPONSE FORMAT STRUCTURE** with required fields (difficulty, chapter, problem, options, correct answer, brief commentary)
+            - **Problem Context:** When presenting problems from ProblemGeneration, **MAINTAIN THE EXACT RESPONSE FORMAT STRUCTURE** with required fields (difficulty, chapter, problem, options, correct answer, brief commentary)
             
 
             **Optional Enhancement (only if space efficient):**
             - **Quick Tip:** One key study point or common pitfall (maximum 1-2 sentences)
             - **Next Step:** Single, specific recommendation for further learning
-
+            - **resorce url:** provide resource url if exists(e.g. https://ema-sigma.vercel.app/study/01)
             ### 4. MATHEMATICAL COMMUNICATION STANDARDS
 
             **LaTeX Formatting Requirements:**
