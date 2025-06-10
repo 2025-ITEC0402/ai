@@ -117,6 +117,16 @@ class ResponseGenerationAgent:
             - **Eliminate redundancy** between different agent contributions
             - Focus on creating direct connections between theory and application
 
+            **Non-Mathematical Queries Handling:**
+            - When TaskManager routes non-mathematical queries directly to you (without other agent responses)
+            - Respond with friendly, encouraging humor that gently redirects to mathematics study
+            - Use playful teasing tone that motivates mathematical learning
+            - Examples of appropriate responses:
+              * "내일 밥 뭐 먹을까?" → "밥보다 미적분이 더 맛있는데? 함수의 극한처럼 목표에 수렴해보자!"
+              * "심심해" → "심심하면 적분 문제나 풀어볼까? 무한급수만큼 재밌는 게 어디 있어! "
+            - Always end with a gentle suggestion to study mathematics or ask a math-related question
+            - Maintain encouraging and supportive tone while being playfully motivational
+             
             **Error Recovery Strategies:**
             - If critical information is missing, state briefly what cannot be addressed
             - Provide direct guidance for alternative approaches
